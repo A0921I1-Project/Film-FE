@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {FilmListComponent} from "./film-module/film-list/film-list.component";
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'history',
-    loadChildren:() => import('./history-module/history-module.module').then(module => module.HistoryModuleModule)
+    loadChildren: () => import('./history-module/history-module.module').then(module => module.HistoryModuleModule)
   },
   {
     path: 'room',

@@ -1,0 +1,110 @@
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+/*body {*/
+/*  !*background: linear-gradient(to right, rgb(142, 247, 142), rgb(248, 115, 115), rgb(243, 243, 110));*!*/
+/*  background: black;*/
+
+/*  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+/*  margin: 15px;*/
+/*}*/
+
+/*.header {*/
+/*  padding: 30px;*/
+/*  background-color: black;*/
+/*  color: white;*/
+/*}*/
+
+/*.header h2 {*/
+/*  font-size: 1.8rem;*/
+/*  font-weight: 600;*/
+/*  padding-bottom: 9px;*/
+/*}*/
+
+/*.header_title {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*}*/
+
+/*.menu_film button,*/
+/*.input_search input,*/
+/*.input_search button {*/
+/*  border: none;*/
+/*  padding: 10px 15px;*/
+/*  font-size: 1.2rem;*/
+/*}*/
+
+/*.input_search {*/
+/*  padding-right: 150px;*/
+/*}*/
+
+/*.menu_film button:hover,*/
+/*.input_search button:hover {*/
+/*  background-color: rgb(200, 204, 207);*/
+/*}*/
+
+/*.input_search input {}*/
+
+/*.body {*/
+/*  display: flex;*/
+/*  padding: 30px;*/
+/*  background-color: black;*/
+/*  color: black;*/
+/*}*/
+
+/*.card {*/
+/*  background-color: white;*/
+/*  margin-right: 15px;*/
+/*  border-radius: 8px;*/
+/*  overflow: hidden;*/
+/*}*/
+
+/*.card img {*/
+/*  max-width: 269px;*/
+/*  max-height: 345px;*/
+/*  width: auto;*/
+/*  height: auto;*/
+/*}*/
+
+/*.card_film {*/
+/*  max-width: fit-content;*/
+/*  padding: 10px 15px;*/
+/*}*/
+
+/*.card_film p {*/
+/*  padding-bottom: 5px;*/
+/*  font-size: 1.2rem;*/
+/*  font-weight: 500;*/
+/*  word-wrap: break-word;*/
+/*}*/
+
+/*.card_film h2 {*/
+/*  padding: 5px 0;*/
+/*}*/
+
+/*.card_film button {*/
+/*  padding: 10px 15px;*/
+/*  color: aliceblue;*/
+/*  font-size: 1.2rem;*/
+/*  background-color: black;*/
+/*  border: none;*/
+/*  margin: 5px 0;*/
+/*  border-radius: 3px;*/
+/*}*/
+
+/*.card_film button:hover {*/
+/*  background-color: rgb(220, 224, 228);*/
+/*  color: black;*/
+/*}*/
+/*!*---*!*/
+/** {*/
+/*  box-sizing: inherit;*/
+/*}*/
+
+/*html {*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*  box-sizing: border-box;*/
+/*}*/

@@ -6,4 +6,5 @@ export interface Booking {
   pointReward: number;
   bookingCode: string;
   account_id: any;
+  received: boolean;
 }

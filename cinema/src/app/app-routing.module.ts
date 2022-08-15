@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'history',
-    loadChildren:() => import('./history-module/history-module.module').then(module => module.HistoryModuleModule)
+    loadChildren: () => import('./history-module/history-module.module').then(module => module.HistoryModuleModule)
   },
   {
     path: 'room',
@@ -27,7 +27,7 @@ const routes: Routes = [
     loadChildren: () => import('./seat-module/seat-module.module').then(module => module.SeatModuleModule)
   },
   {
-    path: 'ticker',
+    path: 'ticket',
     loadChildren: () => import('./ticket-module/ticket-module.module').then(module => module.TicketModuleModule)
   },
   {

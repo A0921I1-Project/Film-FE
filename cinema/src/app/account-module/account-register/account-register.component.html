@@ -12,41 +12,41 @@
                 class="	fa fa-user-circle"></span></div>
               <input type="text" class="form-control" placeholder="Tên người dùng *" required
                      id="username" formControlName="username">
-              <p style="color: red" *ngIf="accountForm.controls.username.hasError('required')&&accountForm.controls.username.touched">Vui lòng nhập tên người dùng</p>
+              <p style="color: red" *ngIf="accountForm.controls.username.hasError('required')&&accountForm.controls.username.touched">Vui lòng nhập tên người dùng.</p>
             </div>
             <div class="form-group">
               <div class="icon d-flex align-items-center justify-content-center"><span
                 class="fa fa-lock"></span></div>
               <input type="password" class="form-control" placeholder="Mật khẩu *" required id="password" formControlName="password">
-              <p style="color: red" *ngIf="accountForm.controls.password.hasError('required')&&accountForm.controls.password.touched">Vui lòng nhập mật khẩu</p>
+              <p style="color: red" *ngIf="accountForm.controls.password.hasError('required')&&accountForm.controls.password.touched">Vui lòng nhập mật khẩu.</p>
 
             </div>
             <div class="form-group">
               <div class="icon d-flex align-items-center justify-content-center"><span
                 class="fa fa-user"></span></div>
               <input type="text" class="form-control" placeholder="Họ tên *" required id="fullname" formControlName="fullname">
-              <p style="color: red" *ngIf="accountForm.controls.fullname.hasError('required')&&accountForm.controls.fullname.touched">Vui lòng nhập họ tên</p>
-              <p style="color: red" *ngIf="accountForm.controls.fullname.hasError('pattern')&&accountForm.controls.fullname.touched">Họ tên không quá 100 kí tự</p>
+              <p style="color: red" *ngIf="accountForm.controls.fullname.hasError('required')&&accountForm.controls.fullname.touched">Vui lòng nhập họ tên.</p>
+              <p style="color: red" *ngIf="accountForm.controls.fullname.hasError('pattern')&&accountForm.controls.fullname.touched">Họ tên không quá 100 kí tự.</p>
             </div>
             <div class="form-group">
               <div class="icon d-flex align-items-center justify-content-center"><span
                 class="	fa fa-envelope"></span></div>
               <input type="text" class="form-control" placeholder="Email *" required id="email" formControlName="email">
-              <p style="color: red" *ngIf="accountForm.controls.email.hasError('required')&&accountForm.controls.email.touched">Vui lòng nhập email</p>
-              <p style="color: red" *ngIf="accountForm.controls.email.hasError('email')&&accountForm.controls.email.touched">Email không đúng định dạng</p>
+              <p style="color: red" *ngIf="accountForm.controls.email.hasError('required')&&accountForm.controls.email.touched">Vui lòng nhập email.</p>
+              <p style="color: red" *ngIf="accountForm.controls.email.hasError('email')&&accountForm.controls.email.touched">Email không đúng định dạng.</p>
             </div>
             <div class="form-group">
               <div class="icon d-flex align-items-center justify-content-center"><span
                 class="fas fa-phone-alt"></span></div>
               <input type="text" class="form-control" placeholder="Số điện thoại *" required id="phone" formControlName="phone">
-              <p style="color: red" *ngIf="accountForm.controls.phone.hasError('required')&&accountForm.controls.phone.touched">Vui lòng nhập số điện thoại</p>
+              <p style="color: red" *ngIf="accountForm.controls.phone.hasError('required')&&accountForm.controls.phone.touched">Vui lòng nhập số điện thoại.</p>
             </div>
             <div class="form-group">
               <div class="icon d-flex align-items-center justify-content-center"><span
                 class="fa fa-id-card"></span></div>
               <input type="text" class="form-control" placeholder="CMND *" required id="idCard" formControlName="idCard">
-              <p style="color: red" *ngIf="accountForm.controls.idCard.hasError('required')&&accountForm.controls.idCard.touched">Vui lòng nhập CMND</p>
-              <p style="color: red" *ngIf="accountForm.controls.idCard.hasError('pattern')&&accountForm.controls.idCard.touched">CMND không đúng định dạng</p>
+              <p style="color: red" *ngIf="accountForm.controls.idCard.hasError('required')&&accountForm.controls.idCard.touched">Vui lòng nhập CMND.</p>
+              <p style="color: red" *ngIf="accountForm.controls.idCard.hasError('pattern')&&accountForm.controls.idCard.touched">CMND không đúng định dạng.</p>
 
             </div>
 

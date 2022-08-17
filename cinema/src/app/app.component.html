@@ -1,15 +1,28 @@
-<router-outlet></router-outlet>
 <div class="header">
   <div class="header_info">
     <div class="header_logo">
       <img src="../assets/img/LOGO%20MỚI%205.png" alt="" width="30">
     </div>
-    <div class="header_find">
-      <input type="text" class="header_find-input" placeholder="Tìm tên phim, diễn viên...">
-      <a href=""><i class="fas fa-magnifying-glass"></i></a>
-    </div>
     <div class="header_login">
       <i class="fas fa-user"></i> Đăng nhập
+      <div>
+        IMAGE
+        <ul>
+          <li>
+            <a routerLink="/account/changePassword">Đổi mật khẩu</a>
+          </li>
+          <li>
+            <a routerLink="/account/changeInfo">Đổi thông tin tài khoản</a>
+          </li>
+          <li>
+            <a routerLink="/account/view-history-point">Xem lịch sử điểm</a>
+          </li>
+          <li>
+            <a routerLink="/ticket/getbookedticket">Vé đã đặt</a>
+          </li>
+          <li>Đăng xuất</li>
+        </ul>
+      </div>
       <a href="" class="vn">VN</a>
       <a href=""> | EN</a>
     </div>
@@ -24,7 +37,7 @@
           <li class="subnav_item"><a class="subnav_item-link" href="#">THỂ LOẠI PHIM</a></li>
           <li class="subnav_item"><a class="subnav_item-link" href="#">DIỄN VIÊN</a></li>
           <li class="subnav_item"><a class="subnav_item-link" href="#">ĐẠO DIỄN</a></li>
-          <li class="subnav_item"><a class="subnav_item-link" href=">BÌNH LUẬN PHIM</a></li>
+          <li class="subnav_item"><a class="subnav_item-link" href="#">BÌNH LUẬN PHIM</a></li>
           <li class="subnav_item"><a class="subnav_item-link" href="#">BLOG ĐIỆN ẢNH</a></li>
         </ul>
       </li>
@@ -39,11 +52,9 @@
       <li class="nav_item"><a href="" class="menu_list">HỖ TRỢ</a></li>
       <li class="nav_item"><a href="" class="menu_list">THÀNH VIÊN</a></li>
     </ul>
-
-
   </div>
 </div>
-<div class="body"></div>
+<router-outlet></router-outlet>
 <div class="foote">
   <div class="footer">
     <div class="footer_list">

@@ -1,0 +1,64 @@
+<div>
+  <div class="header">
+    <h2>Danh sách phim </h2>
+    <div class="header_title">
+      <div class="menu_film">
+        <button>Phim đang chiếu</button>
+        <button>Phim sắp chiếu</button>
+      </div>
+      <form class="form-inline" method="post" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+        <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm" formControlName="name">
+        <small *ngIf="searchForm.get('name').valid && searchForm.get('name').touched">nhập sai</small>
+        <button [disabled]="!searchForm.get('name').valid" class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+  <!--    <div class="input_search">-->
+  <!--      <input type="text" placeholder="Tìm kiếm phim, diễn viên...">-->
+  <!--      <button><i class='bx bx-search-alt-2'></i></button>-->
+  <!--    </div>-->
+    </div>
+  </div>
+  <hr>
+  <div class="body">
+    <div *ngFor="let film of films" class="card">
+      <img [src]="film.filmImgs[0].urlImg" alt="" id="imgstyle">
+      <div class="card_film">
+        <div><h2>{{film.name}}</h2></div>
+        <div>
+          <p>Thể loại: {{film.director}}</p>
+          <p>Thời lượng: {{film.duration}}</p>
+          <p>Khởi chiếu: {{film.startDate | date: "dd/MM/yyyy"}}</p>
+        </div>
+        <div>
+        <button>Chi tiết</button>
+        <button>Đặt vé</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex mt-4 flex-wrap m-3">
+    <p class="text-muted"></p>
+    <nav class="ml-auto">
+      <ul class="pagination separated pagination-info">
+        <li class="page-item"><button class="page-link" (click)="previousPage()" >Trang trước</button></li>
+        <li class="page-item"><span class="page-link"><span>{{indexPagination}}</span><span>/</span><span>{{totalPages}}</span></span></li>
+        <li class="page-item"><button class="page-link" (click)="nextPage()" >Trang kế</button></li>
+      </ul>
+    </nav>
+  </div>
+  <!--    Phân trang-->
+<!--  <div class="mt-3">-->
+<!--    <nav aria-label="Page navigation example">-->
+<!--      <ul class="pagination d-flex justify-content-md-end justify-content-center">-->
+<!--        <li class="page-item">-->
+<!--          <button class="page-link" (click)="previousPage()" >previous</button>-->
+<!--        </li>-->
+<!--        <li class="page-item col-md-1 col-2  px-0 text-center" style="line-height: 38px;color: white">-->
+<!--          <span>{{indexPagination}}</span>/<span>{{totalPages}}</span>-->
+<!--        </li>-->
+<!--        <li class="page-item">-->
+<!--          <button class="page-link" (click)="nextPage()" >next</button>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+<!--  </div>-->
+</div>

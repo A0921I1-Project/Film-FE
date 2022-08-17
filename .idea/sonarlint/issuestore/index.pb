@@ -15,8 +15,6 @@ z
 Jcinema/src/app/ticket-module/booked-ticket/booked-ticket.component.spec.ts,e\8\e824af48985eb2312ab1fc206a2a93a14ad04845
 B
 cinema/src/test.ts,1\8\181831242e64e5055ab89794ac4028bdebe729d3
-E
-cinema/src/styles.css,a\e\ae8ac84e10472f7ae37875babc4f001c388020b2
 O
 cinema/src/assets/css/style.css,2\9\297a4ae8a765217f882248be023e747b65b6cee3
 v
@@ -27,13 +25,9 @@ N
 cinema/src/app/model/ticket.ts,8\9\89332bab5696d0dbe1d37d7554d24f4e77f67b20
 k
 ;cinema/src/app/ticket-module/service/ticket.service.spec.ts,8\b\8b6533352b6f8c90248c525f9d92dee64cd66855
-d
-4cinema/src/app/ticket-module/ticket-module.module.ts,c\7\c7e1f33cd73ca34560b9add9ebae93df5b70004f
-l
-<cinema/src/app/ticket-module/ticket-module-routing.module.ts,d\e\de51e2bcb6b8895f73c2c02573314dc72955e94e
-L
-cinema/src/app/app.module.ts,c\3\c3e3aba6deaad18b6646712c728aff175de936aa
 V
 &cinema/src/environments/environment.ts,c\5\c5f9dbed2237f11ac3adfbd642b7fe3cdedcebbd
 L
 cinema/src/app/model/film.ts,3\e\3e623c3aaf7b8f43bc296610c4cfbee2140518d5
+n
+>cinema/src/app/booking-module/booking-module-routing.module.ts,d\f\df81abdff365ed1d3586a5cab224a6f1f5f5967e

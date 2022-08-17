@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TicketService} from '../service/ticket.service';
 import {BookedTicket} from '../../model/booked-ticket';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-booked-ticket',
@@ -19,7 +20,8 @@ export class BookedTicketComponent implements OnInit {
   price: any;
 
   constructor(
-    private ticketService: TicketService
+    private ticketService: TicketService,
+    private toastr: ToastrService
   ) {
   }
 
@@ -29,13 +31,26 @@ export class BookedTicketComponent implements OnInit {
 
   getBookedTicket() {
     this.ticketService.getBookedTicket(this.indexPagination).subscribe(data => {
-      console.log(data);
+      // console.log(data);
       this.bookedTickets = data.content;
       this.totalPages = data.totalPages;
       // this.indexPagination = data.number;
     }, error => {
       console.log(error);
     });
+  }
+
+  deleteTicket() {
+    console.log(this.id);
+    this.ticketService.deleteTicket(this.id).subscribe(data => {
+        console.log(data);
+        this.toastr.success('Xóa thành công');
+        // alert('Xóa thành công');
+        this.getBookedTicket();
+      }, e => {
+        console.log(e);
+      }
+    );
   }
 
   findBookedTicketDeleteById(name: string, price: any, id: number) {
@@ -69,4 +84,5 @@ export class BookedTicketComponent implements OnInit {
     this.indexPagination = this.totalPages - 1;
     this.ngOnInit();
   }
+
 }

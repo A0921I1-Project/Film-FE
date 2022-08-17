@@ -20,7 +20,10 @@ export class TicketService {
   getBookedTicket(page: number): Observable<PageBookedTicket> {
     // @ts-ignore
     return this.httpClient.get<PageBookedTicket>(API_URL + '/getbookedticket' + '?page=' + page);
-    // return this.httpClient.get<BookedTicket>(API_URL + '/getbookedticket' + '?page=' + page).pipe(map(response => response.content));
-    // return this.httpClient.get<BookedTicket>(API_URL + '/getbookedticket').pipe(map(response => response.content));
+  }
+
+  deleteTicket(id: number): Observable<void> {
+    // @ts-ignore
+    return this.httpClient.patch<void>(API_URL + '/deleteTicket/' + id);
   }
 }

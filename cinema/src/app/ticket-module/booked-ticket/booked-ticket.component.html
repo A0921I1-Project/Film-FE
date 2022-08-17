@@ -76,7 +76,7 @@
           <td>{{bookedTicket.name}}</td>
           <td>{{bookedTicket.dayTimeBooking | date:'dd/mm/yyyy HH:mm' }}</td>
           <td>{{bookedTicket.totalPrice | currency:'VND':''}}</td>
-          <td *ngIf="bookedTicket.received" style="color: green">Đã nhận vé</td>
+          <td *ngIf="bookedTicket.received" style="color: #5ed95e">Đã nhận vé</td>
           <td *ngIf="!bookedTicket.received" style="color: #0090ff">Đợi nhận vé</td>
           <td>
             <button type="button" style="border: none" data-toggle="modal" data-target="#exampleModal"
@@ -131,8 +131,8 @@
           <hr>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-          <button type="button" class="btn btn-primary">Hủy</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="deleteTicket()">Xóa</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Hủy</button>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <div>
   <div class="header">
-    <h2>Danh sách phim </h2>
+<!--    <h2>Danh sách phim </h2>-->
     <div class="header_title">
       <div class="menu_film">
         <button>Phim đang chiếu</button>
@@ -8,13 +8,9 @@
       </div>
       <form class="form-inline" method="post" [formGroup]="searchForm" (ngSubmit)="onSearch()">
         <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm" formControlName="name">
-        <small *ngIf="searchForm.get('name').valid && searchForm.get('name').touched">nhập sai</small>
+<!--        <small *ngIf="searchForm.get('name').valid && searchForm.get('name').touched">nhập sai</small>-->
         <button [disabled]="!searchForm.get('name').valid" class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-  <!--    <div class="input_search">-->
-  <!--      <input type="text" placeholder="Tìm kiếm phim, diễn viên...">-->
-  <!--      <button><i class='bx bx-search-alt-2'></i></button>-->
-  <!--    </div>-->
     </div>
   </div>
   <hr>

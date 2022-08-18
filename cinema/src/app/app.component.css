@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   /*background: linear-gradient(to right, rgb(142, 247, 142), rgb(248, 115, 115), rgb(243, 243, 110));*/
   background: black;
@@ -22,7 +21,10 @@ body {
   font-weight: 600;
   padding-bottom: 9px;
 }
-
+.header_login{
+  list-style-type: none; (dùng để loại bỏ dấu đầu mục và margin, padding ra khỏi danh sách:)
+  text-decoration: none;
+}
 .header_title {
   display: flex;
   justify-content: space-between;
@@ -149,10 +151,13 @@ html {
   background-color: black;
   /* height: 40px; */
   text-align: center;
-  padding: 40px;
-  margin: 0px;
 }
+.menu_list{
 
+}
+.menu_list:hover {
+  background-color: red;
+}
 .nav {
   display: inline-block;
   list-style: none;
@@ -165,7 +170,8 @@ html {
 .nav_item>a {
   text-decoration: none;
   color: white;
-  margin: 40px;
+  margin: 0px;
+  padding: 8px 40px;
   font-size: 0.9rem;
   font-weight: 500;
   align-items: center;

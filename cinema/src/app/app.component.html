@@ -1,28 +1,45 @@
 <div class="header">
   <div class="header_info">
     <div class="header_logo">
-      <img src="../assets/img/LOGO%20MỚI%205.png" alt="" width="30">
+      <a href="/">
+         <img src="../assets/img/LOGO%20MỚI%205.png" alt="" width="250px">
+      </a>
     </div>
     <div class="header_login">
-      <i class="fas fa-user"></i> Đăng nhập
-      <div>
-        IMAGE
-        <ul>
-          <li>
-            <a routerLink="/account/changePassword">Đổi mật khẩu</a>
-          </li>
-          <li>
-            <a routerLink="/account/changeInfo">Đổi thông tin tài khoản</a>
-          </li>
-          <li>
-            <a routerLink="/account/view-history-point">Xem lịch sử điểm</a>
-          </li>
-          <li>
-            <a routerLink="/ticket/getbookedticket">Vé đã đặt</a>
-          </li>
-          <li>Đăng xuất</li>
-        </ul>
-      </div>
+      <li class="nav-item dropdown"><a style="color: white" class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> TÀI KHOẢN </a>
+        <div test="${empty sessionScope.user }">
+          <ul class="dropdown-menu">
+            <li><a href="/account/login">Đăng nhập</a></li>
+            <li><a href="/account/register">Đăng ký</a></li>
+            <li><a href="/account/forgot">Quên mật khẩu?</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="dropdown-menu" style="background-color: #FFF">
+            <li style="border-bottom: 2px solid #EEEEEE;"><a routerLink="/account/changePassword">Thay đổi mật khẩu</a></li>
+            <li style="border-bottom: 2px solid #EEEEEE;"><a routerLink="/account/changeInfo">Cập nhật thông tin cá nhân</a></li>
+            <li style="border-bottom: 2px solid #EEEEEE;"><a routerLink="/account/view-history-point">Xem lịch sử điểm</a></li>
+            <li style="border-bottom: 2px solid #EEEEEE;"><a routerLink="/ticket/getbookedticket">Vé đã đặt</a></li>
+            <li style="border-bottom: 2px solid #EEEEEE;"><a routerLink="/account/login">Đăng xuất</a></li>
+<!--            <li><a href="/order/items">Danh sách sản phẩm đã mua</a></li>-->
+<!--            <li>-->
+<!--              <a routerLink="/account/changePassword">Thay đổi mật khẩu</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a routerLink="/account/changeInfo">Cập nhật thông tin cá nhân</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a routerLink="/account/view-history-point">Xem lịch sử điểm</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a routerLink="/ticket/getbookedticket">Vé đã đặt</a>-->
+<!--            </li>-->
+<!--            <li >-->
+<!--              <a routerLink="/account/login">Đăng xuất</a>-->
+<!--            </li>-->
+          </ul>
+        </div>
+      </li>
       <a href="" class="vn">VN</a>
       <a href=""> | EN</a>
     </div>
@@ -30,9 +47,10 @@
   <div class="menu">
     <ul class="nav">
       <li class="nav_item"><a href="" class="menu_list">MUA VÉ</a></li>
-      <li class="nav_item"><a href="" class="menu_list">PHIM <i class="fas fa-angle-down"></i></a></li>
+      |
+      <li class="nav_item"><a href="" class="menu_list">PHIM <i class="fas fa-angle-down"></i></a></li>|
       <li class="nav_item nav_item-link">
-        <a href="" class="menu_list">GÓC ĐIỆN ẢNH <i class="fas fa-angle-down"></i></a>
+        <a href="" class="menu_list">GÓC ĐIỆN ẢNH <i class="fas fa-angle-down"></i></a>|
         <ul class="subnav">
           <li class="subnav_item"><a class="subnav_item-link" href="#">THỂ LOẠI PHIM</a></li>
           <li class="subnav_item"><a class="subnav_item-link" href="#">DIỄN VIÊN</a></li>
@@ -42,14 +60,14 @@
         </ul>
       </li>
       <li class="nav_item nav_item-link">
-        <a href="" class="menu_list">SỰ KIỆN <i class="fas fa-angle-down"></i></a>
+        <a href="" class="menu_list">SỰ KIỆN <i class="fas fa-angle-down"></i></a>|
         <ul class="subnav">
           <li class="subnav_item"><a class="subnav_item-link" href="#">ƯU ĐÃI</a></li>
           <li class="subnav_item"><a class="subnav_item-link" href="#">PHIM HAY THÁNG</a></li>
         </ul>
       </li>
-      <li class="nav_item"><a href="" class="menu_list">RẠP/GIÁ VÉ</a></li>
-      <li class="nav_item"><a href="" class="menu_list">HỖ TRỢ</a></li>
+      <li class="nav_item"><a href="" class="menu_list">RẠP/GIÁ VÉ</a></li>|
+      <li class="nav_item"><a href="" class="menu_list">HỖ TRỢ</a></li>|
       <li class="nav_item"><a href="" class="menu_list">THÀNH VIÊN</a></li>
     </ul>
   </div>

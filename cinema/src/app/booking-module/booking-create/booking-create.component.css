@@ -1,0 +1,158 @@
+.wrapper {
+  margin: 30px 0;
+}
+
+.sidebar {
+  line-height: 16px;
+  padding: 0 15px;
+  color: var(--color-secondary);
+}
+.ticket {
+  background-color: var(--bg-ticket);
+  min-height: 400px;
+  padding: 10px;
+}
+
+.ticket img {
+  padding: 0 27px;
+  width: 100%;
+}
+/* .ticket--header {
+}
+.ticket--detail {
+} */
+/* .ticket--detail__title {
+
+} */
+
+.ticket--detail__title h2 {
+  line-height: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 0px;
+}
+.ticket--detail__icon {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.ticket--detail__icon .icon_c13 {
+  background-image: url(../../../assets/images/ic-c13.png);
+  background-size: cover;
+  display: inline-block;
+  width: 28px;
+  height: 22px;
+}
+
+.ticket--detail__icon .notice {
+  font-size: 11px;
+  line-height: 11px;
+  color: #ff0033;
+  margin: 0px;
+  padding: 0 0 0 5px;
+}
+
+.ticket--detail__info p {
+  font-size: 13px;
+  line-height: 19.5px;
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px dotted;
+}
+.ticket--detail__price-total p {
+  padding: 10px 0;
+  line-height: 24px;
+}
+
+.ticket--detail__price-total p span {
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--color-primary);
+}
+.ticket--detail__button {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ticket--detail__button a {
+  color: #ffffff;
+  background-color: var(--color-primary);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px;
+  display: block;
+  width: 49%;
+  text-align: center;
+}
+
+.ticket--detail__button a:hover {
+  color: #ffffff;
+  background-color: #e75621;
+}
+
+.wp-context {
+  min-height: 400px;
+  color: var(--color-secondary);
+}
+
+.pay-ticket {
+  min-height: inherit;
+  background-color: var(--color-primary);
+  padding: 10px;
+}
+
+.pay-ticket .booking-title {
+  margin-bottom: 20px;
+}
+
+.pay-ticket .booking-title h2 {
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 36px;
+  font-size: 24px;
+  justify-content: space-between;
+  display: flex;
+  margin: 0px;
+}
+.pay-ticket .booking-title h2 span {
+  display: block;
+}
+
+.pay-ticket .booking-detail {
+  background-color: #ffffff;
+  width: 100%;
+  min-height: inherit;
+}
+
+.pay-ticket .booking-detail form {
+  padding: 30px;
+  min-height: inherit;
+}
+
+.pay-ticket .booking-detail form .row label {
+  font-size: 14px;
+  line-height: 14px;
+  padding: 20px 0 0;
+}
+
+.pay-ticket .booking-detail form .row input {
+  border: 1px solid #ced0da;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.pay-ticket .booking-detail form .row span {
+  font-size: 11px;
+  line-height: 11px;
+}
+
+.row {
+  height: 60px;
+}
+

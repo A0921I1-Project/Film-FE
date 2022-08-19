@@ -3,5 +3,4 @@ export interface Room {
   name: string;
   size: any;
   status: any;
-  seatDetail_id: any;
 }

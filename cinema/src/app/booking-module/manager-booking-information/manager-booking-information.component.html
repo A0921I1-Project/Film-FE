@@ -1,0 +1,171 @@
+<div class="container-scroller">
+  <div class="container-fluid page-body-wrapper">
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item nav-profile">
+          <a href="#" class="nav-link">
+            <div class="profile-image">
+              <img class="img-xs rounded-circle"
+                   src="https://tse1.mm.bing.net/th?id=OIP.uBlH_VgWPHHXNImlM0I-jwHaHa&pid=Api&P=0"
+                   alt="profile image">
+              <div class="dot-indicator bg-succes"></div>
+            </div>
+<!--            <div class="text-wrapper">-->
+<!--              <p class="profile-name">Name User</p>-->
+<!--              <p class="designation">Role</p>-->
+<!--            </div>-->
+<!--            <div class="icon-container">-->
+<!--              <div class="dot-indicator bg-danger"></div>-->
+<!--            </div>-->
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Vé</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/booking/managerBooking/list']">
+            <span class="menu-title">Quản Lý đặt vé</span>
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Nhân Viên</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="menu-title">Quản Lý Nhân Viên</span>
+
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Thành Viên</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >
+            <span class="menu-title">Quản Lý Thành Viên</span>
+
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Thống Kê</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="menu-title">Thống Kê</span>
+
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-panel">
+      <div class="content-wrapper" id="background">
+        <div class="container">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+
+              <div class="card-body">
+                <div style="text-align: center">
+                  <h4 class="card-title mb-sm-0">Thông tin nhận vé</h4>
+                </div>
+                <hr>
+
+                <div class="d-flex">
+                  <div class="col-4">
+                    <img src="{{bookingDetail.url_Img}}" style="width: 100%"
+                         alt="">
+                  </div>
+                  <div class="col-8">
+
+                    <table class="table table-hover">
+                      <tr>
+                        <th><h2>{{bookingDetail.name}}</h2></th>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Ngày chiếu :</th>
+                        <td scope="row">{{bookingDetail.date_Show}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Giờ chiếu :</th>
+                        <td scope="row">{{bookingDetail.time_Show}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Ghế :</th>
+                        <td scope="row">{{bookingDetail.seat_Name}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">loai :</th>
+                        <td scope="row">{{bookingDetail.vip}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Giá :</th>
+                        <td scope="row">
+                          <li>{{bookingDetail.price}}</li>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Điểm đổi vé :</th>
+                        <td scope="row">{{bookingDetail.point_Exchange}}</td>
+                      </tr>
+
+                      <tr>
+                        <th scope="col">Tổng cộng :</th>
+                        <td scope="row">{{bookingDetail.total_Price}}</td>
+                      </tr>
+
+                      &nbsp;&nbsp;
+                      <tr>
+                        <th><h2> Thông tin thành viên</h2></th>
+                        <td></td>
+                      </tr>
+
+
+                      <tr>
+                        <th>Mã thành viên :</th>
+                        <td>{{bookingDetail.account_Code}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">CMND :</th>
+                        <td scope="row">{{bookingDetail.id_Card}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Họ tên :</th>
+                        <td scope="row">{{bookingDetail.fullname}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="col">Số điện thoại :</th>
+                        <td scope="row">{{bookingDetail.phone}}</td>
+                      </tr>
+
+                    </table>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  var password = document.getElementById('fakePassword');
+  var toggler = document.getElementById('toggler');
+  showHidePassword = () => {
+    if (password.type == 'password') {
+      password.setAttribute('type', 'text');
+      toggler.classList.add('fa-eye-slash');
+    } else {
+      toggler.classList.remove('fa-eye-slash');
+      password.setAttribute('type', 'password');
+    }
+  };
+  toggler.addEventListener('click', showHidePassword);
+
+
+</script>
+
+<router-outlet></router-outlet>
+

@@ -1,0 +1,126 @@
+<div class="container-scroller">
+
+  <div class="container-fluid page-body-wrapper">
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item nav-profile">
+          <a href="#" class="nav-link">
+            <div class="profile-image">
+              <img class="img-xs rounded-circle" src="https://tse1.mm.bing.net/th?id=OIP.uBlH_VgWPHHXNImlM0I-jwHaHa&pid=Api&P=0" alt="profile image">
+              <div class="dot-indicator bg-succes"></div>
+            </div>
+<!--            <div class="text-wrapper">-->
+<!--              <p class="profile-name">Name User</p>-->
+<!--              <p class="designation">Role</p>-->
+<!--            </div>-->
+<!--            <div class="icon-container">-->
+<!--              <i class="icon-bubbles"></i>-->
+<!--              <div class="dot-indicator bg-danger"></div>-->
+<!--            </div>-->
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Vé</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"[routerLink]="['/booking/managerBooking/list']">
+            <span class="menu-title">Quản Lý đặt vé</span>
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Nhân Viên</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="menu-title">Quản Lý Nhân Viên</span>
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Thành Viên</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="list.html">
+            <span class="menu-title">Quản Lý Thành Viên</span>
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Thống Kê</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="menu-title">Thống Kê</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-panel">
+      <div class="content-wrapper" id="background">
+        <div class="row">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-sm-flex align-items-center mb-4">
+                  <h4 class="card-title mb-sm-0">Danh Sách Đặt Vé</h4>
+                  <!--                                    <a href="#" class="text-dark ml-auto mb-3 mb-sm-0"> View all Products</a>-->
+                  <div class="navbar-nav navbar-nav-right ml-auto">
+                    <form class="form-inline"  [formGroup]="searchForm" (ngSubmit)="onSearch()">
+                      <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm" formControlName="key" value='' style="opacity: 0.9">
+                      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" >Tìm kiếm</button>
+                    </form>
+                  </div>
+                </div>
+                <hr>
+                <div class="table-responsive border rounded p-1">
+                  <div *ngIf="message != ''" style="text-align: center"><h2 style="color: red">{{message}}</h2></div>
+                  <table class="table table-striped" >
+                    <thead>
+                    <tr>
+                      <th class="font-weight-bold" >STT</th>
+                      <th class="font-weight-bold" >Mã đặt vé</th>
+                      <th class="font-weight-bold"  hidden>booking_id</th>
+                      <th class="font-weight-bold">Mã thành viên</th>
+                      <th class="font-weight-bold">Họ tên</th>
+                      <th class="font-weight-bold">CMND</th>
+                      <th class="font-weight-bold">Số điện thoại</th>
+                      <th class="font-weight-bold">Phim</th>
+                      <th class="font-weight-bold">Xuất chiếu</th>
+                      <th class="font-weight-bold">Nhận vé</th>
+                    </tr>
+                    </thead>
+                    <tbody *ngIf="contents != null" >
+                    <tr *ngFor="let content of contents , index as i">
+                      <td>{{(indexPagination*size)+i+1}}</td>
+                      <td>{{content?.booking_Code}}</td>
+                      <td hidden>{{content?.booking_id}}</td>
+                      <td>{{content?.account_Code}}</td>
+                      <td>{{content?.fullname}}</td>
+                      <td>{{content?.id_Card}}</td>
+                      <td>{{content?.phone}}</td>
+                      <td>{{content?.name}}</td>
+                      <td>{{content?.time_Show}}</td>
+                      <td><input class="btn btn-outline-danger" [routerLink]="['/booking/managerBooking/detail',content.booking_id]" value="Nhận vé" type="button"></td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="d-flex mt-4 flex-wrap m-3">
+                  <p class="text-muted">PAGE</p>
+                  <nav class="ml-auto">
+                    <ul class="pagination separated pagination-info">
+                      <li class="page-item "><button class="page-link" (click)="previousPage()" [disabled]="indexPagination <= 0">Trang trước</button></li>
+                      <li class="page-item"><span class="page-link">{{indexPagination+1}}/{{totalPages}}</span></li>
+                      <li class="page-item"><button class="page-link" (click)="nextPage()" [disabled]="indexPagination >= totalPages-1">Trang kế</button></li>
+                    </ul>
+                  </nav>
+                </div>
+
+              </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<router-outlet></router-outlet>

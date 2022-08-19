@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<!--  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>-->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!--  <link rel="stylesheet" href="css/MemberEdit.css">-->
+  <link rel="stylesheet" href="account-list.component.css">
+</head>
+<body>
+<div class="container-scroller">
+  <div>
+    Navbar
+  </div>
+  <div class="container-fluid page-body-wrapper">
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item nav-profile">
+          <a href="#" class="nav-link">
+            <div class="profile-image">
+              <img class="img-xs rounded-circle" src="https://tse1.mm.bing.net/th?id=OIP.uBlH_VgWPHHXNImlM0I-jwHaHa&pid=Api&P=0" alt="profile image">
+              <div class="dot-indicator bg-succes"></div>
+            </div>
+            <div class="text-wrapper">
+              <p class="profile-name">Name User</p>
+              <p class="designation">Role</p>
+            </div>
+            <div class="icon-container">
+              <i class="icon-bubbles"></i>
+              <div class="dot-indicator bg-danger"></div>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Vé</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-title">Vé</span>
+<!--            <i class="icon-layers menu-icon"><ion-icon name="ticket-outline"></ion-icon></i>-->
+
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="#">Vé</a></li>
+              <li class="nav-item"> <a class="nav-link" href="#">Quản Lý Đặt Vé</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Nhân Viên</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="menu-title">Quản Lý Nhân Viên</span>
+<!--            <i class="icon-globe menu-icon"><ion-icon name="person-outline"></ion-icon></i>-->
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Thành Viên</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="MemberList.html">
+            <span class="menu-title">Quản Lý Thành Viên</span>
+<!--            <i class="icon-globe menu-icon"><ion-icon name="person-circle-outline"></ion-icon></i>-->
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Thống Kê</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="menu-title">Thống Kê</span>
+<!--            <i class="icon-globe menu-icon"><ion-icon name="bar-chart-outline"></ion-icon></i>-->
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-panel">
+      <div class="content-wrapper" id="background">
+        <div class="row">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-sm-flex align-items-center mb-4">
+                  <div class="card-title mb-sm-0">
+                    <h1>Danh Sách Thông Tin Thành Viên</h1>
+                  </div>
+                  <!--                                    <a href="#" class="text-dark ml-auto mb-3 mb-sm-0"> View all Products</a>-->
+                  <div class="navbar-nav navbar-nav-right ml-auto">
+                    <form class="search-form d-none d-md-block" method="get" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+                      <i class="icon-magnifier"></i>
+                      <input type="search" class="form-control" placeholder="Tìm Tài Khoản" title="Search here">
+                      <button class="btn btn-success my-2 my-sm-0" type="submit">Tìm</button>
+                    </form>
+                  </div>
+                </div>
+                <hr>
+                <div class="table-responsive border rounded p-1">
+                  <table class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th class="font-weight-bold" style="text-align: center">Mã Thành Viên</th>
+                      <th class="font-weight-bold" style="text-align: center">Tên Thành Viên</th>
+                      <th class="font-weight-bold" style="text-align: center">Số CMND</th>
+                      <th class="font-weight-bold" style="text-align: center">Email</th>
+                      <th class="font-weight-bold" style="text-align: center">Số Điện Thoại</th>
+                      <th class="font-weight-bold" style="text-align: center">Địa Chỉ</th>
+                      <th class="font-weight-bold" style="text-align: center">Sửa</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of accounts; let i = index">
+                      <td style="text-align: center">{{item.id}}</td>
+                      <td style="text-align: left">{{item.fullname}}</td>
+                      <td style="text-align: center">{{item.idCard}}</td>
+                      <td style="text-align: left">{{item.email}}</td>
+                      <td style="text-align: center">{{item.phone}}</td>
+                      <td style="text-align: left">{{item.address}}</td>
+                      <td>
+                        <a class="nav-link" [routerLink]="['/account/edit',item.id]">
+<!--                          <i class="icon-globe menu-icon"><ion-icon name="create-outline" size="small"></ion-icon></i>-->
+                        </a>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="d-flex mt-4 flex-wrap">
+                  <p class="text-muted">PAGE</p>
+                  <nav class="ml-auto">
+                    <ul class="pagination separated pagination-info">
+<!--                      <li class="page-item"><a href="" class="page-link"><i class="icon-arrow-left">PREVIOUS</i></a></li>-->
+                      <li class="page-item active" *ngFor="let p of pages; let i=index">
+                        <a href="" class="page-link" (click)="setPage(i,$event)">{{i}}</a>
+                      </li>
+<!--                      <li class="page-item"><a href="" class="page-link"><i class="icon-arrow-right">NEXT</i></a></li>-->
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    Footer
+  </div>
+</div>
+</body>
+</html>
+<router-outlet></router-outlet>

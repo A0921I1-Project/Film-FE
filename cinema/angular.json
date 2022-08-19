@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "cinema": {
@@ -88,7 +88,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/ionicons/dist/ionicons/ionicons.esm.js",
+              "node_modules/ionicons/dist/ionicons/ionicons.js"
             ],
             "scripts": []
           }
@@ -119,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "cinema"
+    }
+  },
+  "defaultProject": "cinema",
+  "cli": {
+    "analytics": "a59b95b4-c30f-4416-96b4-59613181df0a"
+  }
 }

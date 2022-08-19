@@ -1,7 +1,6 @@
 export interface Seat {
   id: number;
   name: string;
-  vip: any;
+  vip: number;
   price: any;
-  seatDetail_id: any;
 }

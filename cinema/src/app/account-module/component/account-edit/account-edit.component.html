@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+  <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />-->
+  <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+<!--  <link rel="stylesheet" href="css/MemberEdit.css">-->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="account-edit.component.css">
+</head>
+<body>
+<div class="container-scroller">
+  <div>
+    Navbar
+  </div>
+  <div class="container-fluid page-body-wrapper">
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <ul class="nav">
+        <li class="nav-item nav-profile">
+          <a href="#" class="nav-link">
+            <div class="profile-image">
+              <img class="img-xs rounded-circle" src="https://tse1.mm.bing.net/th?id=OIP.uBlH_VgWPHHXNImlM0I-jwHaHa&pid=Api&P=0" alt="profile image">
+              <div class="dot-indicator bg-succes"></div>
+            </div>
+            <div class="text-wrapper">
+              <p class="profile-name">Name User</p>
+              <p class="designation">Role</p>
+            </div>
+            <div class="icon-container">
+              <i class="icon-bubbles"></i>
+              <div class="dot-indicator bg-danger"></div>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Vé</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <span class="menu-title">Vé</span>
+<!--            <i class="icon-layers menu-icon"><ion-icon name="ticket-outline"></ion-icon></i>-->
+
+          </a>
+          <div class="collapse" id="ui-basic">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item"> <a class="nav-link" href="#">Vé</a></li>
+              <li class="nav-item"> <a class="nav-link" href="#">Quản Lý Đặt Vé</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Nhân Viên</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="menu-title">Quản Lý Nhân Viên</span>
+<!--            <i class="icon-globe menu-icon"><ion-icon name="person-outline"></ion-icon></i>-->
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Thành Viên</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="MemberList.html">
+            <span class="menu-title">Quản Lý Thành Viên</span>
+<!--            <i class="icon-globe menu-icon"><ion-icon name="person-circle-outline"></ion-icon></i>-->
+          </a>
+        </li>
+        <li class="nav-item nav-category">
+          <span class="nav-link">Thống Kê</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <span class="menu-title">Thống Kê</span>
+<!--            <i class="icon-globe menu-icon"><ion-icon name="bar-chart-outline"></ion-icon></i>-->
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-panel">
+      <div class="content-wrapper" id="background">
+        <div class="container">
+          <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <div style="text-align: center">
+                  <h4 class="card-title mb-sm-0">Sửa Tài Khoản Thành Viên</h4>
+                </div>
+                <hr>
+                <form class="forms-sample" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                  <div class="form-group row">
+                    <label for="username" class="col-sm-3 col-form-label" style="text-align: right">Tài Khoản<sup>(*)</sup></label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="username" disabled formControlName="username">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="fullname" class="col-sm-3 col-form-label" style="text-align: right">Họ Tên<sup>(*)</sup></label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="fullname" formControlName="fullname">
+                    </div>
+                  </div>
+<!--                  <div class="form-group row">-->
+<!--                    <label for="fakePassword" class="col-sm-3 col-form-label" style="text-align: right">Mật Khẩu<sup>(*)</sup></label>-->
+<!--                    <div class="col-sm-9">-->
+<!--                      <div class="password-field">-->
+<!--                        <input type="password" id="fakePassword" placeholder="Mật khẩu" class="form-control" formControlName="password">-->
+<!--                        <span><i id="toggler"class="far fa-eye"></i></span>-->
+<!--                      </div>-->
+<!--                    </div>-->
+                    <div class="form-group row">
+                      <label for="password" class="col-sm-3 col-form-label" style="text-align: right">Mật Khẩu</label>
+                      <div class="col-sm-9">
+                        <div class="password-field">
+                          <input type="password" id="fakePassword" placeholder="Mật khẩu" class="form-control">
+                          <span><i id="toggler"class="far fa-eye"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                  <div class="form-group row">
+                    <label for="birthday" class="col-sm-3 col-form-label" style="text-align: right">Ngày Sinh<sup>(*)</sup></label>
+                    <div class="col-sm-9">
+                      <input type="date" class="form-control" id="birthday" formControlName="birthday">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label" style="text-align: right">Giới Tính<sup>(*)</sup></label>
+                    <div class="col-sm-9">
+                      <input type="radio" id="male" formControlName="gender" value="male">
+                      <label for="male">Nam</label>
+                      <br>
+                      <input type="radio" id="female" formControlName="gender" value="female">
+                      <label for="female">Nữ</label>
+                      <br>
+                      <input type="radio" id="other" formControlName="gender" value="other">
+                      <label for="other">Khác</label>
+                    </div>
+<!--                      <input type="radio" id="html" name="fav_language" value="HTML">-->
+<!--                      <label for="html">HTML</label><br>-->
+<!--                      <input type="radio" id="css" name="fav_language" value="CSS">-->
+<!--                      <label for="css">CSS</label><br>-->
+<!--                      <input type="radio" id="javascript" name="fav_language" value="JavaScript">-->
+<!--                      <label for="javascript">JavaScript</label>-->
+                  </div>
+                  <div class="form-group row">
+                    <label for="email" class="col-sm-3 col-form-label" style="text-align: right">Email<sup>(*)</sup></label>
+                    <div class="col-sm-9">
+                      <input type="email" class="form-control" id="email" formControlName="email">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="idCard" class="col-sm-3 col-form-label" style="text-align: right">CMND<sup>(*)</sup></label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="idCard" disabled formControlName="idCard">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="phone" class="col-sm-3 col-form-label" style="text-align: right">Số Điện Thoại<sup>(*)</sup></label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="phone" formControlName="phone">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="address" class="col-sm-3 col-form-label" style="text-align: right">Địa Chỉ<sup>(*)</sup></label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="address" formControlName="address">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-9" style="text-align: right">
+                      <button class="btn btn-primary mr-2" type="submit">Submit</button>
+                      <button class="btn btn-light" [routerLink]="['/account/edit',account.id]">Cancel</button>
+<!--                        <a class="nav-link" ></a>-->
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    Footer
+  </div>
+</div>
+<script>
+  var password = document.getElementById('fakePassword');
+  var toggler = document.getElementById('toggler');
+  showHidePassword = () => {
+    if (password.type == 'password') {
+      password.setAttribute('type', 'text');
+      toggler.classList.add('fa-eye-slash');
+    } else {
+      toggler.classList.remove('fa-eye-slash');
+      password.setAttribute('type', 'password');
+    }
+  };
+  toggler.addEventListener('click', showHidePassword);
+
+  // $('.datepicker').datepicker({
+  //     weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+  //     showMonthsShort: true
+  // })
+</script>
+</body>
+</html>
+<router-outlet></router-outlet>

@@ -1,5 +1,5 @@
 <div>
-  <div class="row">
+  <div class="row background">
     <div class="col-sm-2 p-0" style="height:100vh;  background-color: rgba(0,0,0,0.52);">
       <div class="list-group ng-dark">
         <a href="#" class="list-group-item list-group-item-action"><i
@@ -24,9 +24,15 @@
       <div class="container border" style="background-color: rgba(0,0,0,0.7)">
         <h1 class="mt-4 mb-4" style="color: red;font-weight: bold">Quản lý phim</h1>
         <hr style="color: white;  ">
+        <!--        &lt;!&ndash; Rectangular switch &ndash;&gt;-->
+        <!--        <label class="switch">-->
+        <!--          <input type="checkbox">-->
+        <!--          <span class="slider round"></span>-->
+        <!--        </label>-->
         <button class="btn btn-primary float-right mb-3">Thêm mới</button>
         <form class="form-inline" method="post" [formGroup]="searchForm" (ngSubmit)="onSearch()">
-          <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm" formControlName="name">
+          <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm"
+                 formControlName="name">
           <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         <table class="table text-center">
@@ -36,6 +42,7 @@
             <th scope="col">Phim</th>
             <th scope="col">Ngày khởi chiếu</th>
             <th scope="col">Hãng phim</th>
+            <th scope="col">Thể loại</th>
             <th scope="col">Đạo diễn</th>
             <th scope="col">Diễn viên</th>
             <th scope="col">Thời lượng</th>
@@ -44,16 +51,26 @@
           </thead>
           <tbody style="color: white">
           <tr *ngFor="let film of films;index as i">
-            <td>{{i + 1}}</td>
-            <td>{{film.name | uppercase}}</td>
+            <td>{{i + 1 + (indexPagination - 1) * 3 }}</td>
+            <td id="name">
+              <button class="btn btn-outline-light name-button" data-toggle="modal" data-target="#modalDetail"
+                      (click)="findStudentDetailById(film.id,film.name,film.startDate,film.studioName,
+                      film.categoryFilms,film.director,film.actor,film.duration)">{{film.name | uppercase}}</button>
+            </td>
             <td>{{film.startDate | date:'dd-MM-yyyy'}}</td>
             <td>{{film.studioName}}</td>
-            <td>{{film.director}}</td>
-            <td id="actor">{{film.actor}}</td>
+            <td>
+              <span *ngFor="let categoryFilm of film.categoryFilms">
+                {{categoryFilm.category.nameCategory}}
+              </span>
+            </td>
+            <td id="director">{{film.director}}</td>
+            <td id="actor">{{actor}}</td>
             <td>{{film.duration}} phút</td>
             <td>
-              <button class="btn btn-outline-warning" [routerLink]="['/film/edit', film.id]"><i class="bi bi-pencil-fill"></i></button>
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal"
+              <button class="btn btn-outline-warning" [routerLink]="['/film/edit', film.id]"><i
+                class="bi bi-pencil-fill"></i></button>
+              <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal"
                       (click)="findFilmDeleteById(film.name,film.id)">
                 <i class="bi bi-trash3-fill"></i>
               </button>
@@ -66,22 +83,27 @@
           <nav aria-label="Page navigation example">
             <ul class="pagination d-flex justify-content-md-end justify-content-center">
               <li class="page-item">
-                <button class="page-link" (click)="firstPage()" *ngIf="indexPagination != 1">Đầu</button>
+                <button class="btn btn-outline-danger" (click)="firstPage()" *ngIf="indexPagination != 1"><i
+                  class="bi bi-chevron-double-left"></i></button>
               </li>
               <li class="page-item">
-                <button class="page-link" (click)="previousPage()" *ngIf="indexPagination != 1">Trang trước</button>
+                <button class="btn btn-outline-danger" (click)="previousPage()" *ngIf="indexPagination != 1"><i
+                  class="bi bi-chevron-left"></i></button>
               </li>
 
-              <li class="page-item col-md-1 col-2  px-0 text-center" style="line-height: 38px;color: white">
+              <li class="page-item col-md-1 col-2  px-0 text-center" style="line-height: 35px;color: white">
                 <span>{{indexPagination}}</span>/<span>{{totalPages}}</span>
               </li>
 
               <li class="page-item">
-                <button class="page-link" (click)="nextPage()" *ngIf="indexPagination != totalPages">Trang kế</button>
+                <button class="btn btn-outline-danger" (click)="nextPage()" *ngIf="indexPagination != totalPages"><i
+                  class="bi bi-chevron-right"></i></button>
               </li>
               <li class="page-item">
-                <button class="page-link" (click)="lastPage()" *ngIf="indexPagination != totalPages">Cuối</button>
+                <button class="btn btn-outline-danger" (click)="lastPage()" *ngIf="indexPagination != totalPages"><i
+                  class="bi bi-chevron-double-right"></i></button>
               </li>
+              <span style="margin-right: 83px;" *ngIf="indexPagination == totalPages"></span>
             </ul>
           </nav>
         </div>
@@ -97,13 +119,14 @@
     <div class="modal-content">
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Bạn có muốn xoá Phim có tên :</h4>
+        <h4 class="modal-title">Bạn có muốn xoá phim có tên :</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <!-- Modal body -->
       <div class="modal-body">
-        <h5 style="color: blue">{{name | uppercase}}</h5><hr>
-        <h6 style="color: red">* Lưu ý : thao tác này không thể hoàn tác</h6>
+        <h5 style="color: blue">{{name | uppercase}}</h5>
+        <hr>
+        <h6 style="color: red">* Lưu ý: Thao tác này không thể hoàn tác. </h6>
       </div>
       <!-- Modal footer -->
       <div class="modal-footer">
@@ -114,3 +137,28 @@
   </div>
 </div>
 
+<!-- Modal Detail-->
+<div class="modal fade" id="modalDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Thông tin chi tiết phim. </h5>
+      </div>
+      <div class="modal-body">
+        <p><b>Phim: </b><span> {{name}} </span></p>
+        <p><b>Ngày khởi chiếu: </b><span> {{startDate | date:'dd-MM-yyyy'}} </span></p>
+        <p><b>Hãng phim: </b><span> {{studioName}} </span></p>
+        <p><b>Thể loại: </b><span *ngFor="let categoryFilm of categoryFilms">
+                {{categoryFilm?.category.nameCategory}}
+              </span></p>
+        <p><b>Đạo diễn: </b><span> {{director}} </span></p>
+        <p><b>Diễn viên: </b><span> {{actor}} </span></p>
+        <p><b>Thời lượng: </b><span> {{duration}} phút</span></p>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

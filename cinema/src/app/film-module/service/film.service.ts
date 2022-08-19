@@ -18,11 +18,14 @@ export class FilmService {
 
   search(searchName: any = '', page: number = 0): Observable<PageFilm> {
     let url = API_URL;
-    url += '/search?name=' + searchName + '&page=' + page;
+    url += '/search?value=' + searchName + '&page=' + page;
     return this.http.get<PageFilm>(url);
   }
-  deleteFilm(id: number): Observable<Film> {
-    return this.http.delete<Film>(API_URL + '/' + id);
+  deleteFilm(id: number): Observable<PageFilm> {
+    return this.http.delete<PageFilm>(API_URL + '/' + id);
+  }
+  detailFilm(id: number): Observable<Film> {
+    return this.http.get<Film>(API_URL + '/' + id);
   }
 
   constructor(private http: HttpClient) {

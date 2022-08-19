@@ -12,15 +12,24 @@ import {ToastrService} from 'ngx-toastr';
 export class FilmListComponent implements OnInit {
   indexPagination = 1;
   totalPages: number;
+
   constructor(private filmService: FilmService, private toastr: ToastrService) {
   }
+
   searchForm: FormGroup = new FormGroup({
     name: new FormControl(''),
+    actor: new FormControl(''),
   });
 
   films: Film[];
-  name: string;
   id: number;
+  name: string;
+  startDate: string;
+  actor: string;
+  director: string;
+  duration: string;
+  studioName: string;
+  categoryFilms: [];
   nameSearch = '';
 
   ngOnInit(): void {
@@ -58,6 +67,7 @@ export class FilmListComponent implements OnInit {
       this.onSearch();
     }
   }
+
   deleteFilm(id: number | any) {
     if (this.films.length === 1) {
       this.indexPagination--;
@@ -72,6 +82,7 @@ export class FilmListComponent implements OnInit {
       }
     );
   }
+
   findFilmDeleteById(name: string | any, id: number | any) {
     this.name = name;
     this.id = id;
@@ -91,7 +102,20 @@ export class FilmListComponent implements OnInit {
         this.indexPagination = 1;
         this.totalPages = 1;
         this.films = [];
+        this.toastr.warning('Không có dữ liệu tìm kiếm !!!', 'Thông báo');
       }
     });
+  }
+
+  findStudentDetailById(id: number, name: string, startDate: string, studioName: string, categoryFilms: [],
+                        director: string, actor: string, duration: string) {
+    this.id = id;
+    this.name = name;
+    this.startDate = startDate;
+    this.studioName = studioName;
+    this.categoryFilms = categoryFilms;
+    this.director = director;
+    this.actor = actor;
+    this.duration = duration;
   }
 }

@@ -1,7 +1,47 @@
 
-T
-$cinema/src/app/app-routing.module.ts,5\a\5a01d8dd3688825e9087e497d7c0e5573db5d924
-E
-cinema/src/index.html,8\9\890839faf328a2b5bee3b694f6dbd8c0931e1913
 L
 cinema/src/app/model/film.ts,3\e\3e623c3aaf7b8f43bc296610c4cfbee2140518d5
+O
+cinema/src/app/model/booking.ts,c\e\ce56e735bd5780d991d066c1b032ef56d19d4668
+Q
+!cinema/src/app/app.component.html,9\a\9a146eff2927fd06edb25c17651c0abade43bf5f
+O
+cinema/src/app/app.component.ts,7\b\7b4706aa0aa1b4e9862e642eab0692b0e214ca1d
+D
+cinema/tsconfig.json,c\3\c39fd93dea3aa66cf7b0ec8d975c6cafe272e195
+O
+cinema/src/app/model/account.ts,2\0\207ef34aa6dbd557c301e76f68f2cf4bfef346ab
+C
+cinema/package.json,3\2\3242435649c3270ea26a911f254990f46eec30d1
+C
+cinema/angular.json,f\e\fe909546fecdee784115993e1c00dd097154c907
+}
+Mcinema/src/app/account-module/account-register/account-register.component.css,2\c\2c32b732f49d3aff333b556edf044a02f98b0a3c
+E
+cinema/src/index.html,8\9\890839faf328a2b5bee3b694f6dbd8c0931e1913
+B
+cinema/src/main.ts,6\d\6d8704a805fca3be5f317e0351118198be658dd4
+G
+cinema/src/polyfills.ts,3\b\3b69875eea991c6f59eb80427a06de291e201b02
+E
+cinema/src/styles.css,a\e\ae8ac84e10472f7ae37875babc4f001c388020b2
+h
+8cinema/src/app/account-module/service/account.service.ts,c\0\c0e8523eb8790c81728eab40b974bc699ccd44cf
+f
+6cinema/src/app/account-module/account-module.module.ts,5\c\5cf7a7ae582c8608fc73cc82a3057b4296a26332
+T
+$cinema/src/app/app-routing.module.ts,5\a\5a01d8dd3688825e9087e497d7c0e5573db5d924
+V
+&cinema/src/environments/environment.ts,c\5\c5f9dbed2237f11ac3adfbd642b7fe3cdedcebbd
+L
+cinema/src/app/app.module.ts,c\3\c3e3aba6deaad18b6646712c728aff175de936aa
+l
+<cinema/src/app/ticket-module/ticker-module-routing.module.ts,6\8\68d6d26ea694ec45dcf916603592dca1d738a6ba
+d
+4cinema/src/app/ticket-module/ticket-module.module.ts,c\7\c7e1f33cd73ca34560b9add9ebae93df5b70004f
+n
+>cinema/src/app/account-module/account-module-routing.module.ts,a\7\a7d3df368b94c636b79d8b629ed789273009efb8
+|
+Lcinema/src/app/account-module/account-register/account-register.component.ts,2\3\23dc4bcf4ce1cc259d6c53085e641c14cbc22ff3
+~
+Ncinema/src/app/account-module/account-register/account-register.component.html,6\2\622cebcfb0540470513d50c68ae06551f62ac7cd

@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import {AccountModuleModule} from './account-module/account-module.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,16 @@ import {AccountModuleModule} from './account-module/account-module.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AccountModuleModule
+    AccountModuleModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(
+      {
+        timeOut: 1500,
+        progressBar: true,
+        progressAnimation: 'increasing',
+        preventDuplicates: true
+      }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

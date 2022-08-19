@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AccountService} from '../service/account.service';
 import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-account-register',
@@ -11,9 +12,11 @@ import {Router} from '@angular/router';
 export class AccountRegisterComponent implements OnInit {
   accountForm: FormGroup;
   account: Account;
+  isChecked = false;
 
   constructor(
     private accountService: AccountService,
+    private toastr: ToastrService,
     private router: Router) {
     this.accountForm = new FormGroup({
       id: new FormControl('', [Validators.required]),
@@ -34,9 +37,20 @@ export class AccountRegisterComponent implements OnInit {
 
   saveAccount() {
     console.log(this.accountForm.value);
-    this.accountService.addAccount(this.accountForm.value).subscribe(next => {
-      alert('Đăng ký thành công');
-      // this.router.navigate('')
+    if (this.accountForm.valid) {
+      if (this.isChecked === false) {
+        this.toastr.warning('Vui lòng đọc kĩ điều khoản !!!');
+        return;
+      }
+      this.accountService.addAccount(this.accountForm.value).subscribe(next => {
+      this.toastr.success('Đăng ký thành công');
+    }, () => {
+      this.toastr.error('Đăng kí thất bại');
     });
+    } else {this.toastr.warning('Thông tin không hợp lệ.');}
+  }
+
+  updateCheckbox() {
+    this.isChecked = !this.isChecked;
   }
 }

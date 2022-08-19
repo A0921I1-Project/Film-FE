@@ -32,8 +32,8 @@ th {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
-  text-align:left
+  max-width: 50%;
+  text-align:left;
 }
 #director {
   /*display:inline-block;*/
@@ -100,11 +100,6 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-button.name-button {
-  outline:none;
-  box-shadow: none;
-  border: none;
 }
 
 

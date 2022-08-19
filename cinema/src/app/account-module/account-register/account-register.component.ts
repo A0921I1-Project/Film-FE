@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AccountService} from '../service/account.service';
 import {Router} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-account-register',
@@ -19,7 +20,7 @@ export class AccountRegisterComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router) {
     this.accountForm = new FormGroup({
-      id: new FormControl('', [Validators.required]),
+      id: new FormControl(''),
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
       fullname: new FormControl('', [Validators.required, Validators.maxLength(100)]),
@@ -43,11 +44,14 @@ export class AccountRegisterComponent implements OnInit {
         return;
       }
       this.accountService.addAccount(this.accountForm.value).subscribe(next => {
-      this.toastr.success('Đăng ký thành công');
-    }, () => {
-      this.toastr.error('Đăng kí thất bại');
-    });
-    } else {this.toastr.warning('Thông tin không hợp lệ.');}
+        this.toastr.success('Đăng ký thành công');
+      }, (error: HttpErrorResponse) => {
+        console.log(error.error.message);
+        this.toastr.error(error.error.message);
+      });
+    } else {
+      this.toastr.warning('Thông tin không hợp lệ.');
+    }
   }
 
   updateCheckbox() {

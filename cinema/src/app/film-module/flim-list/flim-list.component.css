@@ -117,3 +117,9 @@ html {
   width: 240px;
   height: 280px;
 }
+.header_title button{
+  margin: 3px;
+}
+.card_film  button{
+  margin: 5px;
+}

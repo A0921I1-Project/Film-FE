@@ -185,7 +185,7 @@ html {
   display: none;
   position: absolute;
   list-style: none;
-  background-color: black;
+  background-color: red;
 }
 
 .subnav_item-link {
@@ -254,9 +254,9 @@ html {
 }
 
 .footer_netword-icon>i {
-  font-size: 1.5rem;
-  padding-right: 3px;
-}
+   font-size: 1.5rem;
+   padding-right: 3px;
+ }
 
 .pag {
   border: 0.5px solid white;
@@ -266,7 +266,7 @@ html {
   display: flex;
   height: 100px;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 220px;
 }
 
 .pading_img {

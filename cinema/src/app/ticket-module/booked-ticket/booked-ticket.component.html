@@ -92,10 +92,10 @@
         <nav aria-label="Page navigation example">
           <ul class="pagination d-flex justify-content-md-end justify-content-center">
             <li class="page-item">
-              <button class="page-link" (click)="firstPage()" *ngIf="indexPagination != 0">Đầu</button>
+              <button class="page-link bi bi-chevron-double-left" (click)="firstPage()" *ngIf="indexPagination != 0"></button>
             </li>
             <li class="page-item">
-              <button class="page-link" (click)="previousPage()" *ngIf="indexPagination != 0">Trang trước</button>
+              <button class="page-link bi bi-chevron-left" (click)="previousPage()" *ngIf="indexPagination != 0"></button>
             </li>
 
             <li class="page-item col-md-1 col-2  px-0 text-center" style="line-height: 38px;color: white">
@@ -103,10 +103,10 @@
             </li>
 
             <li class="page-item">
-              <button class="page-link" (click)="nextPage()" *ngIf="indexPagination != totalPages -1">Trang kế</button>
+              <button class="page-link bi bi-chevron-right" (click)="nextPage()" *ngIf="indexPagination != totalPages -1"></button>
             </li>
             <li class="page-item">
-              <button class="page-link" (click)="lastPage()" *ngIf="indexPagination != totalPages -1 ">Cuối</button>
+              <button class="page-link bi bi-chevron-double-right" (click)="lastPage()" *ngIf="indexPagination != totalPages -1 "></button>
             </li>
           </ul>
         </nav>

@@ -1,10 +1,4 @@
 
-h
-8cinema/src/app/account-module/service/account.service.ts,c\0\c0e8523eb8790c81728eab40b974bc699ccd44cf
-f
-6cinema/src/app/account-module/account-module.module.ts,5\c\5cf7a7ae582c8608fc73cc82a3057b4296a26332
-n
->cinema/src/app/account-module/account-module-routing.module.ts,a\7\a7d3df368b94c636b79d8b629ed789273009efb8
 B
 cinema/tslint.json,c\9\c97e00b1108bec0c38b2246d8c6cc53c448a02ed
 B
@@ -25,8 +19,6 @@ N
 cinema/src/app/model/ticket.ts,8\9\89332bab5696d0dbe1d37d7554d24f4e77f67b20
 k
 ;cinema/src/app/ticket-module/service/ticket.service.spec.ts,8\b\8b6533352b6f8c90248c525f9d92dee64cd66855
-V
-&cinema/src/environments/environment.ts,c\5\c5f9dbed2237f11ac3adfbd642b7fe3cdedcebbd
 L
 cinema/src/app/model/film.ts,3\e\3e623c3aaf7b8f43bc296610c4cfbee2140518d5
 n

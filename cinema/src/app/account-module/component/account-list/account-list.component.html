@@ -92,9 +92,9 @@
                   </div>
                   <!--                                    <a href="#" class="text-dark ml-auto mb-3 mb-sm-0"> View all Products</a>-->
                   <div class="navbar-nav navbar-nav-right ml-auto">
-                    <form class="search-form d-none d-md-block" method="get" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+                    <form class="search-form d-none d-md-block" method="get" [formGroup]="searchForm" (ngSubmit)="getAll()">
                       <i class="icon-magnifier"></i>
-                      <input type="search" class="form-control" placeholder="Tìm Tài Khoản" title="Search here">
+                      <input type="search" class="form-control" placeholder="Tìm Tài Khoản" title="Search here" formControlName="username">
                       <button class="btn btn-success my-2 my-sm-0" type="submit">Tìm</button>
                     </form>
                   </div>
@@ -114,7 +114,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr *ngFor="let item of accounts; let i = index">
+                    <tr *ngFor="let item of accounts | paginate:{itemsPerPage:1, currentPage:p};">
                       <td style="text-align: center">{{item.id}}</td>
                       <td style="text-align: left">{{item.fullname}}</td>
                       <td style="text-align: center">{{item.idCard}}</td>
@@ -133,13 +133,14 @@
                 <div class="d-flex mt-4 flex-wrap">
                   <p class="text-muted">PAGE</p>
                   <nav class="ml-auto">
-                    <ul class="pagination separated pagination-info">
-<!--                      <li class="page-item"><a href="" class="page-link"><i class="icon-arrow-left">PREVIOUS</i></a></li>-->
-                      <li class="page-item active" *ngFor="let p of pages; let i=index">
-                        <a href="" class="page-link" (click)="setPage(i,$event)">{{i}}</a>
-                      </li>
-<!--                      <li class="page-item"><a href="" class="page-link"><i class="icon-arrow-right">NEXT</i></a></li>-->
-                    </ul>
+                    <pagination-controls class="myPagination" (pageChange)="p = $event"></pagination-controls>
+<!--                    <ul class="pagination separated pagination-info">-->
+<!--&lt;!&ndash;                      <li class="page-item"><a href="" class="page-link"><i class="icon-arrow-left">PREVIOUS</i></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                      <li class="page-item active" *ngFor="let p of pages; let i=index">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <a href="" class="page-link" (click)="setPage(i,$event)">{{i}}</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                      </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                      <li class="page-item"><a href="" class="page-link"><i class="icon-arrow-right">NEXT</i></a></li>&ndash;&gt;-->
+<!--                    </ul>-->
                   </nav>
                 </div>
               </div>

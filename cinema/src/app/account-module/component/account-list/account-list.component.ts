@@ -16,10 +16,11 @@ export class AccountListComponent implements OnInit {
   pages: Array<number>;
   username: string;
   id: number;
-  // usernameSearch = '';
+  searchUsername: any = '';
   searchForm: FormGroup = new FormGroup({
     username: new FormControl(''),
   });
+  p: number = 1;
 
   constructor(private accountService: AccountServiceService) { }
 
@@ -28,14 +29,27 @@ export class AccountListComponent implements OnInit {
   }
 
   getAll() {
-    this.accountService.getAll(this.page).subscribe(next => {
-      // console.log(next['content']);
-      // console.log(next['totalPages']);
-      this.accounts = next['content'];
-      this.pages = new Array(next['totalPages']);
-      // this.page = next['number' + 1];
-    });
-  }
+      // if (this.searchUsername !== this.searchForm.value.username) {
+      //   this.searchUsername = this.searchForm.value.username;
+      //   // this.page = 1;
+      // }
+      this.accountService.getAll(this.pages, this.searchForm.value.username).subscribe(next => {
+          // console.log(next['content']);
+          this.accounts = next['content'];
+          this.pages = new Array(next['totalPages']);
+          // this.page = next['number' + 1];
+      });
+    }
+
+  // getAll() {
+  //   this.accountService.getAll(this.page, this.searchUsername).subscribe(next => {
+  //     // console.log(next['content']);
+  //     // console.log(next['totalPages']);
+  //     this.accounts = next['content'];
+  //     this.pages = new Array(next['totalPages']);
+  //     // this.page = next['number' + 1];
+  //   });
+  // }
 
   setPage(i, event: any) {
     event.preventDefault();
@@ -43,16 +57,16 @@ export class AccountListComponent implements OnInit {
     this.getAll();
   }
 
-  onSearch() {
-    // if (this.usernameSearch !== this.searchForm.value.username) {
-    //   this.usernameSearch = this.searchForm.value.username;
-    //   // this.page = 1;
-    // }
-    this.accountService.searchByUsername(this.username).subscribe(next => {
-        console.log(next['content']);
-        this.accounts = next['content'];
-        this.pages = new Array(next['totalPages']);
-        // this.page = next['number' + 1];
-    });
-  }
+  // onSearch() {
+  //   // if (this.usernameSearch !== this.searchForm.value.username) {
+  //   //   this.usernameSearch = this.searchForm.value.username;
+  //   //   // this.page = 1;
+  //   // }
+  //   this.accountService.searchByUsername(this.username).subscribe(next => {
+  //       console.log(next['content']);
+  //       this.accounts = next['content'];
+  //       this.pages = new Array(next['totalPages']);
+  //       // this.page = next['number' + 1];
+  //   });
+  // }
 }

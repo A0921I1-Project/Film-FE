@@ -13,13 +13,12 @@ export class AccountServiceService {
 
   constructor(private  http: HttpClient) { }
 
-  getAll(page: number): Observable<Account[]> {
-    return this.http.get<Account[]>(API_URL + '/account/list?page=' + page);
+  getAll(page: Array<number>, searchUsername: string): Observable<Account[]> {
+    return this.http.get<Account[]>(API_URL + '/account/list?page=' + page + '&username=' + searchUsername);
   }
-
-  searchByUsername(username: any = ''): Observable<Account[]> {
-    return this.http.get<Account[]>(API_URL + '/account/search?username=' + username);
-  }
+  // searchByUsername(username: any = ''): Observable<Account[]> {
+  //   return this.http.get<Account[]>(API_URL + '/account/search?username=' + username);
+  // }
 
   findById(id: number): Observable<Account> {
     return this.http.get<Account>(`${API_URL}/account/find/${id}`);

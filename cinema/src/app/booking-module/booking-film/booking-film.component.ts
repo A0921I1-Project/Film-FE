@@ -18,7 +18,7 @@ export class BookingFilmComponent implements OnInit {
   films: Film[];
   seatDetails: SeatDetail[];
   seatDetails1: SeatDetailDto;
-  times: Time[] = null;
+  times: Time[];
   times1: Timedto[];
   dateShow: any;
   idFilm: any;
@@ -39,7 +39,6 @@ export class BookingFilmComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookingService.getMovieShowing().subscribe(data => {
-      // this.films = data;
       this.films = this.jsogService.deserializeArray(data);
     });
 
@@ -49,18 +48,11 @@ export class BookingFilmComponent implements OnInit {
   showDateShow(id: number) {
     this.message = null;
     this.bookingService.getDateShowByIdFilm(id).subscribe(data => {
-      // this.seatDetails = data;
-        this.message = null;
         this.seatDetails = this.jsogService.deserializeArray(data);
         this.bookingService.getFilmById(id).subscribe(t => {
         this.film = t;
         this.nameFilm = this.film.name;
-        this.times = null;
-        this.dateShow = null;
-        this.timeShow = null;
         this.bookingFilm.patchValue({name: this.nameFilm});
-        this.bookingFilm.patchValue({dateshow: ''});
-        this.bookingFilm.patchValue({timeshow: ''});
       });
     });
     this.idFilm = id;
@@ -72,18 +64,19 @@ export class BookingFilmComponent implements OnInit {
     const y = parseInt(dateShow.substr(8, 10)) + 1;
     this.tmp = x + y;
     this.bookingService.getTimeShowByIdSeatDetail(this.tmp, this.idFilm).subscribe(data => {
-      // this.times = data;
-      this.times = this.jsogService.deserializeArray(data);
-      console.log(this.times);
+      // this.times = this.jsogService.deserializeArray(data);
+      // console.log(this.times);
+      this.times1 = this.jsogService.deserializeArray(data);
       this.dateShow = dateShow;
       this.bookingFilm.patchValue({dateshow: this.dateShow});
     });
   }
 
 
-  chooseTimeShow(timeShow: string, time_id: number) {
-    this.idTime = time_id;
-    this.timeShow = timeShow;
+  chooseTimeShow(time_show: string, time_id: string) {
+    // tslint:disable-next-line:radix
+    this.idTime = parseInt(time_id);
+    this.timeShow = time_show;
     this.bookingFilm.patchValue({timeshow: this.timeShow});
   }
 
@@ -96,15 +89,19 @@ export class BookingFilmComponent implements OnInit {
       console.log(this.nameFilm);
       console.log(this.dateShow);
       console.log(this.timeShow);
-      for (let i = 0 ; i < this.times.length ; i++) {
-        if (this.timeShow === this.times[i].timeShow) {
-          this.idTime = this.times[i].id;
+      for (let i = 0 ; i < this.times1.length ; i++) {
+        if (this.timeShow === this.times1[i].time_show) {
+          this.idTime = parseInt(this.times1[i].time_id);
         }
       }
       // this.seatDetails1 = new SeatDetailDto(this.nameFilm, this.dateShow, this.idTime);
-      this.bookingService.findAllSeatDetailByCondition(this.nameFilm, this.dateShow, this.idTime).subscribe(next => {
+      const x = this.dateShow.substr(0, 8);
+      // tslint:disable-next-line:radix
+      const y = parseInt(this.dateShow.substr(8, 10)) + 1;
+      this.bookingService.findAllSeatDetailByCondition(this.nameFilm, x + y , this.idTime).subscribe(next => {
         console.log(this.jsogService.deserializeObject(next));
         this.idSeat = this.jsogService.deserializeObject(next.id);
+        console.log(this.idSeat);
         this.router.navigate(['bookingSeat', this.idSeat]);
       });
       // this.idSeat = this.seatDetails1[0].seat_id.id;
@@ -125,4 +122,6 @@ export class BookingFilmComponent implements OnInit {
       }
 
     }
-  }
+
+
+}

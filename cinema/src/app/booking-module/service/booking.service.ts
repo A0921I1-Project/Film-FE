@@ -30,4 +30,7 @@ export class BookingService {
     return this.httpClient.get(this.MOVIE_URL + '/findAllSeatDetailByCondition/?name=' + name
       + '&date_show=' + date + '&time_id=' + time);
   }
+  public getAllSeatDetailByIdSeatDetail(id: number) {
+    return this.httpClient.get(this.MOVIE_URL + '/getAllSeatDetailByIdSeat/' + id);
+  }
 }

@@ -17,7 +17,7 @@ export class FlimListComponent implements OnInit {
 
   searchForm: FormGroup = new FormGroup({
     // tslint:disable-next-line:max-line-length
-    name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ]*$')])
+    name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ\\d ]*$')])
   });
 
   films: Film[];

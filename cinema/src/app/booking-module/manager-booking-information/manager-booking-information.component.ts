@@ -13,26 +13,24 @@ export class ManagerBookingInformationComponent implements OnInit {
   bookingDetail: BookingDetail;
   bookingDt: BookingDetail;
   message: string;
-  constructor(private managerBookingService: ManagerBookingService, private activatedRoute: ActivatedRoute , private  router: Router) {
+  constructor(private managerBookingService: ManagerBookingService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
+      console.log(this.id);
       this.takeTicket(this.id);
     });
   }
   public takeTicket(id: number) {
     this.managerBookingService.findById(id).subscribe(bookingDt => {
-      this.bookingDt = bookingDt; });
-    if (this.bookingDt.total_Price < this.bookingDt.total_Point) {
-    this.managerBookingService.takeTicket(id).subscribe(bookingDetail => {
-      this.bookingDetail = bookingDetail;
-    }); }
+      this.bookingDt = bookingDt;
+      if (this.bookingDt.total_Price < this.bookingDt.total_Point) {
+        this.managerBookingService.takeTicket(id).subscribe(bookingDetail => {
+          this.bookingDetail = bookingDetail;
+        }); }
+      console.log(this.bookingDetail);
+    });
   }
 
   ngOnInit(): void {
   }
-  // private getBookingInformation(id: number) {
-  //   this.managerBookingService.findById(id).subscribe(bookingDetail => {
-  //     this.bookingDetail = bookingDetail;
-  //   });
-  // }
 }

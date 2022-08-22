@@ -1,183 +1,115 @@
-<div class="container-scroller">
-  <div class="container-fluid page-body-wrapper">
-    <nav class="sidebar sidebar-offcanvas" id="sidebar">
-      <ul class="nav">
-        <li class="nav-item nav-profile">
-          <a href="#" class="nav-link">
-            <div class="profile-image">
-              <img class="img-xs rounded-circle"
-                   src="https://tse1.mm.bing.net/th?id=OIP.uBlH_VgWPHHXNImlM0I-jwHaHa&pid=Api&P=0"
-                   alt="profile image">
-              <div class="dot-indicator bg-succes"></div>
+<div>
+  <div class="row background">
+    <div class="col-sm-2 p-0" style="height:130vh;  background-color: rgba(0,0,0,0.52);">
+      <div class="list-group ng-dark">
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-film"></i> Bán vé </a>
+        <a routerLink="/booking/managerBooking/list" class="list-group-item list-group-item-action"><i
+          class="bi bi-ticket-perforated-fill"></i> Quản lí đặt vé</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-person-fill"></i> Quản lí nhân viên</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-credit-card-2-back-fill"></i> Quản lí thành viên</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-camera-reels-fill"></i> Quản lí phim</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-calendar-week-fill"></i> Quản lí khuyến mãi</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-camera-video-fill"></i> Quản lí phòng chiếu</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-bar-chart-line-fill"></i> Quản lí thống kê </a>
+      </div>
+    </div>
+    <div class="col-sm-10 p-4 ">
+      <div class="container border" style="background-color: rgba(0,0,0,0.7); height:130vh">
+        <h1 class="mt-4 mb-4" style="color: red;font-weight: bold">Xác nhận nhận vé</h1>
+        <hr style="color: white;  ">
+
+        <br>
+        <div class="d-flex">
+        <div class="col-sm-4">
+          <img src="{{bookingDetail?.url_Img}}" style="width: 100%"
+               alt="">
+        </div>
+          <div class="col-sm-8">
+        <table class="table text-center table-responsive-md" style="color: white">
+
+          <tr>
+            <th><h2>{{bookingDetail?.name}}</h2></th>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="col">Ngày chiếu :</th>
+            <td scope="row">{{bookingDetail?.date_Show | date:'dd-MM-yyyy'}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Giờ chiếu :</th>
+            <td scope="row">{{bookingDetail?.time_Show}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Ghế :</th>
+            <td scope="row">{{bookingDetail?.seat_Name}}</td>
+          </tr>
+          <tr>
+            <th scope="col">loai :</th>
+            <td scope="row">{{bookingDetail?.vip}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Giá :</th>
+            <td scope="row">
+              {{bookingDetail?.price}}
+            </td>
+          </tr>
+
+
+          <tr>
+            <th scope="col">Tổng cộng :</th>
+            <td scope="row">{{bookingDetail?.total_Price}}</td>
+          </tr>
+
+          &nbsp;&nbsp;
+          <tr>
+            <th><h2> Thông tin thành viên</h2></th>
+            <td></td>
+          </tr>
+
+
+          <tr>
+            <th>Mã thành viên :</th>
+            <td>{{bookingDetail?.account_Code}}</td>
+          </tr>
+          <tr>
+            <th scope="col">CMND :</th>
+            <td scope="row">{{bookingDetail?.id_Card}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Họ tên :</th>
+            <td scope="row">{{bookingDetail?.fullname}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Điểm thành viên :</th>
+            <td scope="row">{{bookingDetail?.total_Point}}</td>
+          </tr>
+
+
+          <tr>
+            <th scope="col">Số điện thoại :</th>
+            <td scope="row">{{bookingDetail?.phone}}</td>
+          </tr>
+        </table>
+
+
+            <div *ngIf="message == ''">
+              <input class="btn btn-outline-danger" [routerLink]="['/booking/managerBooking/takeTicket',bookingDetail?.id]"
+                     value="Xác nhận nhận vé">
             </div>
-<!--            <div class="text-wrapper">-->
-<!--              <p class="profile-name">Name User</p>-->
-<!--              <p class="designation">Role</p>-->
-<!--            </div>-->
-<!--            <div class="icon-container">-->
-<!--              <div class="dot-indicator bg-danger"></div>-->
-<!--            </div>-->
-          </a>
-        </li>
-        <li class="nav-item nav-category">
-          <span class="nav-link">Vé</span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"[routerLink]="['/booking/managerBooking/list']">
-            <span class="menu-title">Quản Lý đặt vé</span>
-          </a>
-        </li>
-        <li class="nav-item nav-category">
-          <span class="nav-link">Nhân Viên</span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span class="menu-title">Quản Lý Nhân Viên</span>
-
-          </a>
-        </li>
-        <li class="nav-item nav-category">
-          <span class="nav-link">Thành Viên</span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" >
-            <span class="menu-title">Quản Lý Thành Viên</span>
-
-          </a>
-        </li>
-        <li class="nav-item nav-category">
-          <span class="nav-link">Thống Kê</span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span class="menu-title">Thống Kê</span>
-
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div class="main-panel">
-      <div class="content-wrapper" id="background">
-        <div class="container">
-          <div class="col-md-12 grid-margin stretch-card">
-            <div class="card">
-
-              <div class="card-body">
-                <div style="text-align: center">
-                  <h4 class="card-title mb-sm-0">Xác nhận nhận vé</h4>
-                </div>
-                <hr>
-
-                <div class="d-flex">
-                  <div class="col-4">
-                    <img src="{{bookingDetail?.url_Img}}" style="width: 100%"
-                         alt="">
-                  </div>
-                  <div class="col-8">
-
-                      <table class="table table-hover">
-                        <tr>
-                          <th><h2>{{bookingDetail.name}}</h2></th>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <th scope="col">Ngày chiếu :</th>
-                          <td scope="row">{{bookingDetail.date_Show}}</td>
-                        </tr>
-                        <tr>
-                          <th scope="col">Giờ chiếu :</th>
-                          <td scope="row">{{bookingDetail.time_Show}}</td>
-                        </tr>
-                        <tr>
-                          <th scope="col">Ghế :</th>
-                          <td scope="row">{{bookingDetail.seat_Name}}</td>
-                        </tr>
-                        <tr>
-                          <th scope="col">loai :</th>
-                          <td scope="row">{{bookingDetail.vip}}</td>
-                        </tr>
-                        <tr>
-                          <th scope="col">Giá :</th>
-                          <td scope="row">
-
-                            <li>{{bookingDetail.price}}</li>
-
-
-                          </td>
-                        </tr>
-
-
-                        <tr>
-                          <th scope="col">Tổng cộng :</th>
-                          <td scope="row">{{bookingDetail.total_Price}}</td>
-                        </tr>
-
-                        &nbsp;&nbsp;
-                        <tr>
-                          <th><h2> Thông tin thành viên</h2></th>
-                          <td></td>
-                        </tr>
-
-
-                        <tr>
-                          <th>Mã thành viên :</th>
-                          <td>{{bookingDetail.account_Code}}</td>
-                        </tr>
-                        <tr>
-                          <th scope="col">CMND :</th>
-                          <td scope="row">{{bookingDetail.id_Card}}</td>
-                        </tr>
-                        <tr>
-                          <th scope="col">Họ tên :</th>
-                          <td scope="row">{{bookingDetail.fullname}}</td>
-                        </tr>
-                        <tr>
-                          <th scope="col">Điểm thành viên :</th>
-                          <td scope="row">{{bookingDetail.total_Point}}</td>
-                        </tr>
-
-
-                        <tr>
-                          <th scope="col">Số điện thoại :</th>
-                          <td scope="row">{{bookingDetail.phone}}</td>
-                        </tr>
-
-                      </table>
-                    <div *ngIf="message == ''">
-                      <input class="btn btn-outline-danger" [routerLink]="['/booking/managerBooking/takeTicket',bookingDetail.id]"
-                             value="Xác nhận nhận vé">
-                    </div>
-                    <div *ngIf="message != ''">
-                      <p style="color: red">{{message}}</p>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
+            <div *ngIf="message != ''">
+              <p style="color: red">{{message}}</p>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
-<script>
-  var password = document.getElementById('fakePassword');
-  var toggler = document.getElementById('toggler');
-  showHidePassword = () => {
-    if (password.type == 'password') {
-      password.setAttribute('type', 'text');
-      toggler.classList.add('fa-eye-slash');
-    } else {
-      toggler.classList.remove('fa-eye-slash');
-      password.setAttribute('type', 'password');
-    }
-  };
-  toggler.addEventListener('click', showHidePassword);
-
-
-</script>
-
-<router-outlet></router-outlet>

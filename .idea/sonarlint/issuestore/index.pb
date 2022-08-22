@@ -15,8 +15,6 @@ C
 cinema/package.json,3\2\3242435649c3270ea26a911f254990f46eec30d1
 C
 cinema/angular.json,f\e\fe909546fecdee784115993e1c00dd097154c907
-}
-Mcinema/src/app/account-module/account-register/account-register.component.css,2\c\2c32b732f49d3aff333b556edf044a02f98b0a3c
 E
 cinema/src/index.html,8\9\890839faf328a2b5bee3b694f6dbd8c0931e1913
 B
@@ -25,3 +23,5 @@ G
 cinema/src/polyfills.ts,3\b\3b69875eea991c6f59eb80427a06de291e201b02
 E
 cinema/src/styles.css,a\e\ae8ac84e10472f7ae37875babc4f001c388020b2
+}
+Mcinema/src/app/account-module/account-register/account-register.component.css,2\c\2c32b732f49d3aff333b556edf044a02f98b0a3c

@@ -24,17 +24,29 @@
               <input type="password" class="form-control" placeholder="Mật khẩu *" required id="password"
                      formControlName="password">
               <p style="color: red"
-                 *ngIf="accountForm.controls.password.hasError('required')&&(accountForm.controls.password.touched || f.submitted)">Vui
-                lòng nhập mật khẩu.</p>
+                 *ngIf="accountForm.controls.password.hasError('required')&&(accountForm.controls.password.touched || f.submitted)">
+                Vui lòng nhập mật khẩu.</p>
 
             </div>
+<!--            <div class="form-group">-->
+<!--              <div class="icon d-flex align-items-center justify-content-center"><span-->
+<!--                class="fa fa-lock"></span></div>-->
+<!--              <input type="password" class="form-control" placeholder="Xác nhận mật khẩu *" required-->
+<!--                     id="confirmPassword">-->
+<!--&lt;!&ndash;                     formControlName="confirmPassword">&ndash;&gt;-->
+<!--              <p style="color: red"-->
+<!--                 *ngIf="accountForm.controls.confirmPassword.hasError('required')&&(accountForm.controls.confirmPassword.touched || f.submitted)">-->
+<!--                Vui lòng nhập lại mật khẩu.</p>-->
+
+<!--            </div>-->
             <div class="form-group">
               <div class="icon d-flex align-items-center justify-content-center"><span
                 class="fa fa-user"></span></div>
               <input type="text" class="form-control" placeholder="Họ tên *" required id="fullname"
                      formControlName="fullname">
               <p style="color: red"
-                 *ngIf="accountForm.controls.fullname.hasError('required')&&(accountForm.controls.fullname.touched || f.submitted)">Vui
+                 *ngIf="accountForm.controls.fullname.hasError('required')&&(accountForm.controls.fullname.touched || f.submitted)">
+                Vui
                 lòng nhập họ tên.</p>
               <p style="color: red"
                  *ngIf="accountForm.controls.fullname.hasError('pattern')&&accountForm.controls.fullname.touched">Họ tên
@@ -45,7 +57,8 @@
                 class="	fa fa-envelope"></span></div>
               <input type="text" class="form-control" placeholder="Email *" required id="email" formControlName="email">
               <p style="color: red"
-                 *ngIf="accountForm.controls.email.hasError('required')&&(accountForm.controls.email.touched || f.submitted)">Vui lòng
+                 *ngIf="accountForm.controls.email.hasError('required')&&(accountForm.controls.email.touched || f.submitted)">
+                Vui lòng
                 nhập email.</p>
               <p style="color: red"
                  *ngIf="accountForm.controls.email.hasError('email')&&accountForm.controls.email.touched">Email không
@@ -57,8 +70,8 @@
               <input type="text" class="form-control" placeholder="Số điện thoại *" required id="phone"
                      formControlName="phone">
               <p style="color: red"
-                 *ngIf="accountForm.controls.phone.hasError('required')&&(accountForm.controls.phone.touched || f.submitted)">Vui lòng
-                nhập số điện thoại.</p>
+                 *ngIf="accountForm.controls.phone.hasError('required')&&(accountForm.controls.phone.touched || f.submitted)">
+                Vui lòng nhập số điện thoại.</p>
             </div>
             <div class="form-group">
               <div class="icon d-flex align-items-center justify-content-center"><span
@@ -66,7 +79,8 @@
               <input type="text" class="form-control" placeholder="CMND *" required id="idCard"
                      formControlName="idCard">
               <p style="color: red"
-                 *ngIf="accountForm.controls.idCard.hasError('required')&&(accountForm.controls.idCard.touched || f.submitted)">Vui lòng
+                 *ngIf="accountForm.controls.idCard.hasError('required')&&(accountForm.controls.idCard.touched || f.submitted)">
+                Vui lòng
                 nhập CMND.</p>
               <p style="color: red"
                  *ngIf="accountForm.controls.idCard.hasError('pattern')&&accountForm.controls.idCard.touched">CMND không
@@ -75,8 +89,8 @@
             </div>
 
             <div class="form-group form-row">
-              <!--                            <div class="icon d-flex align-items-center justify-content-center"><span-->
-              <!--                                    class="far fa-calendar-alt"></span></div>-->
+              <div class="icon d-flex align-items-center justify-content-center"><span
+                class="far fa-calendar-alt"></span></div>
               <input type="date" class="form-control col-sm-7" placeholder="Ngày sinh" required id="dateOfBirth"
                      formControlName="birthday">
               <div class="form-check form-check-inline col-sm-4">

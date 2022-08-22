@@ -17,7 +17,8 @@ export class AccountService {
 
   addAccount(account: Account): Observable<Account> {
     // @ts-ignore
-    return this.httpClient.post<Account>(API_URL + '/add', account).pipe(catchError(this.handleError));
+    return this.httpClient.post<Account>(API_URL + '/add', account);
+    // return this.httpClient.post<Account>(API_URL + '/add', account).pipe(catchError(this.handleError));
   }
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {

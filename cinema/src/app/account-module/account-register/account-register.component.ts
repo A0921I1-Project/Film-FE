@@ -23,6 +23,7 @@ export class AccountRegisterComponent implements OnInit {
       id: new FormControl(''),
       username: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
+      // confirmPassword: new FormControl('', [Validators.required]),
       fullname: new FormControl('', [Validators.required, Validators.maxLength(100)]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [Validators.required, Validators.pattern('((09|03|07|08|05)([0-9]{8})\\b)')]),
@@ -45,9 +46,9 @@ export class AccountRegisterComponent implements OnInit {
       }
       this.accountService.addAccount(this.accountForm.value).subscribe(next => {
         this.toastr.success('Đăng ký thành công');
-      }, (error: HttpErrorResponse) => {
-        console.log(error.error.message);
-        this.toastr.error(error.error.message);
+      }, e => {
+        console.log();
+        this.toastr.error('Thông tin không hợp lệ');
       });
     } else {
       this.toastr.warning('Thông tin không hợp lệ.');

@@ -1,0 +1,303 @@
+<div class="row background">
+  <div class="col-3">
+    <ul class="list-group list-group-flush" style="position: fixed">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fifth one</li>
+    </ul>
+  </div>
+  <div class="col-9">
+    <h3 class="border-bottom py-2"
+        style="color: #fc0000; background-color: rgba(20,20,20,0.83); width: 220px ">Thêm mới phim</h3>
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()"
+          style="padding-left: 190px; padding-right: 50px; background-color: rgba(20,20,20,0.91)">
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-9">
+          <img id="output">
+          <div>
+            <input type="file" id="inputImage" onchange="loadFile(event)" >
+          </div>
+
+        </div>
+      </div>
+      <div class="form-group row">
+        <label style="color: whitesmoke" for="inputFilmName" class="col-sm-2 col-form-label">Tên phim
+          <span class="text-danger">(*)</span></label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputFilmName" formControlName="name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label style="color: whitesmoke" for="inputStarDay" class="col-sm-2 col-form-label">Từ ngày
+          <span class="text-danger">(*)</span></label>
+        <div class="col-sm-4">
+          <input type="date" class="form-control" id="inputStarDay" formControlName="startDate">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label style="color: whitesmoke" for="inputEndDay" class="col-sm-2 col-form-label">Đến ngày
+          <span class="text-danger">(*)</span></label>
+        <div class="col-sm-4">
+          <input type="date" class="form-control" id="inputEndDay" formControlName="endDate" >
+        </div>
+      </div>
+      <div class="form-group row" style="padding-top: 30px">
+        <label style="color: whitesmoke" for="inputActorName" class="col-sm-2 col-form-label">Diễn viên
+          <span class="text-danger">(*)</span></label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputActorName" formControlName="actor">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label style="padding-right: 1px;color: whitesmoke"
+               for="inputFilmStudio" class="col-sm-2 col-form-label">Hãng phim
+          <span class="text-danger">(*)</span></label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputFilmStudio" formControlName="studioName">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label style="color: whitesmoke" for="inputDirectorName" class="col-sm-2 col-form-label">Đạo diễn
+          <span class="text-danger">(*)</span></label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputDirectorName" formControlName="director">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label style="padding-right: 1px;color: whitesmoke"
+               for="inputTime" class="col-sm-2 col-form-label">Thời lượng
+          <span class="text-danger">(*)</span></label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputTime" formControlName="duration">
+        </div>
+      </div>
+      <fieldset class="form-group row">
+        <legend style="color: whitesmoke" class="col-form-label col-sm-2 float-sm-left pt-0">Phiên bản
+          <span class="text-danger">(*)</span></legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="inputVersion2D"
+                   value="option1"
+                   checked>
+            <label style="color: whitesmoke"
+                   class="form-check-label" for="inputVersion2D">
+              2D
+            </label>
+            <input style="margin-left: 30px"
+                   class="form-check-input" type="radio" name="gridRadios" id="inputVersion3D"
+                   value="option2">
+            <label style="margin-left: 50px;color: whitesmoke"
+                   class="form-check-label" for="inputVersion3D">
+              3D
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <div class="form-group row">
+        <label style="padding-right: 1px;color: whitesmoke"
+               for="inputTrailer" class="col-sm-2 col-form-label">Trailer
+          <span class="text-danger">(*)</span></label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="inputTrailer" formControlName="trailer">
+        </div>
+      </div>
+      <div class="form-group row" style="margin-bottom: 100px">
+        <label style="padding-right: 1px;color: whitesmoke"
+               for="inputTrailer" class="col-sm-2 col-form-label">Thể loại
+          <span class="text-danger">(*)</span></label>
+        <div class="col-sm-10" style="height: 30px" >
+          <div class="row" style="margin-left: 10px">
+            <div style="margin-right: 0px"
+              class="form-check form-check-inline col-3" *ngFor="let category of categoryList" formArrayName="categories" >
+              <input name="checkType" style="accent-color: red" class="form-check-input" type="checkbox"
+                     id="{{category.nameCategory}}" [value]="category.id" >
+<!--              (change)="onCheckChange($event)-->
+              <label style="color: white"
+                class="form-check-label" for="{{category.nameCategory}}">{{category.nameCategory}}</label>
+            </div>
+          </div>
+
+          </div>
+
+        </div>
+      <div class="form-group row">
+        <div class="card col-4" style="width: 18rem; background-color: transparent">
+          <div class="card-body"
+               style="border-style: double; border-color: red ">
+            <h5 class="card-title" style="color: white; font-weight: bold">Thêm lịch chiếu</h5>
+            <label style="padding-right: 1px;color: whitesmoke">Chọn ngày chiếu
+              <span class="text-danger">(*)</span></label>
+            <div>
+
+              <input type="date">
+            </div>
+            <label style="padding-right: 1px;color: whitesmoke">Chọn phòng chiếu
+              <span class="text-danger">(*)</span></label>
+            <div>
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option selected>Chọn phòng chiếu</option>
+                <option value="1">Phòng 1</option>
+                <option value="2">Phòng 2</option>
+                <option value="3">Phòng 3</option>
+              </select>
+            </div>
+            <label style="padding-right: 1px;color: whitesmoke; margin-bottom: 0px; margin-top: 3px ">Chọn giờ chiếu
+              <span class="text-danger">(*)</span></label>
+            <div class="row">
+              <table class="table table-borderless" style="margin-bottom: 0px">
+                <tr>
+                  <td style="padding-top: 0px; padding-bottom: 0px"><input
+                    style="accent-color: #E50815; margin-left: 15px;margin-top: 7px" class="form-check-input "
+                    type="checkbox"></td>
+                  <td style="padding-top: 0px; padding-bottom: 0px"><label style="color: whitesmoke"
+                                                                           class="form-check-label ">
+                    8:00-10:00
+                  </label></td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 0px; padding-bottom: 0px"><input
+                    style="accent-color: #E50815; margin-left: 15px;margin-top: 7px" class="form-check-input "
+                    type="checkbox"></td>
+                  <td style="padding-top: 0px; padding-bottom: 0px"><label style="color: whitesmoke"
+                                                                           class="form-check-label ">
+                    10:00-12:00
+                  </label></td>
+                </tr>
+                <tr>
+                  <td style="padding-top: 0px; padding-bottom: 0px"><input
+                    style="accent-color: #E50815; margin-left: 15px;margin-top: 7px" class="form-check-input "
+                    type="checkbox"></td>
+                  <td style="padding-top: 0px; padding-bottom: 0px"><label style="color: whitesmoke"
+                                                                           class="form-check-label ">
+                    12:00-14:00
+                  </label></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card col-4" style="width: 18rem; background-color: transparent">
+          <!--                    padding: 110px 90px;-->
+          <div class="card-body d-flex justify-content-center align-items-center"
+               style="border-color: red; border-style: double">
+            <button type="button" class="btn btn-dark" style="background-color: transparent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                   class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path style="color: red"
+                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label style="color: whitesmoke" for="inputContent" class="col-sm-2 col-form-label">Nội dung
+          <span class="text-danger">(*)</span></label>
+        <div class="col-sm-9">
+          <!--                        <input type="text" class="form-control" id="inputContent">-->
+          <textarea style="width: 300px; height: 120px" id="inputContent" class="form-control" formControlName="content"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10" style="padding-left: 150px">
+          <button style="color: #E50815; background-color: rgba(229,8,21,0.45); border-color: #ff0000"
+                  type="submit" class="btn btn-primary">Tạo
+          </button>
+          <button style="color: #E50815; background-color: rgba(229,8,21,0.45); border-color: #ff0000"
+                  type="reset" class="btn btn-primary">Xóa toàn bộ
+          </button>
+          <button style="color: #E50815; background-color: rgba(229,8,21,0.45); border-color: #ff0000"
+                  type="reset" class="btn btn-primary">Quay về
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+  var loadFile = function (event) {
+    var image = document.getElementById('output');
+    image.src = URL.createObjectURL(event.target.files[0]);
+  };
+
+  function checkHanhDong() {
+    var check = document.getElementById('hanhDong');
+    if (check.checked == true) {
+      console.log('đã check')
+    }
+  }
+</script>
+
+
+
+<!--<form novalidate (ngSubmit)="onSubmitArray()" [formGroup]="rfContact"-->
+<!--      class="row justify-content-md-center">-->
+<!--  <div class="col-md-8">-->
+<!--    <div class="form-group row">-->
+<!--      <label for="contactName" class="col-2 col-form-label">-->
+<!--        Name:-->
+<!--      </label>-->
+<!--      <div class="col-10">-->
+<!--        <input class="form-control" type="text" formControlName="contactName"-->
+<!--               id="contactName" >-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--      <label for="email" class="col-2 col-form-label">-->
+<!--        Email:-->
+<!--      </label>-->
+<!--      <div class="col-10">-->
+<!--        <input class="form-control" type="email" formControlName="email"-->
+<!--               id="email">-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <fieldset formGroupName="social">-->
+<!--      <div class="form-group row">-->
+<!--        <label for="example-url-fb" class="col-2 col-form-label">-->
+<!--          Facebook:-->
+<!--        </label>-->
+<!--        <div class="col-10">-->
+<!--          <input class="form-control" type="url" id="example-url-fb" formControlName="facebook">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="form-group row">-->
+<!--        <label for="example-url-twt" class="col-2 col-form-label">-->
+<!--          Twitter:-->
+<!--        </label>-->
+<!--        <div class="col-10">-->
+<!--          <input class="form-control" type="url" id="example-url-twt" formControlName="twitter">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="form-group row">-->
+<!--        <label for="example-url-web" class="col-2 col-form-label">-->
+<!--          Website:-->
+<!--        </label>-->
+<!--        <div class="col-10">-->
+<!--          <input class="form-control" type="url" id="example-url-web" formControlName="website">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </fieldset>-->
+<!--    <div formArrayName="tels" *ngIf="tels.controls.length">-->
+<!--      <div class="form-group row" *ngFor="let c of tels.controls; index as i">-->
+<!--        <label for="example-tel-input" class="col-md-2 col-form-label">Tel:</label>-->
+<!--        <div class="col-md-10">-->
+<!--          <input class="form-control" type="tel" id="example-tel-input" [formControlName]="i">-->
+<!--          <div class="text-right">-->
+<!--            <button class="btn btn-info" (click)="addTel()">+</button>-->
+<!--            <button class="btn btn-danger" (click)="removeTel(i)" *ngIf="tels.controls.length > 1">-</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group row">-->
+<!--      <div class="col-10 offset-2">-->
+<!--        <button class="btn btn-primary"-->
+<!--                type="submit">Submit</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</form>-->

@@ -1,3 +1,5 @@
+import {Category} from "./category";
+
 export interface Film {
   id: number;
   name: string;
@@ -8,4 +10,5 @@ export interface Film {
   duration: string;
   trailer: string;
   studioName: string;
+  categories: Category[];
 }

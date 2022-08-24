@@ -10,7 +10,7 @@ const API_URL = `${environment.apiUrl}` + 'film';
 })
 export class FilmService {
   getAllFilmsWithPage(page: number): Observable<PageFilm> {
-    return this.http.get<PageFilm>(API_URL + '?page=' + page);
+    return this.http.get<PageFilm>(API_URL + '/list?page=' + page);
   }
 
   search(searchName: any = '', page: number = 0): Observable<PageFilm> {

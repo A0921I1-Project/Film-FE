@@ -13,10 +13,6 @@ O
 cinema/src/assets/css/style.css,2\9\297a4ae8a765217f882248be023e747b65b6cee3
 v
 Fcinema/src/app/ticket-module/booked-ticket/booked-ticket.component.css,7\e\7ea08f81021f2521a68660660760bacf35feea6c
-L
-cinema/src/app/model/time.ts,9\0\90e650df4cee25edf32238408c24127f9eb6bf86
-N
-cinema/src/app/model/ticket.ts,8\9\89332bab5696d0dbe1d37d7554d24f4e77f67b20
 k
 ;cinema/src/app/ticket-module/service/ticket.service.spec.ts,8\b\8b6533352b6f8c90248c525f9d92dee64cd66855
 L

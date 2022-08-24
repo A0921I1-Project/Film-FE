@@ -31,7 +31,7 @@ export class BookedTicketComponent implements OnInit {
 
   getBookedTicket() {
     this.ticketService.getBookedTicket(this.indexPagination).subscribe(data => {
-      // console.log(data);
+      console.log(data);
       this.bookedTickets = data.content;
       this.totalPages = data.totalPages;
       // this.indexPagination = data.number;

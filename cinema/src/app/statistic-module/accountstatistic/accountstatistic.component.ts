@@ -13,68 +13,61 @@ export class AccountstatisticComponent implements OnInit {
   statisticAccounts: StatisticAccount[] = [];
   changeStatistics = true;
   sum = 0;
-  sum1 = 0;
-  changePoint = true;
+  totalPriceAccount = 0;
 
   constructor(private accountStatisticService: AccountStatisticService) { }
 
   public canvas: any;
   public ctx: any;
-  public labels: any = [];
+  public labels: any = this.statisticAccounts;
   public dataCases: any = {
     label: 'Points',
-    chart1: [10, 20, 55, 30, 10],
+    chart: [],
   };
+
   totalPage: number[] = [];
   pageNumber = 0;
 
   ngOnInit(): void {
-    this.accountStatisticService.getAccountStatisticPage(0).subscribe(
-      (data: any) => {
-        this.statisticAccounts = data.content;
-        this.setPage(data.totalPages);
-      }
-    );
-    this.createLineChart(this.labels, this.dataCases, 'myChart');
-  }
-
-  onStatistics() {
-    this.sum = 0;
-    // tslint:disable-next-line:prefer-for-of
-    this.statisticAccounts.forEach( a => {
-      this.sum += a.money;
+    this.accountStatisticService.getTotalPriceAccount().subscribe(a => {
+      this.totalPriceAccount = a;
+      this.accountStatisticService.getAccountStatisticPage(0).subscribe(
+        (data: any) => {
+          this.statisticAccounts = data.content;
+          this.setPage(data.totalPages);
+          for (let i = 0; i < this.statisticAccounts.length; i++) {
+            this.labels[i] = this.statisticAccounts[i].fullName;
+            this.dataCases.chart[i] = this.statisticAccounts[i].money;
+            this.totalPriceAccount -= this.statisticAccounts[i].money;
+          }
+          console.log(this.totalPriceAccount);
+          this.labels[5] = 'residual';
+          this.dataCases.chart[5] = this.totalPriceAccount;
+          this.createLineChart1(this.labels, this.dataCases, 'myChart1');
+        }
+      );
     });
-    this.changeStatistics = this.changeStatistics;
-
-    // this.sum1 = 0;
-    // this.statisticAccounts.forEach( s => {
-    //   this.sum1 += s.point;
-    // });
-    // this.changePoint = this.changePoint;
   }
 
-  private createLineChart(labels, dataCases, chartId) {
+  // Chart
+  private createLineChart1(labels, dataCases, chartId) {
     this.canvas = document.getElementById(chartId);
     this.ctx = this.canvas.getContext('2d');
 
-    let chart = new Chart(this.ctx, {
+    const chart = new Chart(this.ctx, {
       type: 'doughnut',
       data: {
-        labels: labels,
+        labels,
         datasets: [{
           label: 'Chart 1',
-          data: dataCases.chart1,
-          backgroundColor: ['#ffbb33', '#e67e22', '#16a085', '#2980b9'],
-          fill: false,
+          data: dataCases.chart,
+          backgroundColor: ['#ffbb33', '#e67e22', '#16a085', '#2980b9', '#2f7532', '#E50815'],
+          fill: true,
           borderWidth: 2
         }]
       },
       options: {
         cutoutPercentage: 50,
-        title: {
-          display: true,
-          text: ''
-        },
         tooltips: {
           mode: 'index',
           intersect: true
@@ -86,6 +79,15 @@ export class AccountstatisticComponent implements OnInit {
 
       }
     });
+  }
+
+  onStatistics() {
+    this.sum = 0;
+    // tslint:disable-next-line:prefer-for-of
+    this.statisticAccounts.forEach( a => {
+      this.sum += a.money;
+    });
+    this.changeStatistics = this.changeStatistics;
   }
 
   // Phân trang
@@ -121,6 +123,7 @@ export class AccountstatisticComponent implements OnInit {
     this.accountStatisticService.getAccountStatisticPage(page).subscribe((data: any ) => {
       this.statisticAccounts = data.content;
     });
+
   }
 
 }

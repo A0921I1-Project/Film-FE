@@ -20,4 +20,8 @@ export class AccountStatisticService {
     return this.httpClient.get<StatisticAccount[]>(this.URL_API + '/accountStatisticPage?page=' + index);
   }
 
+  getTotalPriceAccount(): Observable<number> {
+    return this.httpClient.get<number>(this.URL_API + '/totalPriceAccount');
+  }
+
 }

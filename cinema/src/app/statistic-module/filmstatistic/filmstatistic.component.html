@@ -17,7 +17,7 @@
       <td>{{i + 1}}</td>
       <td style="padding-left: 100px !important;" >{{s.name}}</td>
       <td>{{s.numberTicket}}</td>
-      <td>{{s.money}}</td>
+      <td>{{s.money | currency: 'VND' : ''}}</td>
     </tr>
     </tbody>
   </table>
@@ -78,7 +78,7 @@
       <div class="col-lg-6 col-sm-12 mt-4">
         <div class="textInput">
           <div *ngIf="changeStatistic">
-            Tổng tiền trong ngày: {{sum}} VND
+            Tổng tiền trong ngày: {{sum | currency: 'VND' : ''}} VND
           </div>
         </div>
       </div>

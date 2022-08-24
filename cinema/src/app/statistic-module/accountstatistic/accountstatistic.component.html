@@ -22,7 +22,7 @@
         <td>{{a.accountCode}}</td>
         <td>{{a.fullName}}</td>
         <td>{{a.numberTicket}}</td>
-        <td>{{a.money}}</td>
+        <td>{{a.money | currency: 'VND' : ''}}</td>
         <td>{{a.point}}</td>
       </tbody>
     </table>
@@ -80,19 +80,16 @@
       <div class="row">
         <div class="textInput">
           <div *ngIf="changeStatistics">
-            Tổng tiền trong ngày: {{sum}} VND
+            Tổng tiền trong ngày: {{sum | currency: 'VND' : ''}} VND
           </div>
 
-          <!--          <div *ngIf="changePoint">-->
-          <!--            Tổng điểm tích lũy: {{sum1}} Điểm-->
-          <!--          </div>-->
         </div>
 
         <div class="row">
           <h2 class="titular">Sơ đồ thống kê</h2>
           <p class="center-date">August<span class="scnd-font-color"> 2022</span></p>
           <div>
-            <canvas id="myChart" width="600" height="250"></canvas>
+            <canvas id="myChart1" width="600" height="250"></canvas>
           </div>
         </div>
 

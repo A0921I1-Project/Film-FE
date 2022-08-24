@@ -19,12 +19,8 @@ export class FilmStatisticService {
     return this.httpClient.get<StatisticFilm[]>(this.URL_API + '/filmStatisticPage?page=' + index);
   }
 
+  getTotalPrice(): Observable<number> {
+    return this.httpClient.get<number>(this.URL_API + '/totalPrice');
+  }
 
-  // countProductNameFilm(): Observable<number> {
-  //   return this.httpClient.get<number>(this.URL_API + '/CountNameFilm');
-  // }
-  //
-  // countProductTicket(): Observable<number> {
-  //   return  this.httpClient.get<number>(this.URL_API + '/CountTicket');
-  // }
 }

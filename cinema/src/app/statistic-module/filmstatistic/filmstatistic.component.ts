@@ -14,6 +14,7 @@ export class FilmstatisticComponent implements OnInit {
   changeStatistic = false;
   sum = 0;
   topFive: StatisticFilm[] = [];
+  totalPrice = 0;
 
   constructor(private filmStatisticService: FilmStatisticService) { }
 
@@ -22,22 +23,31 @@ export class FilmstatisticComponent implements OnInit {
   public labels: any = this.statisticFilms;
   public dataCases: any = {
     label: 'Points',
-    chart1: [10, 20, 55, 30, 10],
+    chart1: [],
   };
 
   totalPage: number[] = [];
   pageNumber = 0;
 
   ngOnInit(): void {
-    this.filmStatisticService.getFilmStatisticPage(0).subscribe(
-      (data: any) => {
-        this.statisticFilms = data.content;
-        this.topFive = [];
-        this.setPage(data.totalPages);
-        console.log(data);
-      }
-
-    );
+    this.filmStatisticService.getTotalPrice().subscribe(t => {
+      this.totalPrice = t;
+      this.filmStatisticService.getFilmStatisticPage(0).subscribe(
+        (data: any) => {
+          this.statisticFilms = data.content;
+          this.topFive = [];
+          this.setPage(data.totalPages);
+          for (let i = 0; i < this.statisticFilms.length; i++) {
+            this.labels[i] = this.statisticFilms[i].name;
+            this.dataCases.chart1[i] = this.statisticFilms[i].money;
+            this.totalPrice -= this.statisticFilms[i].money;
+          }
+          console.log(this.totalPrice);
+          this.labels[5] = 'residual';
+          this.dataCases.chart1[5] = this.totalPrice;
+        }
+      );
+    });
     console.log(this.totalPage);
     this.createLineChart(this.labels, this.dataCases, 'myChart');
   }
@@ -54,7 +64,7 @@ export class FilmstatisticComponent implements OnInit {
         datasets: [{
           label: 'Chart 1',
           data: dataCases.chart1,
-          backgroundColor: ['#ffbb33', '#e67e22', '#16a085', '#2980b9'],
+          backgroundColor: ['#ffbb33', '#e67e22', '#16a085', '#2980b9', '#3f000f', '#E50815'],
           fill: true,
           borderWidth: 2
         }]

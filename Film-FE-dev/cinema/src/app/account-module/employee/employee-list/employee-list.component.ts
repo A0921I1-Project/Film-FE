@@ -20,7 +20,8 @@ export class EmployeeListComponent implements OnInit {
   name: string;
   id: number;
   searchForm: FormGroup = new FormGroup({
-    name: new FormControl('', [Validators.maxLength(50)]),
+    name: new FormControl('',
+      [Validators.pattern('^[a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ\\d .@]*$')])
   });
 
   constructor(private accountService: AccountService) {

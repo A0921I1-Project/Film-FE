@@ -14,8 +14,8 @@
             </tr>
             <tr>
               <td colspan="2">
-                <div *ngIf="searchForm.controls['name'].hasError('maxlength')">
-                  <p style="color: red">Không được quá 50 kí tự </p>
+                <div *ngIf="searchForm.controls['name'].hasError('pattern')">
+                  <p style="color: red">Không đúng định dạng</p>
                 </div>
               </td>
             </tr>

@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
+  "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
     "cinema": {
@@ -24,11 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -121,10 +119,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "cinema",
-  "cli": {
-    "analytics": "97a7c617-1d59-4c4f-8178-defb2bd3a823"
-  }
+    }},
+  "defaultProject": "cinema"
 }

@@ -3,10 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'security',
-    loadChildren: () => import('./security/security.module').then(module => module.SecurityModule)
-  },
-  {
     path: 'account',
     loadChildren: () => import('./account-module/account-module.module').then(module => module.AccountModuleModule)
   },
@@ -20,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'history',
-    loadChildren: () => import('./history-module/history-module.module').then(module => module.HistoryModuleModule)
+    loadChildren:() => import('./history-module/history-module.module').then(module => module.HistoryModuleModule)
   },
   {
     path: 'room',

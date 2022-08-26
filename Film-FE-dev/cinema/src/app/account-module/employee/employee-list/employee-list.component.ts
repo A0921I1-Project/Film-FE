@@ -15,7 +15,7 @@ export class EmployeeListComponent implements OnInit {
   page: PageAccount;
   numEmployee: number;
   employees: Content[];
-  totalPages: number;
+  totalPages = 1;
   size: number;
   name: string;
   id: number;

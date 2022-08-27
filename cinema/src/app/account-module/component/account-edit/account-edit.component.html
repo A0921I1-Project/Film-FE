@@ -10,7 +10,7 @@
   <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
 <!--  <link rel="stylesheet" href="css/MemberEdit.css">-->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!--  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="account-edit.component.css">
 </head>
@@ -95,17 +95,18 @@
                 <hr>
                 <form class="forms-sample" [formGroup]="editForm" (ngSubmit)="onSubmit()">
                   <div class="form-group row">
-                    <label for="username" class="col-sm-3 col-form-label" style="text-align: right">Tài Khoản<sup>(*)</sup></label>
+                    <label for="username" class="col-sm-3 col-form-label" style="text-align: right">Tài Khoản<sup style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="username" disabled formControlName="username">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="fullname" class="col-sm-3 col-form-label" style="text-align: right">Họ Tên<sup>(*)</sup></label>
+                    <label for="fullname" class="col-sm-3 col-form-label" style="text-align: right">Họ Tên<sup style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="fullname" formControlName="fullname">
                     </div>
                   </div>
+
 <!--                  <div class="form-group row">-->
 <!--                    <label for="fakePassword" class="col-sm-3 col-form-label" style="text-align: right">Mật Khẩu<sup>(*)</sup></label>-->
 <!--                    <div class="col-sm-9">-->
@@ -114,32 +115,51 @@
 <!--                        <span><i id="toggler"class="far fa-eye"></i></span>-->
 <!--                      </div>-->
 <!--                    </div>-->
-                    <div class="form-group row">
-                      <label for="password" class="col-sm-3 col-form-label" style="text-align: right">Mật Khẩu</label>
-                      <div class="col-sm-9">
-                        <div class="password-field">
-                          <input type="password" id="fakePassword" placeholder="Mật khẩu" class="form-control">
-                          <span><i id="toggler"class="far fa-eye"></i></span>
-                        </div>
+<!--                  </div>-->
+
+                  <div class="form-group row">
+                    <label for="password" class="col-sm-3 col-form-label" style="text-align: right">Mật Khẩu<sup style="color: #ff0000">(*)</sup></label>
+                    <div class="col-sm-9" style="margin: -55px -9px -15px 263px;">
+                      <div class="password-field">
+                        <input [type]="showPassword ? 'text' : 'password'" id="password-field" class="form-control" name="password" formControlName="password">
+<!--                        <span><i id="toggler"class="far fa-eye"></i></span>-->
+                          <span>
+                            <div class="form-group inner-addon right-addon">
+                              <i alt="show" class="far fa-eye eye-show" (click)="showPassword = !showPassword" [class.hide]="showPassword" style="margin: -65px"></i>
+                              <i alt="hide" class="far fa-eye-slash eye-hide" (click)="showPassword = !showPassword" [class.hide]="!showPassword" style="margin: -65px"></i>
+                            </div>
+                          </span>
                       </div>
                     </div>
+                  </div>
+
                   <div class="form-group row">
-                    <label for="birthday" class="col-sm-3 col-form-label" style="text-align: right">Ngày Sinh<sup>(*)</sup></label>
+                    <label for="birthday" class="col-sm-3 col-form-label" style="text-align: right">Ngày Sinh<sup style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="date" class="form-control" id="birthday" formControlName="birthday">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label" style="text-align: right">Giới Tính<sup>(*)</sup></label>
-                    <div class="col-sm-9">
-                      <input type="radio" id="male" formControlName="gender" value="male">
-                      <label for="male">Nam</label>
-                      <br>
-                      <input type="radio" id="female" formControlName="gender" value="female">
-                      <label for="female">Nữ</label>
-                      <br>
-                      <input type="radio" id="other" formControlName="gender" value="other">
-                      <label for="other">Khác</label>
+                    <label class="col-sm-3 col-form-label" style="text-align: right">Giới Tính<sup style="color: #ff0000">(*)</sup></label>
+<!--                    <div class="col-sm-9">-->
+<!--                      <input type="radio" id="male" formControlName="gender" value="male">-->
+<!--                      <label for="male">Nam</label>-->
+<!--                      <br>-->
+<!--                      <input type="radio" id="female" formControlName="gender" value="female">-->
+<!--                      <label for="female">Nữ</label>-->
+<!--                      <br>-->
+<!--                      <input type="radio" id="other" formControlName="gender" value="other">-->
+<!--                      <label for="other">Khác</label>-->
+<!--                    </div>-->
+                    <div class="col-sm-9 d-flex">
+                      <div class="form-check form-check-inline d-flex align-items-center">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="nam">
+                        <label class="form-check-label" for="inlineRadio1">Nam</label>
+                      </div>
+                      <div class="form-check form-check-inline d-flex">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="nữ">
+                        <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                      </div>
                     </div>
 <!--                      <input type="radio" id="html" name="fav_language" value="HTML">-->
 <!--                      <label for="html">HTML</label><br>-->
@@ -149,25 +169,25 @@
 <!--                      <label for="javascript">JavaScript</label>-->
                   </div>
                   <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label" style="text-align: right">Email<sup>(*)</sup></label>
+                    <label for="email" class="col-sm-3 col-form-label" style="text-align: right">Email<sup style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="email" class="form-control" id="email" formControlName="email">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="idCard" class="col-sm-3 col-form-label" style="text-align: right">CMND<sup>(*)</sup></label>
+                    <label for="idCard" class="col-sm-3 col-form-label" style="text-align: right">CMND<sup style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="idCard" disabled formControlName="idCard">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="phone" class="col-sm-3 col-form-label" style="text-align: right">Số Điện Thoại<sup>(*)</sup></label>
+                    <label for="phone" class="col-sm-3 col-form-label" style="text-align: right">Số Điện Thoại<sup style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="phone" formControlName="phone">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="address" class="col-sm-3 col-form-label" style="text-align: right">Địa Chỉ<sup>(*)</sup></label>
+                    <label for="address" class="col-sm-3 col-form-label" style="text-align: right">Địa Chỉ<sup style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="address" formControlName="address">
                     </div>
@@ -205,12 +225,38 @@
     }
   };
   toggler.addEventListener('click', showHidePassword);
-
-  // $('.datepicker').datepicker({
-  //     weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-  //     showMonthsShort: true
-  // })
 </script>
+<!--<script>-->
+<!--  var password = document.getElementById('fakePassword');-->
+<!--  var toggler = document.getElementById('toggler');-->
+<!--  showHidePassword = () => {-->
+<!--    if (password.type == 'password') {-->
+<!--      password.setAttribute('type', 'text');-->
+<!--      toggler.classList.add('fa-eye-slash');-->
+<!--    } else {-->
+<!--      toggler.classList.remove('fa-eye-slash');-->
+<!--      password.setAttribute('type', 'password');-->
+<!--    }-->
+<!--  };-->
+<!--  toggler.addEventListener('click', showHidePassword);-->
+
+<!--  // $('.datepicker').datepicker({-->
+<!--  //     weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],-->
+<!--  //     showMonthsShort: true-->
+<!--  // })-->
+<!--</script>-->
+<!--<script>-->
+<!--  const togglePassword = document.querySelector('#toggler');-->
+<!--  const password = document.querySelector('#password');-->
+
+<!--  togglePassword.addEventListener('click', function (e) {-->
+<!--    // toggle the type attribute-->
+<!--    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';-->
+<!--    password.setAttribute('type', type);-->
+<!--    // toggle the eye / eye slash icon-->
+<!--    this.classList.toggle('bi-eye');-->
+<!--  });-->
+<!--</script>-->
 </body>
 </html>
 <router-outlet></router-outlet>

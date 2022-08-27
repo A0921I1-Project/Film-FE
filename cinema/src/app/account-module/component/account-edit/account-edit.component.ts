@@ -76,4 +76,6 @@ export class AccountEditComponent implements OnInit {
   onSubmit() {
     this.editAccount(this.id);
   }
+
+  public showPassword: boolean;
 }

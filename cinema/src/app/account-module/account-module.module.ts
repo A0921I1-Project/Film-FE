@@ -7,16 +7,18 @@ import { AccountModuleComponent } from './account-module.component';
 import { AccountEditComponent } from './component/account-edit/account-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {ShowHidePasswordModule} from 'ngx-show-hide-password';
 
 
 @NgModule({
   declarations: [AccountListComponent, AccountModuleComponent, AccountEditComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    AccountModuleRoutingModule,
-    ReactiveFormsModule,
-    NgxPaginationModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule,
+        AccountModuleRoutingModule,
+        ReactiveFormsModule,
+        NgxPaginationModule,
+        ShowHidePasswordModule
+    ]
 })
 export class AccountModuleModule { }

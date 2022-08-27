@@ -13260,3 +13260,37 @@ style for off-canvas menu
     padding: 0.25rem 0.5rem; } }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.form-check-label {
+  margin-bottom: 0px !important;
+  margin-left: 5px !important;
+}
+.form-check {
+  position: relative;
+  top: -6px;
+}
+
+form i {
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.inner-addon {
+  position: relative;
+}
+.inner-addon .far {
+  position: absolute;
+  padding: 10px 85px;
+  z-index: 100;
+  cursor: pointer;
+}
+.left-addon .far  { left:  0px; }
+.right-addon .far { right: 0px; }
+
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }

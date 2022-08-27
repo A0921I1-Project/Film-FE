@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
+
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Film} from '../../model/film';
 import {SeatDetailDto} from '../../model/seat-detail';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class BookingService {
+
   private readonly MOVIE_URL = 'http://localhost:8080/api/film';
   constructor(private httpClient: HttpClient) { }
 
@@ -33,4 +36,5 @@ export class BookingService {
   public getAllSeatDetailByIdSeatDetail(id: number) {
     return this.httpClient.get(this.MOVIE_URL + '/getAllSeatDetailByIdSeat/' + id);
   }
+
 }

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../../../environments/environment';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Account} from '../../model/account';
 import {Content} from '@angular/compiler/src/render3/r3_ast';
+import {TokenStorageService} from "../../security/service/token-storage-service.service";
 
 const API_URL = `${environment.apiUrl}`;
 @Injectable({
@@ -11,14 +12,21 @@ const API_URL = `${environment.apiUrl}`;
 })
 export class AccountServiceService {
 
-  constructor(private  http: HttpClient) { }
+  private API_ACCOUNT = 'http://localhost:8080/api';
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.tokenStorageService.getToken()
+    }),
+    'Access-Control-Allow-Origin': 'http://localhost:4200/', 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'}
+
+  constructor(private  http: HttpClient,
+              private tokenStorageService : TokenStorageService) { }
 
   getAll(page: Array<number>, searchUsername: string): Observable<Account[]> {
-    return this.http.get<Account[]>(API_URL + '/account/list?page=' + page + '&username=' + searchUsername);
+    return this.http.get<Account[]>( this.API_ACCOUNT+ '/account/list?page=' + page + '&username=' + searchUsername, this.httpOptions);
   }
-  // searchByUsername(username: any = ''): Observable<Account[]> {
-  //   return this.http.get<Account[]>(API_URL + '/account/search?username=' + username);
-  // }
 
   findById(id: number): Observable<Account> {
     return this.http.get<Account>(`${API_URL}/account/find/${id}`);

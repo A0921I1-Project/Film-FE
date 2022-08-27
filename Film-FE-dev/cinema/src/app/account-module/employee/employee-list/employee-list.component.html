@@ -9,7 +9,7 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm" formControlName="name" value='' style="opacity: 0.9">
               </td>
               <td>
-                <button class="btn btn-outline-danger my-2 my-sm-0 zoom" type="submit" style="background: rgba(255,0,0,0.69); color: #cccccc; margin: 0">Tìm kiếm</button>
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" style="background: rgba(255,0,0,0.69); color: #cccccc; margin: 0"  [disabled]="searchForm.controls['name'].hasError('pattern')" [class]="searchForm.controls['name'].hasError('pattern')==true?'':'zoom'">Tìm kiếm</button>
               </td>
             </tr>
             <tr>

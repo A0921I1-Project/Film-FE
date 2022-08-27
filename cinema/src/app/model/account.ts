@@ -1,5 +1,7 @@
+import {AccountRole} from './account-role';
 export interface Account {
   id: number;
+  isEnabled: boolean;
   username: string;
   accountCode: string;
   password: string;
@@ -13,5 +15,7 @@ export interface Account {
   gender: string;
   totalPoint: number;
   imageUrl: string;
+  account_role_test: AccountRole;
+
 
 }

@@ -1,5 +1,7 @@
+import {Role} from './role';
+
 export interface AccountRole {
   id: number;
-  accountId: any;
-  roleId: any;
+  account_id: Account;
+  role_id: Role;
 }

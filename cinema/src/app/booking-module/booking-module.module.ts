@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import {BookingFilmComponent} from './booking-film/booking-film.component';
+import {BookingSeatComponent} from './booking-seat/booking-seat.component';
+import {JsogService} from 'jsog-typescript';
 import { ManagerBookingListComponent } from './manager-booking-list/manager-booking-list.component';
 import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
@@ -10,14 +14,19 @@ import { ManagerBookingInformationComponent } from './manager-booking-informatio
 
 
 
+
 @NgModule({
-  declarations: [ManagerBookingListComponent, ManagerBookingDetailComponent, ManagerBookingInformationComponent],
+  declarations: [BookingFilmComponent, BookingSeatComponent, ManagerBookingListComponent, ManagerBookingDetailComponent, ManagerBookingInformationComponent],
   imports: [
     CommonModule,
-    RouterModule,
-    HttpClientModule,
     BookingModuleRoutingModule,
-    ReactiveFormsModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule
+  ],
+  providers: [
+    JsogService
   ]
 })
 export class BookingModuleModule { }

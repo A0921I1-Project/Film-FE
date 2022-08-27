@@ -1,4 +1,5 @@
 import {Account} from './account';
+
 export interface Booking {
   id: number;
   dayTimeBooking: any;

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {FilmListComponent} from "./film-module/film-list/film-list.component";
 
 const routes: Routes = [
   {

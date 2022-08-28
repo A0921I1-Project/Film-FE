@@ -1,0 +1,15 @@
+
+ctypescript:S1533"BReplace this "String" wrapper object with primitive type "string".(åàœÄúÿÿÿÿ
+Rtypescript:S5869T"*Remove duplicates in this character class.(İÊºıÿÿÿÿ8äà ®0
+Mtypescript:S5869Y"*Remove duplicates in this character class.(Ñ€Áİ8äà ®0
+Rtypescript:S5869\"*Remove duplicates in this character class.(óö˜Øûÿÿÿÿ8äà ®0
+Mtypescript:S5869a"*Remove duplicates in this character class.(»µËı8äà ®0
+|typescript:S3776}"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(¹†òÅøÿÿÿÿ8äà ®0
+utypescript:S4138ƒ"LExpected a `for-of` loop instead of a `for` loop with this simple iteration.(Ğú•Êşÿÿÿÿ8‘äà ®0
+ptypescript:S4138’"LExpected a `for-of` loop instead of a `for` loop with this simple iteration.(‰Šô’8‘äà ®0
+‚typescript:S1172“"YRemove the unused function parameter "r" or rename it to "_r" to make intention explicit.(×¦ÑÏüÿÿÿÿ8‘äà ®0
+Itypescript:S1186“" Unexpected empty arrow function.(×¦ÑÏüÿÿÿÿ8‘äà ®0
+utypescript:S4138¢"LExpected a `for-of` loop instead of a `for` loop with this simple iteration.(Ğú•Êşÿÿÿÿ8‘äà ®0
+ptypescript:S4138±"LExpected a `for-of` loop instead of a `for` loop with this simple iteration.(‰Šô’8‘äà ®0
+}typescript:S1172²"YRemove the unused function parameter "r" or rename it to "_r" to make intention explicit.(ÅÔ©Ó8’äà ®0
+Dtypescript:S1186²" Unexpected empty arrow function.(ÅÔ©Ó8’äà ®0

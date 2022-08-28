@@ -10,7 +10,7 @@
           class="bi bi-person-fill"></i> Quản lí nhân viên</a>
         <a href="#" class="list-group-item list-group-item-action"><i
           class="bi bi-credit-card-2-back-fill"></i> Quản lí thành viên</a>
-        <a href="#" class="list-group-item list-group-item-action"><i
+        <a routerLink="/film/list" class="list-group-item list-group-item-action"><i
           class="bi bi-camera-reels-fill"></i> Quản lí phim</a>
         <a href="#" class="list-group-item list-group-item-action"><i
           class="bi bi-calendar-week-fill"></i> Quản lí khuyến mãi</a>
@@ -29,7 +29,8 @@
         <!--          <input type="checkbox">-->
         <!--          <span class="slider round"></span>-->
         <!--        </label>-->
-        <button class="btn btn-outline-primary float-right mb-3"><i class="bi bi-plus-square-fill"></i></button>
+        <button [routerLink]="['/film/create']" class="btn btn-outline-primary float-right mb-3"><i
+          class="bi bi-plus-square-fill"></i></button>
         <form class="form-inline" method="post" [formGroup]="searchForm" (ngSubmit)="onSearch()">
           <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm"
                  formControlName="name">
@@ -54,23 +55,28 @@
             <td id="name">{{film.name}}</td>
             <td>{{film.startDate | date:'dd-MM-yyyy'}}</td>
             <td>{{film.studioName}}</td>
-            <td>
+            <td id="category">
               <span *ngFor="let categoryFilm of film.categoryFilms">
-                {{categoryFilm.category.nameCategory}}
+                {{categoryFilm.category?.nameCategory}}
               </span>
             </td>
             <td id="director">{{film.director}}</td>
             <td id="actor">{{film.actor}}</td>
             <td>
-              <button class="btn btn-outline-warning" [routerLink]="['/film/edit', film.id]"><i
+              <button class="btn btn-outline-warning" [routerLink]="['/film/update', film.id]"><i
                 class="bi bi-pencil-fill"></i></button>
-              <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#myModal"
+              <button style="margin-left: 10px" type="button" class="btn btn-outline-danger" data-toggle="modal"
+                      data-target="#myModal"
                       (click)="findFilmDeleteById(film.name,film.id)">
                 <i class="bi bi-trash3-fill"></i>
               </button>
-              <button class="btn btn-outline-info" data-toggle="modal" data-target="#modalDetail"
-                      (click)="findStudentDetailById(film.id,film.name,film.startDate,film.studioName,
-                      film.categoryFilms,film.director,film.actor,film.duration)"><i class="bi bi-info-circle-fill"></i></button>
+              <button style="margin-left: 10px" class="btn btn-outline-info" data-toggle="modal"
+                      data-target="#modalDetail"
+                      (click)="findFilmDetailById(film.id,film.name,film.startDate,film.studioName,
+                      film.categoryFilms,film.director,film.actor,film.duration,film.trailer,film.content,film.version,film.img)">
+                <i
+                  class="bi bi-info-circle-fill"></i>
+              </button>
             </td>
           </tr>
           </tbody>
@@ -143,15 +149,25 @@
         <h5 class="modal-title" id="exampleModalLabel">Thông tin chi tiết phim. </h5>
       </div>
       <div class="modal-body">
+        <p><b>Hình ảnh: </b><span><img *ngIf="img" [src]="transform(img)" width="200px" height="300px" alt=""></span>
+        </p>
         <p><b>Phim: </b><span> {{name}} </span></p>
         <p><b>Ngày khởi chiếu: </b><span> {{startDate | date:'dd-MM-yyyy'}} </span></p>
         <p><b>Hãng phim: </b><span> {{studioName}} </span></p>
-        <p><b>Thể loại: </b><span *ngFor="let categoryFilm of categoryFilms">
-                {{categoryFilm?.category.nameCategory}}
-              </span></p>
+        <p><b>Thể loại: </b><span *ngFor="let film of films;">
+          <li *ngFor="let categoryFilm of film.categoryFilms">
+                {{categoryFilm.category.nameCategory}}
+          </li></span>
         <p><b>Đạo diễn: </b><span> {{director}} </span></p>
         <p><b>Diễn viên: </b><span> {{actor}} </span></p>
+        <p><b>Phiên bản: </b><span> {{version}} </span></p>
         <p><b>Thời lượng: </b><span> {{duration}} phút</span></p>
+        <p style="text-align: justify"><b>Nội dung: </b><span> {{content}}</span></p>
+        <p><b>Trailer: </b><br></p>
+        <iframe width="460" height="315" [src]="transform(trailer)" *ngIf="trailer" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         </div>
@@ -159,3 +175,4 @@
     </div>
   </div>
 </div>
+

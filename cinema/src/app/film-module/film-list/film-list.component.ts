@@ -3,6 +3,10 @@ import {Film} from '../../model/film';
 import {FilmService} from '../service/film.service';
 import {FormGroup, FormControl} from '@angular/forms';
 import {ToastrService} from 'ngx-toastr';
+import {DomSanitizer} from '@angular/platform-browser';
+import {CategoryFilm} from '../../model/category-film';
+import { Category } from 'src/app/model/category';
+
 
 @Component({
   selector: 'app-film-list',
@@ -12,21 +16,34 @@ import {ToastrService} from 'ngx-toastr';
 export class FilmListComponent implements OnInit {
   indexPagination = 1;
   totalPages: number;
-  constructor(private filmService: FilmService, private toastr: ToastrService) {
+
+  constructor(private filmService: FilmService, private toastr: ToastrService, private sanitizer: DomSanitizer ) {
   }
+
   searchForm: FormGroup = new FormGroup({
     name: new FormControl(''),
+    actor: new FormControl(''),
   });
-
   films: Film[];
-  name: string;
   id: number;
+  name: string;
+  startDate: string;
+  actor: string;
+  director: string;
+  duration: string;
+  studioName: string;
+  categoryFilms: [];
   nameSearch = '';
-
+  trailer: string;
+  content: string;
+  version: string;
+  img: string;
   ngOnInit(): void {
     this.getAllWithPage();
   }
-
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
   getAllWithPage() {
     this.filmService.getAllFilmsWithPage(this.indexPagination).subscribe(page => {
       this.films = page.content;
@@ -58,20 +75,22 @@ export class FilmListComponent implements OnInit {
       this.onSearch();
     }
   }
+
   deleteFilm(id: number | any) {
     if (this.films.length === 1) {
       this.indexPagination--;
     }
     this.filmService.deleteFilm(id).subscribe(
       data => {
-        this.toastr.success('Bạn đã xoá film thành công!!!', 'Thông báo');
+        this.toastr.success('Đã xoá phim thành công!!!', 'Thông báo');
         this.onSearch();
       },
       error => {
-        this.toastr.error('Bạn đã xoá film thất bại!!!', 'Thông báo');
+        this.toastr.error('Đã xoá phim thất bại!!!', 'Thông báo');
       }
     );
   }
+
   findFilmDeleteById(name: string | any, id: number | any) {
     this.name = name;
     this.id = id;
@@ -91,7 +110,24 @@ export class FilmListComponent implements OnInit {
         this.indexPagination = 1;
         this.totalPages = 1;
         this.films = [];
+        this.toastr.warning('Không có dữ liệu tìm kiếm !!!', 'Thông báo');
       }
     });
+  }
+  findFilmDetailById(id: number, name: string, startDate: string, studioName: string, categoryFilms: [],
+                     director: string, actor: string, duration: string, trailer: string, content: string,
+                     version: string, img: string) {
+    this.id = id;
+    this.name = name;
+    this.startDate = startDate;
+    this.studioName = studioName;
+    this.categoryFilms = categoryFilms;
+    this.director = director;
+    this.actor = actor;
+    this.duration = duration;
+    this.trailer = trailer + '?autoplay=1';
+    this.content = content;
+    this.version = version;
+    this.img = img;
   }
 }

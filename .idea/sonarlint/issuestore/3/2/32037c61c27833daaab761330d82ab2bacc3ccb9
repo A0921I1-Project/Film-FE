@@ -1,0 +1,6 @@
+
+Ttypescript:S1128",Remove this unused import of 'CategoryFilm'.(´À‹Âøÿÿÿÿ8òÓœŸ®0
+Itypescript:S1128"(Remove this unused import of 'Category'.(ƒÙÚ³øÿÿÿÿ
+€typescript:S1172T"_Remove the unused function parameter "data" or rename it to "_data" to make intention explicit.(šä¨Úøÿÿÿÿ
+‚typescript:S1172X"aRemove the unused function parameter "error" or rename it to "_error" to make intention explicit.(Ã¡Èîýÿÿÿÿ
+otypescript:S107u"OMethod 'findFilmDetailById' has too many parameters (12). Maximum allowed is 7.(š˜þáþÿÿÿÿ

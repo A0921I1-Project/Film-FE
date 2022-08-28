@@ -1,0 +1,49 @@
+
+Q
+!cinema/src/app/model/page-film.ts,f\6\f6cd19ab1aae572200ab79f5f127c87eb0710ddd
+P
+ cinema/src/app/app.component.css,a\e\ae3e8140bba6ed19fe389b800daf099708a571dc
+E
+cinema/src/styles.css,a\e\ae8ac84e10472f7ae37875babc4f001c388020b2
+V
+&cinema/src/environments/environment.ts,c\5\c5f9dbed2237f11ac3adfbd642b7fe3cdedcebbd
+Q
+!cinema/src/app/app.component.html,9\a\9a146eff2927fd06edb25c17651c0abade43bf5f
+O
+cinema/src/app/app.component.ts,7\b\7b4706aa0aa1b4e9862e642eab0692b0e214ca1d
+P
+ cinema/src/app/model/film-img.ts,7\c\7c86c228616a628a5b584168547bd53550317161
+l
+<cinema/src/app/film-module/film-list/film-list.component.css,2\6\26e327352a47d3dc74621dea578138a7e7e84426
+E
+cinema/src/index.html,8\9\890839faf328a2b5bee3b694f6dbd8c0931e1913
+T
+$cinema/src/app/app-routing.module.ts,5\a\5a01d8dd3688825e9087e497d7c0e5573db5d924
+L
+cinema/src/app/model/film.ts,3\e\3e623c3aaf7b8f43bc296610c4cfbee2140518d5
+k
+;cinema/src/app/film-module/film-edit/film-edit.component.ts,6\b\6bf9e615529b5adbae9fac135336c619e6b273ab
+m
+=cinema/src/app/film-module/film-edit/film-edit.component.html,b\d\bdc3489faede982cb5974fc79f0d929718248c3d
+L
+cinema/src/app/app.module.ts,c\3\c3e3aba6deaad18b6646712c728aff175de936aa
+p
+@cinema/src/app/film-module/film-create/film-create.component.css,1\8\1854893b1786e1b8712d19a6c7e9363c81a165ca
+P
+ cinema/src/app/model/category.ts,1\0\10df5c6ca9c786273577cfb9357de45e415e54c8
+U
+%cinema/src/app/model/category-film.ts,1\4\145857ecf8634c6decedfc403e192c39975626d9
+k
+;cinema/src/app/film-module/film-list/film-list.component.ts,3\2\32037c61c27833daaab761330d82ab2bacc3ccb9
+h
+8cinema/src/app/film-module/film-module-routing.module.ts,2\6\26c01496ef41f4d7c4c2ba00d7d054a6a3cb216e
+`
+0cinema/src/app/film-module/film-module.module.ts,e\a\ea18ec46192f7e0b737465f1d0ffe04d88cba7b8
+m
+=cinema/src/app/film-module/film-list/film-list.component.html,1\6\16ffbfea9e9523e0dafdf260f973035b9d6b5072
+q
+Acinema/src/app/film-module/film-create/film-create.component.html,d\1\d15f14176be47c233c54d8319a869b21e174d708
+o
+?cinema/src/app/film-module/film-create/film-create.component.ts,d\a\da50228cda1bbac130d99a88593c85b302c3b3a4
+b
+2cinema/src/app/film-module/service/film.service.ts,8\7\8741e9d1448ee4d66d52316614caddb1b7d23b0d

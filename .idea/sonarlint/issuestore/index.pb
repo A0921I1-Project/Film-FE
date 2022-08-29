@@ -11,10 +11,6 @@ D
 cinema/tsconfig.json,c\3\c39fd93dea3aa66cf7b0ec8d975c6cafe272e195
 O
 cinema/src/app/model/account.ts,2\0\207ef34aa6dbd557c301e76f68f2cf4bfef346ab
-C
-cinema/package.json,3\2\3242435649c3270ea26a911f254990f46eec30d1
-C
-cinema/angular.json,f\e\fe909546fecdee784115993e1c00dd097154c907
 E
 cinema/src/index.html,8\9\890839faf328a2b5bee3b694f6dbd8c0931e1913
 B

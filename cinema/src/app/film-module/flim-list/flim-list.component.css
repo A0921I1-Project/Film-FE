@@ -58,10 +58,11 @@ body {
 }
 
 .card {
-  background-color: white;
+  background-color: black;
   margin-right: 15px;
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
 }
 
 .card img {
@@ -74,11 +75,16 @@ body {
 .card_film {
   max-width: fit-content;
   padding: 10px 15px;
+
+  /*display: flex;*/
+  /*min-height: 200px;*/
+  /*flex-direction: column;*/
+  /*justify-content: space-around;*/
 }
 
 .card_film p {
   padding-bottom: 5px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
   word-wrap: break-word;
 }
@@ -87,7 +93,7 @@ body {
   padding: 5px 0;
 }
 
-.card_film button {
+.card button {
   padding: 10px 15px;
   color: aliceblue;
   font-size: 1.2rem;
@@ -97,7 +103,7 @@ body {
   border-radius: 3px;
 }
 
-.card_film button:hover {
+.card button:hover {
   background-color: rgb(220, 224, 228);
   color: black;
 }
@@ -125,4 +131,45 @@ html {
 }
 .mt-4{
   margin-top: -2.5rem !important;
+}
+.page-item{
+  /*background: red;*/
+  /*color: white;*/
+  font-size: 20px;
+  margin: auto;
+}
+.page-item .page-link{
+  background-color: red;
+  color: #FFFFFF;
+}
+
+.detail{
+  min-height: 150px;
+}
+
+.button--active{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+}
+
+.button--active button{
+  width: 100px;
+  display: none;
+}
+
+.bg{
+  background-color: white;
+}
+
+.card:hover>.bg{
+  opacity: 0.5;
+}
+
+.card:hover .button--active button{
+  display: block;
+  position: relative;
+  display: inline-block;
 }

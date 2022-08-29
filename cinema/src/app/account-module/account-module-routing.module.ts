@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AccountListComponent} from './component/account-list/account-list.component';
 import {AccountEditComponent} from './component/account-edit/account-edit.component';
 import {AccountModuleComponent} from './account-module.component';
+import {AccountRegisterComponent} from './account-register/account-register.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
       },
       {
         path: 'edit/:id', component: AccountEditComponent
+      },
+      {
+        path: 'register',
+        component: AccountRegisterComponent,
       }
     ]
   }

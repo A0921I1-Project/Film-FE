@@ -17,6 +17,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SecurityModule} from './security/security.module';
 import {AuthenticationService} from './security/service/authentication.service';
 import {TokenStorageService} from './security/service/token-storage-service.service';
+import {ToastrModule} from "ngx-toastr";
 @NgModule({
   declarations: [
     AppComponent
@@ -36,7 +37,15 @@ import {TokenStorageService} from './security/service/token-storage-service.serv
     HttpClientModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot(
+      {
+        timeOut: 1500,
+        progressBar: true,
+        progressAnimation: 'increasing',
+        preventDuplicates: true
+      }
+    )
   ],
   providers: [
     AuthenticationService,

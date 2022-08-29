@@ -1,20 +1,24 @@
-import {AccountRole} from './account-role';
-
-export interface Account {
+export interface Content {
   id: number;
   isEnabled: boolean;
   username: string;
   accountCode: string;
   password: string;
   fullname: string;
-  birthday: any;
+  birthday: Date;
   idCard: string;
   address: string;
   phone: string;
   verificationCode: string;
   email: string;
-  gender: string;
+  gender: boolean;
   totalPoint: number;
   imageUrl: string;
-  account_role_test: AccountRole;
+  deleted: boolean;
+  enable: boolean;
+  provider: string;
+  accountRoles: [];
+  bookings: [];
+  roles: [];
+  enabled: boolean;
 }

@@ -1,15 +1,22 @@
 import { Injectable } from '@angular/core';
+<<<<<<< HEAD
+=======
 import {HttpClient} from '@angular/common/http';
 import {Film} from '../../model/film';
 import {Observable} from 'rxjs';
 
 const API_URL = `api/film`;
+>>>>>>> origin/manager-account
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilmService {
 
+<<<<<<< HEAD
+  constructor() { }
+}
+=======
   constructor(private http: HttpClient) { }
 
   getAPI(): Observable<Film[]> {
@@ -38,3 +45,4 @@ export class FilmService {
   }
 }
 
+>>>>>>> origin/manager-account

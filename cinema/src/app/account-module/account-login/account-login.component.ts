@@ -61,7 +61,6 @@ export class AccountLoginComponent implements OnInit {
           timeOut: 3000,
           extendedTimeOut: 1500
         });
-
       }
     );
   }

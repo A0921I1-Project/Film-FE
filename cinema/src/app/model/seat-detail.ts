@@ -1,3 +1,4 @@
+
 import {Film} from './film';
 import {Room} from './room';
 import {Seat} from './seat';
@@ -9,6 +10,7 @@ export interface SeatDetail {
   isFlag: any;
   dateShow: any;
   status: any;
+  ticket_id: any;
   film_id: Film;
   room_id: Room;
   seat_id: Seat;

@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {PageAccount} from '../model/page-employee';
 import {Content} from '../model/content';
-import {AccountService} from '../../service/account.service';
-import {validate} from 'codelyzer/walkerFactory/walkerFn';
 import {AccountServiceService} from '../../service/account-service.service';
 
 @Component({
@@ -75,6 +73,5 @@ export class EmployeeListComponent implements OnInit {
         this.onSearch();
       }
     );
-    alert('Xoá thành công');
   }
 }

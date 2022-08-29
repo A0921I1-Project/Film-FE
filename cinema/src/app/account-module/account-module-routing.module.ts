@@ -4,6 +4,9 @@ import {AccountListComponent} from './component/account-list/account-list.compon
 import {AccountEditComponent} from './component/account-edit/account-edit.component';
 import {AccountModuleComponent} from './account-module.component';
 import {AccountRegisterComponent} from './account-register/account-register.component';
+import {ChangePasswordComponent} from "./component/change-password/change-password.component";
+import {ChangeInfoComponent} from "./component/change-info/change-info.component";
+import {ViewHistoryPointComponent} from "./component/view-history-point/view-history-point.component";
 
 const routes: Routes = [
   {
@@ -17,8 +20,17 @@ const routes: Routes = [
       {
         path: 'register',
         component: AccountRegisterComponent,
+      },
+      {
+        path: 'changePassword', component: ChangePasswordComponent
+      },
+      {
+        path: 'changeInfo', component: ChangeInfoComponent
+      },
+      {
+        path: 'view-history-point', component: ViewHistoryPointComponent
       }
-    ]
+      ]
   }
 ];
 

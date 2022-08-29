@@ -34,5 +34,20 @@ export class AccountService {
 
     return throwError(error);
   }
+  findById(id: number): Observable<Account> {
+    return this.httpClient.get<Account>(API_URL + '/account/find/' + id);
+  }
 
+  changePassword(id: number, oldPass: string, newPass: string): Observable<Account> {
+    return this.httpClient.post<Account>
+    (API_URL + '/account/updatePassword?id=' + id + '&oldPass=' + oldPass + '&newPass=' + newPass, {});
+  }
+
+  updateInfo(id: number, account: Account): Observable<Account> {
+    return this.httpClient.post<Account>(API_URL + '/account/update?id=' + id, account);
+  }
+
+  checkExistEmail(email: string): Observable<boolean> {
+    return this.httpClient.get<boolean>(API_URL + '/account/checkExistEmail?email=' + email);
+  }
 }

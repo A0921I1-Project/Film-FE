@@ -10,10 +10,16 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {ShowHidePasswordModule} from 'ngx-show-hide-password';
 import {AccountRegisterComponent} from './account-register/account-register.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ChangeInfoComponent } from './component/change-info/change-info.component';
+import { ChangePasswordComponent } from './component/change-password/change-password.component';
+import { SidebarComponent } from './component/sidebar/sidebar.component';
+import {FormDirective} from '../common/focus.directive';
+import {ViewHistoryPointComponent} from './component/view-history-point/view-history-point.component';
 
 
 @NgModule({
-  declarations: [AccountListComponent, AccountModuleComponent, AccountEditComponent, AccountRegisterComponent],
+  declarations: [AccountListComponent, AccountModuleComponent, AccountEditComponent, AccountRegisterComponent,
+    ChangeInfoComponent, ChangePasswordComponent, SidebarComponent, ViewHistoryPointComponent, FormDirective],
   imports: [
     CommonModule,
     RouterModule,

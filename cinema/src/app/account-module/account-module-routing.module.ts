@@ -7,6 +7,8 @@ import {AccountRegisterComponent} from './account-register/account-register.comp
 import {ChangePasswordComponent} from "./component/change-password/change-password.component";
 import {ChangeInfoComponent} from "./component/change-info/change-info.component";
 import {ViewHistoryPointComponent} from "./component/view-history-point/view-history-point.component";
+import {EmployeeListComponent} from './employee/employee-list/employee-list.component';
+
 
 const routes: Routes = [
   {
@@ -29,6 +31,10 @@ const routes: Routes = [
       },
       {
         path: 'view-history-point', component: ViewHistoryPointComponent
+      },
+      {
+        path : 'employee',
+        component: EmployeeListComponent
       }
       ]
   }

@@ -1,22 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import {AccountModuleModule} from './account-module/account-module.module';
-import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {Ng2OrderModule} from 'ng2-order-pipe';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
-
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SecurityModule} from './security/security.module';
 import {AuthenticationService} from './security/service/authentication.service';
 import {TokenStorageService} from './security/service/token-storage-service.service';
+import {HttpClientModule} from '@angular/common/http';
+import {FilmModuleRoutingModule} from './film-module/film-module-routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
+import {FilmModuleModule} from './film-module/film-module.module';
+
 
 @NgModule({
   declarations: [
@@ -25,19 +25,18 @@ import {ToastrModule} from 'ngx-toastr';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     AccountModuleModule,
     NgxPaginationModule,
     Ng2OrderModule,
     Ng2SearchPipeModule,
     ShowHidePasswordModule,
-
     SecurityModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    HttpClientModule,
     FormsModule,
+    FilmModuleRoutingModule,
+    FilmModuleModule,
     ToastrModule.forRoot(
       {
         timeOut: 1500,
@@ -51,6 +50,8 @@ import {ToastrModule} from 'ngx-toastr';
     AuthenticationService,
     TokenStorageService
 
+  ],
+  exports: [
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,3 @@
-
 H
 cinema/package-lock.json,a\1\a1849f987e796f3e0e61e33bd3f9431ca967a5fb
 j
@@ -27,13 +26,13 @@ g
 7cinema/src/app/account-module/validator/validateDate.ts,2\1\2112f0024f326540a197dbeba3de67a46e6490bb
 X
 (cinema/src/app/common/focus.directive.ts,3\f\3fc771c99ec59d5bc05ac4f21467b2078107f95f
-†
+ï¿½
 Vcinema/src/app/account-module/component/change-password/change-password.component.html,8\2\821304219b6ff1d9d7642f819810a377a2b0d3e6
 v
 Fcinema/src/app/account-module/component/sidebar/sidebar.component.html,a\7\a748a5afc22e2565460c22828c56ea18136a050a
 t
 Dcinema/src/app/account-module/component/sidebar/sidebar.component.ts,8\a\8abd1abbee14cd25ad77900417611967c9206f6c
-„
+ï¿½
 Tcinema/src/app/account-module/component/change-password/change-password.component.ts,7\7\77d9843c70b8fcd9f71af51016476a6b32571360
 L
 cinema/src/app/app.module.ts,c\3\c3e3aba6deaad18b6646712c728aff175de936aa
@@ -59,9 +58,17 @@ E
 cinema/src/index.html,8\9\890839faf328a2b5bee3b694f6dbd8c0931e1913
 G
 cinema/src/polyfills.ts,3\b\3b69875eea991c6f59eb80427a06de291e201b02
-Š
+ï¿½
 Zcinema/src/app/account-module/component/view-history-point/view-history-point.component.ts,a\b\abacb0301fbee4ad01e0a602aef93ed2b7ccdb4f
 O
 cinema/src/assets/css/style.css,2\9\297a4ae8a765217f882248be023e747b65b6cee3
-Œ
+ï¿½
 \cinema/src/app/account-module/component/view-history-point/view-history-point.component.html,6\9\69e0a13c3da4ff15171a3a8b43a9257c892de78b
+h
+8cinema/src/app/account-module/service/account.service.ts,c\0\c0e8523eb8790c81728eab40b974bc699ccd44cf
+ï¿½
+Pcinema/src/app/statistic-module/accountstatistic/accountstatistic.component.html,5\d\5db5e0c809cedf0e95316fdebf951ee29e6f5f52
+~
+Ncinema/src/app/statistic-module/accountstatistic/accountstatistic.component.ts,0\4\047367e58e30f65da129302bca9479c9b031f81b
+m
+=cinema/src/app/film-module/film-list/film-list.component.html,1\6\16ffbfea9e9523e0dafdf260f973035b9d6b5072

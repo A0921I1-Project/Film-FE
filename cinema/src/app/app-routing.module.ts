@@ -65,7 +65,7 @@ const routes: Routes = [
     loadChildren: () => import('./seat-module/seat-module.module').then(module => module.SeatModuleModule)
   },
   {
-    path: 'ticker',
+    path: 'ticket',
     loadChildren: () => import('./ticket-module/ticket-module.module').then(module => module.TicketModuleModule)
   },
   {

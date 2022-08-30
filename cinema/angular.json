@@ -93,7 +93,8 @@
               "node_modules/jquery/dist/jquery.slim.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "node_modules/ionicons/dist/ionicons/ionicons.esm.js",
-              "node_modules/ionicons/dist/ionicons/ionicons.js"
+              "node_modules/ionicons/dist/ionicons/ionicons.js",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           }
@@ -131,3 +132,4 @@
     "analytics": "a59b95b4-c30f-4416-96b4-59613181df0a"
   }
 }
+

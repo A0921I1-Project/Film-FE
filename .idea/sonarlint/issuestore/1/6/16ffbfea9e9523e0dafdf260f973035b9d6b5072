@@ -1,0 +1,44 @@
+
+JWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(ÖÉûÔ8­¤§†­0
+JWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(ÖÉûÔ8®¤§†­0
+JWeb:BoldAndItalicTagsCheck	"Replace this <i> tag by <em>.(ÖÉûÔ8®¤§†­0
+JWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(ÖÉûÔ8®¤§†­0
+JWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(æÄ—•8®¤§†­0
+JWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(ÖÉûÔ8¯¤§†­0
+JWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(ÖÉûÔ8¯¤§†­0
+JWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(ÖÉûÔ8°¤§†­0
+PWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(ÜÈÑ–8œÜ˜ı¬0
+UWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(„‘ïÎıÿÿÿÿ8Ü˜ı¬0
+PWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(÷¤±é8Ü˜ı¬0
+UWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(«ßãºÿÿÿÿÿ8ŸÜ˜ı¬0
+OWeb:BoldAndItalicTagsCheck "Replace this <i> tag by <em>.(¢ÅÃ©şÿÿÿÿ8ŸÜ˜ı¬0
+OWeb:BoldAndItalicTagsCheck%"Replace this <i> tag by <em>.(±ÒÊĞıÿÿÿÿ8 Ü˜ı¬0
+OWeb:TableWithoutCaptionCheck'" Add a description to this table.(¢ìÖÆ8 Ü˜ı¬0
+E	Web:S1827*")Remove this deprecated "width" attribute.(íÙú8¡Ü˜ı¬0
+E	Web:S1827+")Remove this deprecated "width" attribute.(¥îğ®8¡Ü˜ı¬0
+E	Web:S1827,")Remove this deprecated "width" attribute.(£½ñ¶8¡Ü˜ı¬0
+J	Web:S1827-")Remove this deprecated "width" attribute.(¿ÅÆ­şÿÿÿÿ8¢Ü˜ı¬0
+J	Web:S1827.")Remove this deprecated "width" attribute.(¸‰ğ†üÿÿÿÿ8¢Ü˜ı¬0
+J	Web:S1827/")Remove this deprecated "width" attribute.(¯Ó¥Œúÿÿÿÿ8£Ü˜ı¬0
+E	Web:S18270")Remove this deprecated "width" attribute.(çŠäª8¤Ü˜ı¬0
+D	Web:S18271")Remove this deprecated "width" attribute.(ö™¸-8¤Ü˜ı¬0
+JWeb:BoldAndItalicTagsCheckB"Replace this <i> tag by <em>.(ÜïÙ8¥Ü˜ı¬0
+JWeb:BoldAndItalicTagsCheckG"Replace this <i> tag by <em>.(ê³ß¾8¦Ü˜ı¬0
+OWeb:BoldAndItalicTagsCheckM"Replace this <i> tag by <em>.(µëç”şÿÿÿÿ8¦Ü˜ı¬0
+OWeb:BoldAndItalicTagsCheckY"Replace this <i> tag by <em>.(†œ‡ûÿÿÿÿ8§Ü˜ı¬0
+JWeb:BoldAndItalicTagsCheck]"Replace this <i> tag by <em>.(Ëœìí8§Ü˜ı¬0
+JWeb:BoldAndItalicTagsCheckf"Replace this <i> tag by <em>.(–®¼Ó8¨Ü˜ı¬0
+OWeb:BoldAndItalicTagsCheckj"Replace this <i> tag by <em>.(¢È—ıÿÿÿÿ8¨Ü˜ı¬0
+OWeb:BoldAndItalicTagsCheck˜"!Replace this <b> tag by <strong>.(Üº¤8©Ü˜ı¬0
+TWeb:BoldAndItalicTagsCheckš"!Replace this <b> tag by <strong>.(İØÆÿÿÿÿÿ8¹°ËÑ­0
+TWeb:BoldAndItalicTagsCheck›"!Replace this <b> tag by <strong>.(Î†õÿÿÿÿÿ8¹°ËÑ­0
+OWeb:BoldAndItalicTagsCheckœ"!Replace this <b> tag by <strong>.(ÃĞÁü8¹°ËÑ­0
+OWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(áÃÔ…8¹°ËÑ­0
+u%Web:ItemTagNotWithinContainerTagCheck"<Surround this <li> item tag by a <ul> or <ol> container one.(øñ•ß8Ù¾ùŸ®0
+TWeb:BoldAndItalicTagsCheck¡"!Replace this <b> tag by <strong>.(†Âˆåşÿÿÿÿ8ó¿¢Ÿ®0
+TWeb:BoldAndItalicTagsCheck¢"!Replace this <b> tag by <strong>.(İæüÿÿÿÿ8ó¿¢Ÿ®0
+TWeb:BoldAndItalicTagsCheck£"!Replace this <b> tag by <strong>.(ãßê§şÿÿÿÿ8ó¿¢Ÿ®0
+TWeb:BoldAndItalicTagsCheck¤"!Replace this <b> tag by <strong>.(ÕéëÄúÿÿÿÿ8ó¿¢Ÿ®0
+OWeb:BoldAndItalicTagsCheck¥"!Replace this <b> tag by <strong>.(‡øìß8ó¿¢Ÿ®0
+OWeb:BoldAndItalicTagsCheck¦"!Replace this <b> tag by <strong>.(ÇˆÕŞ8ô¿¢Ÿ®0
+Q	Web:S1827§"/Remove this deprecated "frameborder" attribute.(¥ı»ëüÿÿÿÿ8ô¿¢Ÿ®0

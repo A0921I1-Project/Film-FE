@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {FilmModuleRoutingModule} from './film-module/film-module-routing.module';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'history',
-    loadChildren:() => import('./history-module/history-module.module').then(module => module.HistoryModuleModule)
+    loadChildren: () => import('./history-module/history-module.module').then(module => module.HistoryModuleModule)
   },
   {
     path: 'room',
@@ -36,8 +37,10 @@ const routes: Routes = [
   }
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), FilmModuleRoutingModule],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

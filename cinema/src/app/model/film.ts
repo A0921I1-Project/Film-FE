@@ -1,6 +1,8 @@
+
 import {FilmImg} from './film-img';
 import {SeatDetail} from './seat-detail';
 import {CategoryFilm} from './category-film';
+
 
 export interface Film {
   id: number;

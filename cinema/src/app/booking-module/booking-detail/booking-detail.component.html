@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <a href="" class="detail-feat-img">
+          <img [src]="bookingDetail.seatDetails[0].film.filmImgs[0].urlImg" alt="" class="loaded">
+        </a>
+      </div>
+      <div class="details col-9">
+        <div class="detail-info">
+          <h2 class="detail-title ng-binding">
+            {{bookingDetail.seatDetails[0].film.name}}
+          </h2>
+          <div class="detail-info-row">
+            <label>Đạo diễn: &nbsp;</label>
+            <div class="detail-info-right">
+              <a href="">{{bookingDetail.seatDetails[0].film.director}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

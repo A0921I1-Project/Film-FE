@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {PageFilm} from '../../model/page-film';
@@ -8,7 +9,11 @@ const API_URL = `${environment.apiUrl}` + 'film';
 @Injectable({
   providedIn: 'root'
 })
+
 export class FilmService {
+  constructor(private http: HttpClient) {
+   // this.URL_API = "http://localhost:8080/api/film";
+  }
   getAllFilmsWithPage(page: number): Observable<PageFilm> {
     return this.http.get<PageFilm>(API_URL + '/list?page=' + page);
   }
@@ -18,5 +23,7 @@ export class FilmService {
     url += '/search?value=' + searchName + '&page=' + page;
     return this.http.get<PageFilm>(url);
   }
-  constructor(private http: HttpClient) {}
+  getInfoFilmById(id: number): Observable<Film> {
+    return this.http.get<Film>(API_URL + '/info' + '?' + 'id=' + id);
+  }
 }

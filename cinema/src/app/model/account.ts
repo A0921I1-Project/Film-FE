@@ -3,7 +3,7 @@ export interface Account {
   username: string;
   accountCode: string;
   password: string;
-  fullName: string;
+  fullname: string;
   birthday: any;
   idCard: string;
   address: string;

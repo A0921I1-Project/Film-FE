@@ -1,9 +1,13 @@
+import {SeatDetail} from './seat-detail';
+
 export interface Booking {
   id: number;
   dayTimeBooking: any;
-  totalPrice: any;
+  totalPrice: number;
   pointExchange: number;
   pointReward: number;
   bookingCode: string;
-  account_id: any;
+  account: Account;
+  seatDetails: SeatDetail[];
+
 }

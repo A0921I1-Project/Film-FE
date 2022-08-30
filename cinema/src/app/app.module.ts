@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {TicketModuleModule} from './ticket-module/ticket-module.module';
+import {HttpClientModule} from '@angular/common/http';
+import {FilmModuleRoutingModule} from './film-module/film-module-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
+import {FilmModuleModule} from './film-module/film-module.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,21 @@ import {ToastrModule} from 'ngx-toastr';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TicketModuleModule,
+    FilmModuleModule,
+    HttpClientModule,
+    FilmModuleRoutingModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      timeOut: 1500,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true
+    }),
   ],
   providers: [],
+  exports: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

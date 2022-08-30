@@ -1,8 +1,8 @@
-import {Category} from './category';
 import {Film} from './film';
+import {Category} from './category';
 
 export interface CategoryFilm {
-  id: number;
-  category_id: Category;
-  film_id: Film;
+  id?: number;
+  film: Film;
+  category: Category;
 }

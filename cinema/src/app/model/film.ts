@@ -1,5 +1,8 @@
-
 import { CategoryFilm } from './category-film';
+import {FilmImg} from './film-img';
+import {Category} from './category';
+import {SeatDetail} from './seat-detail';
+
 
 export interface Film {
   id: number;
@@ -15,4 +18,6 @@ export interface Film {
   version: string;
   img: string;
   categoryFilms: CategoryFilm[];
+  filmImgs: FilmImg[];
+  seatDetails: SeatDetail[];
 }

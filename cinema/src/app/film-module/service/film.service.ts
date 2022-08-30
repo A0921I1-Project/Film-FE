@@ -59,6 +59,19 @@ export class FilmService {
     // tslint:disable-next-line:ban-types
     return this.http.get<Number>(API_URL + '/findNumberOfReCordOfCategoryFilm');
   }
+
+  // getAllFilmsWithPage(page: number): Observable<PageFilm> {
+  //   return this.http.get<PageFilm>(API_URL + '/list?page=' + page);
+  // }
+  //
+  // search(searchName: any = '', page: number = 0): Observable<PageFilm> {
+  //   let url = API_URL;
+  //   url += '/search?value=' + searchName + '&page=' + page;
+  //   return this.http.get<PageFilm>(url);
+  // }
+  getInfoFilmById(id: number): Observable<Film> {
+    return this.http.get<Film>(API_URL + '/info' + '?' + 'id=' + id);
+  }
   constructor(private http: HttpClient) {
   }
 }

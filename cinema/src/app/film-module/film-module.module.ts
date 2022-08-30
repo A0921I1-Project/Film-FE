@@ -4,9 +4,15 @@ import {FilmListComponent} from './film-list/film-list.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FilmCreateComponent } from './film-create/film-create.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FilmModuleRoutingModule} from './film-module-routing.module';
+import {FlimListComponent} from './flim-list/flim-list.component';
+import {FilmModuleComponent} from './film-module.component';
+import {FilmInfoComponent} from './film-info/film-info.component';
+import {SafePipeModule} from 'safe-pipe';
 
 @NgModule({
-  declarations: [FilmListComponent, FilmCreateComponent],
+  declarations: [FilmListComponent, FilmCreateComponent, FlimListComponent, FilmInfoComponent, FilmModuleComponent],
   exports: [
     FilmListComponent,
     FilmCreateComponent
@@ -16,6 +22,13 @@ import { FilmCreateComponent } from './film-create/film-create.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    CommonModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FilmModuleRoutingModule,
+    SafePipeModule
     // HttpClientModule,
     // FilmModuleRoutingModule,
     // BrowserAnimationsModule,

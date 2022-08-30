@@ -16,7 +16,7 @@ import {FilmModuleRoutingModule} from './film-module/film-module-routing.module'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import {FilmModuleModule} from './film-module/film-module.module';
-
+import {BookingModuleModule} from './booking-module/booking-module.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +37,7 @@ import {FilmModuleModule} from './film-module/film-module.module';
     FormsModule,
     FilmModuleRoutingModule,
     FilmModuleModule,
+    BookingModuleModule,
     ToastrModule.forRoot(
       {
         timeOut: 1500,
@@ -52,6 +53,8 @@ import {FilmModuleModule} from './film-module/film-module.module';
 
   ],
   exports: [
+    BookingModuleModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

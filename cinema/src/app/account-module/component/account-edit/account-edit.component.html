@@ -1,27 +1,4 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <title>Title</title>-->
-<!--  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"-->
-<!--        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">-->
-<!--  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"-->
-<!--          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"-->
-<!--          crossorigin="anonymous"></script>-->
-<!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"-->
-<!--          integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"-->
-<!--          crossorigin="anonymous"></script>-->
-<!--  &lt;!&ndash;    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />&ndash;&gt;-->
-<!--  &lt;!&ndash;    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">&ndash;&gt;-->
-<!--  &lt;!&ndash;  <link rel="stylesheet" href="css/MemberEdit.css">&ndash;&gt;-->
-<!--  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>-->
-<!--  &lt;!&ndash;  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>&ndash;&gt;-->
-<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"-->
-<!--        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="-->
-<!--        crossorigin="anonymous" referrerpolicy="no-referrer"/>-->
-<!--  <link rel="stylesheet" href="account-edit.component.css">-->
-<!--</head>-->
-<!--<body>-->
+<link rel="stylesheet" href="account-edit.component.css">
 <div class="container-scroller">
   <div>
     Navbar
@@ -114,19 +91,13 @@
                       style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="fullname" formControlName="fullname">
+                      <div class="text-danger" *ngFor="let validation of validation_messages.fullname">
+                        <div class="error-message"
+                             *ngIf="fullname.hasError(validation.type) && (fullname.dirty || fullname.touched)">
+                          {{validation.message}}</div>
+                      </div>
                     </div>
                   </div>
-
-                  <!--                  <div class="form-group row">-->
-                  <!--                    <label for="fakePassword" class="col-sm-3 col-form-label" style="text-align: right">Mật Khẩu<sup>(*)</sup></label>-->
-                  <!--                    <div class="col-sm-9">-->
-                  <!--                      <div class="password-field">-->
-                  <!--                        <input type="password" id="fakePassword" placeholder="Mật khẩu" class="form-control" formControlName="password">-->
-                  <!--                        <span><i id="toggler"class="far fa-eye"></i></span>-->
-                  <!--                      </div>-->
-                  <!--                    </div>-->
-                  <!--                  </div>-->
-
                   <div class="form-group row">
                     <label for="password" class="col-sm-3 col-form-label" style="text-align: right">Mật Khẩu<sup
                       style="color: #ff0000">(*)</sup></label>
@@ -152,21 +123,17 @@
                       style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="date" class="form-control" id="birthday" formControlName="birthday">
+                      <div class="text-danger" *ngFor="let validation of validation_messages.birthday">
+                        <div class="error-message"
+                             *ngIf="birthday.hasError(validation.type) && (birthday.dirty || birthday.touched)">
+                          {{validation.message}}
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label" style="text-align: right">Giới Tính<sup
                       style="color: #ff0000">(*)</sup></label>
-                    <!--                    <div class="col-sm-9">-->
-                    <!--                      <input type="radio" id="male" formControlName="gender" value="male">-->
-                    <!--                      <label for="male">Nam</label>-->
-                    <!--                      <br>-->
-                    <!--                      <input type="radio" id="female" formControlName="gender" value="female">-->
-                    <!--                      <label for="female">Nữ</label>-->
-                    <!--                      <br>-->
-                    <!--                      <input type="radio" id="other" formControlName="gender" value="other">-->
-                    <!--                      <label for="other">Khác</label>-->
-                    <!--                    </div>-->
                     <div class="col-sm-9 d-flex">
                       <div class="form-check form-check-inline d-flex align-items-center">
                         <input class="form-check-input" type="radio" name="gender" id="inlineRadio1"
@@ -179,18 +146,18 @@
                         <label class="form-check-label" for="inlineRadio2">Nữ</label>
                       </div>
                     </div>
-                    <!--                      <input type="radio" id="html" name="fav_language" value="HTML">-->
-                    <!--                      <label for="html">HTML</label><br>-->
-                    <!--                      <input type="radio" id="css" name="fav_language" value="CSS">-->
-                    <!--                      <label for="css">CSS</label><br>-->
-                    <!--                      <input type="radio" id="javascript" name="fav_language" value="JavaScript">-->
-                    <!--                      <label for="javascript">JavaScript</label>-->
                   </div>
                   <div class="form-group row">
                     <label for="email" class="col-sm-3 col-form-label" style="text-align: right">Email<sup
                       style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="email" class="form-control" id="email" formControlName="email">
+                      <div class="text-danger" *ngFor="let validation of validation_messages.email">
+                        <div class="error-message"
+                             *ngIf="email.hasError(validation.type) && (email.dirty || email.touched)">
+                          {{validation.message}}
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -198,6 +165,12 @@
                       style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="idCard" disabled formControlName="idCard">
+                      <div class="text-danger" *ngFor="let validation of validation_messages.idCard">
+                        <div class="error-message"
+                             *ngIf="idCard.hasError(validation.type) && (idCard.dirty || idCard.touched)">
+                          {{validation.message}}
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -205,6 +178,12 @@
                       style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="phone" formControlName="phone">
+                      <div class="text-danger" *ngFor="let validation of validation_messages.phone">
+                        <div class="error-message"
+                             *ngIf="phone.hasError(validation.type) && (phone.dirty || phone.touched)">
+                          {{validation.message}}
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -212,13 +191,19 @@
                       style="color: #ff0000">(*)</sup></label>
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="address" formControlName="address">
+                      <div class="text-danger" *ngFor="let validation of validation_messages.address">
+                        <div class="error-message"
+                             *ngIf="address.hasError(validation.type) && (address.dirty || address.touched)">
+                          {{validation.message}}
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-3"></div>
                     <div class="col-sm-9" style="text-align: right">
                       <button class="btn btn-primary mr-2" type="submit">Submit</button>
-                      <button class="btn btn-light" [routerLink]="['/account/edit',account.id]">Cancel</button>
+                      <button class="btn btn-light" [routerLink]="['/account/list']">Cancel</button>
                       <!--                        <a class="nav-link" ></a>-->
                     </div>
                   </div>
@@ -234,51 +219,4 @@
     Footer
   </div>
 </div>
-<!--<script>-->
-<!--  var password = document.getElementById('fakePassword');-->
-<!--  var toggler = document.getElementById('toggler');-->
-<!--  showHidePassword = () => {-->
-<!--    if (password.type == 'password') {-->
-<!--      password.setAttribute('type', 'text');-->
-<!--      toggler.classList.add('fa-eye-slash');-->
-<!--    } else {-->
-<!--      toggler.classList.remove('fa-eye-slash');-->
-<!--      password.setAttribute('type', 'password');-->
-<!--    }-->
-<!--  };-->
-<!--  toggler.addEventListener('click', showHidePassword);-->
-<!--</script>-->
-<!--<script>-->
-<!--  var password = document.getElementById('fakePassword');-->
-<!--  var toggler = document.getElementById('toggler');-->
-<!--  showHidePassword = () => {-->
-<!--    if (password.type == 'password') {-->
-<!--      password.setAttribute('type', 'text');-->
-<!--      toggler.classList.add('fa-eye-slash');-->
-<!--    } else {-->
-<!--      toggler.classList.remove('fa-eye-slash');-->
-<!--      password.setAttribute('type', 'password');-->
-<!--    }-->
-<!--  };-->
-<!--  toggler.addEventListener('click', showHidePassword);-->
-
-<!--  // $('.datepicker').datepicker({-->
-<!--  //     weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],-->
-<!--  //     showMonthsShort: true-->
-<!--  // })-->
-<!--</script>-->
-<!--<script>-->
-<!--  const togglePassword = document.querySelector('#toggler');-->
-<!--  const password = document.querySelector('#password');-->
-
-<!--  togglePassword.addEventListener('click', function (e) {-->
-<!--    // toggle the type attribute-->
-<!--    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';-->
-<!--    password.setAttribute('type', type);-->
-<!--    // toggle the eye / eye slash icon-->
-<!--    this.classList.toggle('bi-eye');-->
-<!--  });-->
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
-<!--<router-outlet></router-outlet>-->
+<router-outlet></router-outlet>

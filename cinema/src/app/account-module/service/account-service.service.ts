@@ -31,11 +31,11 @@ export class AccountServiceService {
   }
 
   findById(id: number): Observable<Account> {
-    return this.http.get<Account>(`${API_URL}/account/find/${id}`);
+    return this.http.get<Account>(`${API_URL}/account/find/${id}`, this.httpOptions);
   }
 
   edit(id: number, account: Account): Observable<Account> {
-    return this.http.put<Account>(`${API_URL}/account/edit/${id}`, account);
+    return this.http.put<Account>(`${API_URL}/account/edit/${id}`, account, this.httpOptions);
   }
   getSearch(page: number, search: string): Observable<PageAccount> {
     return this.http.get<PageAccount>(this.API_ACCOUNT + `/account/employee/list?page=` + page + '&search=' + search , this.httpOptions);

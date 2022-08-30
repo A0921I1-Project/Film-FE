@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {PageAccount} from '../model/page-employee';
 import {Content} from '../model/content';
+
 import {AccountServiceService} from '../../service/account-service.service';
+import {ToastrService} from 'ngx-toastr';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -10,6 +13,11 @@ import {AccountServiceService} from '../../service/account-service.service';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
+
+  constructor(private accountService: AccountServiceService,
+              private toastrService: ToastrService,
+              private router: Router) {
+  }
   indexPagination = 0;
   page: PageAccount;
   numEmployee: number;
@@ -20,16 +28,12 @@ export class EmployeeListComponent implements OnInit {
   id: number;
   searchForm: FormGroup = new FormGroup({
     name: new FormControl('',
-      [Validators.pattern('^[a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ\\d .@]*$')])
+      [Validators.pattern('^[a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ\\d .@-]*$')])
   });
-
-  constructor(private accountService: AccountServiceService) {
-  }
 
   ngOnInit(): void {
     this.onSearch();
   }
-
   previousPage() {
     this.indexPagination -= 1;
     this.onSearch();
@@ -39,9 +43,8 @@ export class EmployeeListComponent implements OnInit {
     this.indexPagination += 1;
     this.onSearch();
   }
-
   onSearch() {
-    this.accountService.getSearch(this.indexPagination, this.searchForm.value.name).subscribe(page => {
+      this.accountService.getSearch(this.indexPagination, this.searchForm.value.name).subscribe(page => {
       this.employees = page.content;
       this.indexPagination = page.number;
       this.page = page;
@@ -54,7 +57,6 @@ export class EmployeeListComponent implements OnInit {
         this.totalPages = 1;
       }
     });
-    console.log(this.page);
   }
   findDeleteById(name: string | any, id: number | any) {
     this.name = name;
@@ -68,10 +70,16 @@ export class EmployeeListComponent implements OnInit {
     this.accountService.delete(id).subscribe(
       data => {
         this.onSearch();
+        this.toastrService.success('Đã xoá thành công', 'Thông báo');
       },
       error => {
         this.onSearch();
+        this.toastrService.success('Xoá không thành công', 'Thông báo');
       }
     );
+  }
+
+  reload() {
+    location.reload();
   }
 }

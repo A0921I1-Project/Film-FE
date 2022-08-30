@@ -6,7 +6,7 @@ import {newArray} from '@angular/compiler/src/util';
 import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
-  selector: 'app-employee-list',
+  selector: 'app-account-list',
   templateUrl: './account-list.component.html',
   styleUrls: ['./account-list.component.css']
 })

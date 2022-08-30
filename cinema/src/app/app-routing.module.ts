@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-
-
 import {AccountListComponent} from './account-module/component/account-list/account-list.component';
 
 const routes: Routes = [
@@ -43,7 +40,6 @@ const routes: Routes = [
     path: 'security',
     loadChildren: () => import('./security/security.module').then(module => module.SecurityModule)
   },
-
   {
     path: 'account',
     loadChildren: () => import('./account-module/account-module.module').then(module => module.AccountModuleModule)

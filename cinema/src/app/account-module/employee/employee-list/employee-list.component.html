@@ -6,7 +6,7 @@
           <table>
             <tr>
               <td>
-                <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm" formControlName="name" value='' style="opacity: 0.9">
+                <input class="form-control mr-sm-2 text-dark" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm" formControlName="name" value='' style="opacity: 0.9" >
               </td>
               <td>
                 <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" style="background: rgba(255,0,0,0.69); color: #cccccc; margin: 0"  [disabled]="searchForm.controls['name'].hasError('pattern')" [class]="searchForm.controls['name'].hasError('pattern')==true?'':'zoom'">Tìm kiếm</button>
@@ -22,7 +22,9 @@
           </table>
         </form>
       </div>
-      <br>
+      <div>
+        <a (click)="reload()" style="color: white; background: rgba(255,0,0,0.69) " class="btn btn-danger my-2 my-sm-0">Tải lại</a>
+      </div>
       <div style="background: rgba(0,0,0,0.61)" class ="table-content navbar-nav-scroll">
         <div class="table table" >
           <table class="table text-center">
@@ -36,7 +38,6 @@
               <th class="font-weight-bold">Số Điện Thoại</th>
               <th class="font-weight-bold ">Địa Chỉ</th>
               <th class="font-weight-bold">Xoá</th>
-              <!--            <th class="font-weight-bold">Sửa</th>-->
             </tr>
             </thead>
             <tbody style="color: #cccccc">
@@ -56,11 +57,6 @@
                   <i class="bi bi-trash3-fill" style="color: #cccccc"></i>
                 </button>
               </td>
-              <!--            <td>-->
-              <!--              <a class="btn btn-danger"  [routerLink]="['/account/employee', e.id]">-->
-              <!--                Edit-->
-              <!--              </a>-->
-              <!--            </td>-->
             </tr>
             </tbody>
           </table>
@@ -97,20 +93,11 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger" style="border: red 1px solid"data-toggle="modal" data-target="#exampleModal1" (click)="delete(id)" data-dismiss="modal">
+          <button type="button" class="btn btn-danger" style="border: red 1px solid"data-toggle="modal" (click)="delete(id)" data-dismiss="modal">
             Xoá
           </button>
         </div>
       </div>
     </div>
   </div>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="alert alert-success">
-        Đã xoá thành công
-      </div>
-    </div>
-  </div>
-
 </div>

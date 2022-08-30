@@ -1,4 +1,3 @@
-
 import {Account} from './account';
 
 export interface Booking {
@@ -8,7 +7,6 @@ export interface Booking {
   pointExchange: number;
   pointReward: number;
   bookingCode: string;
-  // account_id: any;
   received: boolean;
   account_id: Account;
 }

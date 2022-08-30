@@ -6,6 +6,7 @@ import {BookingModuleModule} from './booking-module/booking-module.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
+import {FilmModuleModule} from './film-module/film-module.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BookingModuleModule,
-    HttpClientModule
+    HttpClientModule,
+    FilmModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

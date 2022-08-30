@@ -30,7 +30,7 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
         ShowHidePasswordModule,
         HttpClientModule,
         FormsModule,
-    ]
+    ],
 })
 export class AccountModuleModule {
 }

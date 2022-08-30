@@ -9,6 +9,7 @@ import {ChangeInfoComponent} from "./component/change-info/change-info.component
 import {ViewHistoryPointComponent} from "./component/view-history-point/view-history-point.component";
 import {EmployeeListComponent} from './employee/employee-list/employee-list.component';
 
+
 const routes: Routes = [
   {
     path: 'account', component: AccountModuleComponent, children: [

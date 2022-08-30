@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {StatisticAccount} from '../../model/statistic-account';
 import {AccountStatisticService} from '../service/account-statistic.service';
 import * as Chart from 'chart.js';
+// import * as Chart from 'chart.js';
 
 @Component({
   selector: 'app-accountstatistic',

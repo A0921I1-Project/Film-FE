@@ -23,8 +23,6 @@ n
 >cinema/src/app/account-module/account-module-routing.module.ts,a\7\a7d3df368b94c636b79d8b629ed789273009efb8
 f
 6cinema/src/app/account-module/account-module.module.ts,5\c\5cf7a7ae582c8608fc73cc82a3057b4296a26332
-h
-8cinema/src/app/account-module/service/account.service.ts,c\0\c0e8523eb8790c81728eab40b974bc699ccd44cf
 V
 &cinema/src/environments/environment.ts,c\5\c5f9dbed2237f11ac3adfbd642b7fe3cdedcebbd
 h

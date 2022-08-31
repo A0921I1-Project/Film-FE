@@ -12,8 +12,8 @@ export class BookedTicketComponent implements OnInit {
 // tickets: List[]=[],
 //   indexPagination = 1;
 //   totalPagination: number;
-  indexPagination = 0;
-  totalPages: number;
+  indexPagination = 1;
+  totalPages = 1;
   bookedTickets: BookedTicket[];
   name: string;
   id: number;
@@ -26,15 +26,16 @@ export class BookedTicketComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.id = 1;
     this.getBookedTicket();
   }
 
   getBookedTicket() {
-    this.ticketService.getBookedTicket(this.indexPagination).subscribe(data => {
+    this.ticketService.getBookedTicket(this.indexPagination, this.id).subscribe(data => {
       console.log(data);
       this.bookedTickets = data.content;
       this.totalPages = data.totalPages;
-      // this.indexPagination = data.number;
+      this.indexPagination = data.number + 1;
     }, error => {
       console.log(error);
     });
@@ -60,7 +61,7 @@ export class BookedTicketComponent implements OnInit {
   }
 
   firstPage() {
-    this.indexPagination = 0;
+    this.indexPagination = 1;
     this.ngOnInit();
   }
 
@@ -81,7 +82,7 @@ export class BookedTicketComponent implements OnInit {
   }
 
   lastPage() {
-    this.indexPagination = this.totalPages - 1;
+    this.indexPagination = this.totalPages ;
     this.ngOnInit();
   }
 

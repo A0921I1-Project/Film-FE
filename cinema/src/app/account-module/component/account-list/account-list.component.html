@@ -1,159 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-<!--  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
-<!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>-->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<!--  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>-->
-<!--  <link rel="stylesheet" href="css/MemberEdit.css">-->
-  <link rel="stylesheet" href="account-list.component.css">
-</head>
-<body>
-<div class="container-scroller">
-  <div>
-    Navbar
-  </div>
-  <div class="container-fluid page-body-wrapper">
-    <nav class="sidebar sidebar-offcanvas" id="sidebar">
-      <ul class="nav">
-        <li class="nav-item nav-profile">
-          <a href="#" class="nav-link">
-            <div class="profile-image">
-              <img class="img-xs rounded-circle" src="https://tse1.mm.bing.net/th?id=OIP.uBlH_VgWPHHXNImlM0I-jwHaHa&pid=Api&P=0" alt="profile image">
-              <div class="dot-indicator bg-succes"></div>
-            </div>
-            <div class="text-wrapper">
-              <p class="profile-name">Name User</p>
-              <p class="designation">Role</p>
-            </div>
-            <div class="icon-container">
-              <i class="icon-bubbles"></i>
-              <div class="dot-indicator bg-danger"></div>
-            </div>
-          </a>
-        </li>
-        <li class="nav-item nav-category">
-          <span class="nav-link">Vé</span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-            <span class="menu-title">Vé</span>
-<!--            <i class="icon-layers menu-icon"><ion-icon name="ticket-outline"></ion-icon></i>-->
-
-          </a>
-          <div class="collapse" id="ui-basic">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="#">Vé</a></li>
-              <li class="nav-item"> <a class="nav-link" href="#">Quản Lý Đặt Vé</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item nav-category">
-          <span class="nav-link">Nhân Viên</span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span class="menu-title">Quản Lý Nhân Viên</span>
-<!--            <i class="icon-globe menu-icon"><ion-icon name="person-outline"></ion-icon></i>-->
-          </a>
-        </li>
-        <li class="nav-item nav-category">
-          <span class="nav-link">Thành Viên</span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="MemberList.html">
-            <span class="menu-title">Quản Lý Thành Viên</span>
-<!--            <i class="icon-globe menu-icon"><ion-icon name="person-circle-outline"></ion-icon></i>-->
-          </a>
-        </li>
-        <li class="nav-item nav-category">
-          <span class="nav-link">Thống Kê</span>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span class="menu-title">Thống Kê</span>
-<!--            <i class="icon-globe menu-icon"><ion-icon name="bar-chart-outline"></ion-icon></i>-->
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div class="main-panel">
-      <div class="content-wrapper" id="background">
-        <div class="row">
-          <div class="col-md-12 grid-margin stretch-card">
-            <div class="card">
-              <div class="card-body">
-                <div class="d-sm-flex align-items-center mb-4">
-                  <div class="card-title mb-sm-0">
-                    <h1>Danh Sách Thông Tin Thành Viên</h1>
-                  </div>
-                  <!--                                    <a href="#" class="text-dark ml-auto mb-3 mb-sm-0"> View all Products</a>-->
-                  <div class="navbar-nav navbar-nav-right ml-auto">
-                    <form class="search-form d-none d-flex" method="get" [formGroup]="searchForm" (ngSubmit)="getAll()">
-                      <i class="icon-magnifier"></i>
-                      <input type="search" class="form-control" placeholder="Tìm Tài Khoản" title="Search here" formControlName="username">
-                      <button class="btn btn-success my-2 my-sm-0" type="submit">Tìm</button>
-                    </form>
-                  </div>
-                </div>
-                <hr>
-                <div class="table-responsive border rounded p-1">
-                  <table class="table table-striped">
-                    <thead>
-                    <tr>
-                      <th class="font-weight-bold" style="text-align: center">Mã Thành Viên</th>
-                      <th class="font-weight-bold" style="text-align: center">Tên Thành Viên</th>
-                      <th class="font-weight-bold" style="text-align: center">Số CMND</th>
-                      <th class="font-weight-bold" style="text-align: center">Email</th>
-                      <th class="font-weight-bold" style="text-align: center">Số Điện Thoại</th>
-                      <th class="font-weight-bold" style="text-align: center">Địa Chỉ</th>
-                      <th class="font-weight-bold" style="text-align: center">Sửa</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr *ngFor="let item of accounts | paginate:{itemsPerPage:10, currentPage:p};">
-                      <td style="text-align: center">{{item.id}}</td>
-                      <td style="text-align: left">{{item.fullname}}</td>
-                      <td style="text-align: center">{{item.idCard}}</td>
-                      <td style="text-align: left">{{item.email}}</td>
-                      <td style="text-align: center">{{item.phone}}</td>
-                      <td style="text-align: left">{{item.address}}</td>
-                      <td style="text-align: center">
-                        <a class="nav-link" [routerLink]="['/account/edit',item.id]">
-                          <i class="bi bi-pencil-square"></i>
-                        </a>
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="d-flex mt-4 flex-wrap">
-                  <p class="text-muted">PAGE</p>
-                  <nav class="ml-auto">
-                    <pagination-controls class="myPagination" (pageChange)="p = $event"></pagination-controls>
-<!--                    <ul class="pagination separated pagination-info">-->
-<!--&lt;!&ndash;                      <li class="page-item"><a href="" class="page-link"><i class="icon-arrow-left">PREVIOUS</i></a></li>&ndash;&gt;-->
-<!--&lt;!&ndash;                      <li class="page-item active" *ngFor="let p of pages; let i=index">&ndash;&gt;-->
-<!--&lt;!&ndash;                        <a href="" class="page-link" (click)="setPage(i,$event)">{{i}}</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                      </li>&ndash;&gt;-->
-<!--&lt;!&ndash;                      <li class="page-item"><a href="" class="page-link"><i class="icon-arrow-right">NEXT</i></a></li>&ndash;&gt;-->
-<!--                    </ul>-->
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
+<div>
+  <div class="row background">
+    <div class="col-sm-2 p-0" style="height:120vh;  background-color: rgba(0,0,0,0.52);">
+      <div class="list-group ng-dark">
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-film"></i> Bán vé </a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-ticket-perforated-fill"></i> Quản lí đặt vé</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-person-fill"></i> Quản lí nhân viên</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-credit-card-2-back-fill"></i> Quản lí thành viên</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-camera-reels-fill"></i> Quản lí phim</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-calendar-week-fill"></i> Quản lí khuyến mãi</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-camera-video-fill"></i> Quản lí phòng chiếu</a>
+        <a href="#" class="list-group-item list-group-item-action"><i
+          class="bi bi-bar-chart-line-fill"></i> Quản lí thống kê </a>
+      </div>
+    </div>
+    <div class="col-sm-10 p-4">
+      <div class="container border" style="background-color: rgba(0,0,0,0.7)">
+        <h1 class="mt-4 mb-4" style="color: red;font-weight: bold">Danh Sách Thông Tin Thành Viên</h1>
+        <hr style="color: white;  ">
+        <form class="form-inline" method="get" [formGroup]="searchForm" (ngSubmit)="getAll()">
+          <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm"
+                 formControlName="username">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+        </form>
+        <br>
+        <table class="table text-center table-responsive-md">
+          <thead style="color: red">
+          <tr>
+            <th scope="col" width=auto class="font-weight-bold" style="text-align: center">Mã Thành Viên</th>
+            <th scope="col" width=auto class="font-weight-bold" style="text-align: center">Tên Thành Viên</th>
+            <th scope="col" width=auto class="font-weight-bold" style="text-align: center">Số CMND</th>
+            <th scope="col" width=auto class="font-weight-bold" style="text-align: center">Email</th>
+            <th scope="col" width=auto class="font-weight-bold" style="text-align: center">Số Điện Thoại</th>
+            <th scope="col" width=auto class="font-weight-bold" style="text-align: center">Địa Chỉ</th>
+          </tr>
+          </thead>
+          <tbody style="color: white">
+          <tr *ngFor="let item of accounts| paginate:{itemsPerPage:10, currentPage:p};">
+            <td style="text-align: center">{{item.id}}</td>
+            <td style="text-align: left">{{item.fullname}}</td>
+            <td style="text-align: center">{{item.idCard}}</td>
+            <td style="text-align: left">{{item.email}}</td>
+            <td style="text-align: center">{{item.phone}}</td>
+            <td style="text-align: left">{{item.address}}</td>
+            <td style="text-align: center">
+              <a class="nav-link" [routerLink]="['/account/edit',item.id]">
+                <i class="bi bi-pencil-square"></i>
+              </a>
+            </td>
+              <button class="btn btn-outline-warning" [routerLink]="['/account/edit',item.id]"><i class="bi bi-pencil-square"></i></button>
+          </tr>
+          </tbody>
+        </table>
+        <!--    Phân trang-->
+        <div class="d-flex mt-4 flex-wrap">
+          <p class="text-muted">PAGE</p>
+          <nav class="ml-auto">
+            <pagination-controls class="myPagination" (pageChange)="p = $event"></pagination-controls>
+          </nav>
         </div>
       </div>
     </div>
   </div>
-  <div>
-    Footer
-  </div>
 </div>
-</body>
-</html>
-<router-outlet></router-outlet>
+
+
+<!-- The Modal -->
+<!--<div class="modal" id="myModal">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
+<!--      &lt;!&ndash; Modal Header &ndash;&gt;-->
+<!--      <div class="modal-header">-->
+<!--        <h4 class="modal-title">Bạn có muốn xoá phim có tên :</h4>-->
+<!--        <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Modal body &ndash;&gt;-->
+<!--      <div class="modal-body">-->
+<!--        <h5 style="color: blue">{{name | uppercase}}</h5>-->
+<!--        <hr>-->
+<!--        <h6 style="color: red">* Lưu ý: Thao tác này không thể hoàn tác. </h6>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Modal footer &ndash;&gt;-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-primary" data-dismiss="modal">Huỷ</button>-->
+<!--        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteFilm(id)">Xoá</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!-- Modal Detail-->
+<!--<div class="modal fade" id="modalDetail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
+<!--     aria-hidden="true">-->
+<!--  <div class="modal-dialog" role="document">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <h5 class="modal-title" id="exampleModalLabel">Thông tin chi tiết phim. </h5>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        <p><b>Hình ảnh: </b><span><img *ngIf="img" [src]="transform(img)" width="200px" height="300px" alt=""></span>-->
+<!--        </p>-->
+<!--        <p><b>Phim: </b><span> {{name}} </span></p>-->
+<!--        <p><b>Ngày khởi chiếu: </b><span> {{startDate | date:'dd-MM-yyyy'}} </span></p>-->
+<!--        <p><b>Hãng phim: </b><span> {{studioName}} </span></p>-->
+<!--        <p><b>Thể loại: </b><span *ngFor="let film of films;">-->
+<!--          <li *ngFor="let categoryFilm of film.categoryFilms">-->
+<!--                {{categoryFilm.category_id.nameCategory}}-->
+<!--          </li></span>-->
+<!--        <p><b>Đạo diễn: </b><span> {{director}} </span></p>-->
+<!--        <p><b>Diễn viên: </b><span> {{actor}} </span></p>-->
+<!--        <p><b>Phiên bản: </b><span> {{version}} </span></p>-->
+<!--        <p><b>Thời lượng: </b><span> {{duration}} phút</span></p>-->
+<!--        <p style="text-align: justify"><b>Nội dung: </b><span> {{content}}</span></p>-->
+<!--        <p><b>Trailer: </b><br></p>-->
+<!--        <iframe width="460" height="315" [src]="transform(trailer)" *ngIf="trailer" title="YouTube video player"-->
+<!--                frameborder="0"-->
+<!--                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
+<!--                allowfullscreen></iframe>-->
+<!--        <div class="modal-footer">-->
+<!--          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

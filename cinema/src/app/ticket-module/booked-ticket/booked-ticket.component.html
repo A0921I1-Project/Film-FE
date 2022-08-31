@@ -5,56 +5,7 @@
   <div class="row">
     <div class="col-2">
       <!-- Sidebar -->
-      <nav id="sidebarMenu" class="d-lg-block sidebar">
-        <div class="list-group">
-          <div href="#" class="list-group-item py-2" aria-current="true">
-            <div class="text-center">
-              <!--              <img src="../../../avatar2.png";-->
-              <img src="favicon.ico"
-                   class="rounded-circle avatar-image" alt="Cinque Terre">
-              <div class="font-weight-bold mt-2 text-white">Nguyễn A</div>
-              <div class="my-3 text-white">
-                <i class="fa-solid fa-angles-down"></i>
-                Điểm tích luỹ: 120
-              </div>
-              <button class="btn mb-2 text-white bg-color-btn">
-                <i class="bi bi-box-arrow-in-left"></i>
-                Đăng xuất
-              </button>
-            </div>
-          </div>
-          <a href="#" class="list-group-item py-2" aria-current="true">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-person-circle"></i>
-                                <span> Thông tin tài khoản</span>
-                            </span>
-          </a>
-          <a href="#" class="list-group-item py-2" aria-current="true">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-lock"></i>
-                                <span> Đổi mật khẩu</span>
-                            </span>
-          </a>
-          <a href="#" class="list-group-item py-2">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-clock-history"></i>
-                                <span> Lịch sử</span>
-                            </span>
-          </a>
-          <a href="#" class="list-group-item py-2">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-bag-check-fill"></i>
-                                <span>Vé đã đặt</span>
-                            </span>
-          </a>
-          <a href="#" class="list-group-item py-2">
-                            <span class="d-flex align-items-center">
-                                <i class="bi bi-bag-x-fill"></i>
-                                <span>Vé đã huỷ</span>
-                            </span>
-          </a>
-        </div>
-      </nav>
+      <app-sidebar></app-sidebar>
       <!-- Sidebar -->
     </div>
 
@@ -93,21 +44,21 @@
         <nav aria-label="Page navigation example">
           <ul class="pagination d-flex justify-content-md-end justify-content-center">
             <li class="page-item">
-              <button class="page-link bi bi-chevron-double-left" (click)="firstPage()" *ngIf="indexPagination != 0"></button>
+              <button class="page-link bi bi-chevron-double-left" (click)="firstPage()" *ngIf="indexPagination != 1"></button>
             </li>
             <li class="page-item">
-              <button class="page-link bi bi-chevron-left" (click)="previousPage()" *ngIf="indexPagination != 0"></button>
+              <button class="page-link bi bi-chevron-left" (click)="previousPage()" *ngIf="indexPagination != 1"></button>
             </li>
 
             <li class="page-item col-md-1 col-2  px-0 text-center" style="line-height: 38px;color: white">
-              <span>{{indexPagination + 1}}</span>/<span>{{totalPages}}</span>
+              <span>{{indexPagination }}</span>/<span>{{totalPages}}</span>
             </li>
 
             <li class="page-item">
-              <button class="page-link bi bi-chevron-right" (click)="nextPage()" *ngIf="indexPagination != totalPages -1"></button>
+              <button class="page-link bi bi-chevron-right" (click)="nextPage()" *ngIf="indexPagination != totalPages "></button>
             </li>
             <li class="page-item">
-              <button class="page-link bi bi-chevron-double-right" (click)="lastPage()" *ngIf="indexPagination != totalPages -1 "></button>
+              <button class="page-link bi bi-chevron-double-right" (click)="lastPage()" *ngIf="indexPagination != totalPages  "></button>
             </li>
           </ul>
         </nav>

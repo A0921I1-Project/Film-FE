@@ -74,7 +74,7 @@ export class EmployeeListComponent implements OnInit {
       },
       error => {
         this.onSearch();
-        this.toastrService.success('Xoá không thành công', 'Thông báo');
+        this.toastrService.warning('Xoá không thành công', 'Thông báo');
       }
     );
   }

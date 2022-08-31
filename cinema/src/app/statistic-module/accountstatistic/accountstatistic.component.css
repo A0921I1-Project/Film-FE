@@ -41,6 +41,10 @@ h1{
   font-size: 20px;
   /*font-family: Courier;*/
 }
+.titular{
+  color: #E50815;
+}
 .center-date{
+  color: #E50815;
   margin: 5px;
 }

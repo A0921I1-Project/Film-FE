@@ -17,9 +17,9 @@ export class TicketService {
   }
 
   // tslint:disable-next-line:ban-types
-  getBookedTicket(page: number): Observable<PageBookedTicket> {
+  getBookedTicket(page: number, id: number): Observable<PageBookedTicket> {
     // @ts-ignore
-    return this.httpClient.get<PageBookedTicket>(API_URL + '/getbookedticket' + '?page=' + page);
+    return this.httpClient.get<PageBookedTicket>(API_URL + '/getbookedticket' + '?accountId=' + id + '&page=' + page);
   }
 
   deleteTicket(id: number): Observable<void> {

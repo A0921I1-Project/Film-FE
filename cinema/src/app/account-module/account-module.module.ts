@@ -19,8 +19,8 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 
 
 @NgModule({
-  declarations: [AccountListComponent, AccountModuleComponent, AccountEditComponent, AccountRegisterComponent,
-    ChangeInfoComponent, ChangePasswordComponent, SidebarComponent, ViewHistoryPointComponent, FormDirective, EmployeeListComponent],
+    declarations: [AccountListComponent, AccountModuleComponent, AccountEditComponent, AccountRegisterComponent,
+        ChangeInfoComponent, ChangePasswordComponent, SidebarComponent, ViewHistoryPointComponent, FormDirective, EmployeeListComponent],
     imports: [
         CommonModule,
         RouterModule,
@@ -31,6 +31,9 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
         HttpClientModule,
         FormsModule,
     ],
+    exports: [
+        SidebarComponent
+    ]
 })
 export class AccountModuleModule {
 }

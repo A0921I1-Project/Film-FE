@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BookedTicketComponent } from './booked-ticket/booked-ticket.component';
 import {TicketModuleRoutingModule} from './ticket-module-routing.module';
 import { HttpClientModule} from '@angular/common/http';
+import {AccountModuleModule} from '../account-module/account-module.module';
 
 
 
@@ -12,6 +13,7 @@ import { HttpClientModule} from '@angular/common/http';
     CommonModule,
     TicketModuleRoutingModule,
     HttpClientModule,
+    AccountModuleModule,
   ]
 })
 export class TicketModuleModule { }

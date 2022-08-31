@@ -57,7 +57,7 @@
             <td>{{film.studioName}}</td>
             <td id="category">
               <span *ngFor="let categoryFilm of film.categoryFilms">
-                {{categoryFilm.category?.nameCategory}}
+                {{categoryFilm.category_id?.nameCategory}}
               </span>
             </td>
             <td id="director">{{film.director}}</td>
@@ -74,8 +74,7 @@
                       data-target="#modalDetail"
                       (click)="findFilmDetailById(film.id,film.name,film.startDate,film.studioName,
                       film.categoryFilms,film.director,film.actor,film.duration,film.trailer,film.content,film.version,film.img)">
-                <i
-                  class="bi bi-info-circle-fill"></i>
+                <i class="bi bi-info-circle-fill"></i>
               </button>
             </td>
           </tr>
@@ -156,7 +155,7 @@
         <p><b>Hãng phim: </b><span> {{studioName}} </span></p>
         <p><b>Thể loại: </b><span *ngFor="let film of films;">
           <li *ngFor="let categoryFilm of film.categoryFilms">
-                {{categoryFilm.category.nameCategory}}
+                {{categoryFilm.category_id.nameCategory}}
           </li></span>
         <p><b>Đạo diễn: </b><span> {{director}} </span></p>
         <p><b>Diễn viên: </b><span> {{actor}} </span></p>

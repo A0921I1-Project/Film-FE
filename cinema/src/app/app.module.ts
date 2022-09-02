@@ -17,10 +17,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import {FilmModuleModule} from './film-module/film-module.module';
 import {BookingModuleModule} from './booking-module/booking-module.module';
+import { HeadFooterComponent } from './head-footer/head-footer.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HeadFooterComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,10 +56,11 @@ import {BookingModuleModule} from './booking-module/booking-module.module';
     TokenStorageService
 
   ],
-  exports: [
-    BookingModuleModule,
-    HttpClientModule
-  ],
+    exports: [
+        BookingModuleModule,
+        HttpClientModule,
+        HeadFooterComponent
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

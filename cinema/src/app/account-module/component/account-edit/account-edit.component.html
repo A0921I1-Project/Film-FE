@@ -89,7 +89,7 @@
           <div class="form-group row">
             <label class="col-sm-3 col-form-label font-weight-bold" for="idCard" style="text-align: right">CMND<sup style="color: #ff0000">(*)</sup>:</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="idCard" formControlName="idCard">
+              <input type="text" class="form-control" id="idCard" formControlName="idCard" disabled>
               <div class="text-danger" *ngFor="let validation of validation_messages.idCard">
                 <div class="error-message"
                      *ngIf="idCard.hasError(validation.type) && (idCard.dirty || idCard.touched)">{{validation.message}}

@@ -3,30 +3,25 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  /*background: linear-gradient(to right, rgb(142, 247, 142), rgb(248, 115, 115), rgb(243, 243, 110));*/
-  background: black;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin: 15px;
-}
-
-.header {
-  padding: 30px;
-  background-color: black;
-  color: white;
-}
-
-.header h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  padding-bottom: 9px;
-}
-
 .header_title {
   display: flex;
   justify-content: space-between;
+  background: black;
 }
+/*body {*/
+/*  !*background: linear-gradient(to right, rgb(142, 247, 142), rgb(248, 115, 115), rgb(243, 243, 110));*!*/
+/*  background: black;*/
+/*  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+/*  margin: 15px;*/
+/*}*/
+
+.form-control::placeholder{
+  color: black;
+}
+.body {
+  min-height: 600px;
+}
+
 
 .menu_film button,
 .input_search input,
@@ -172,4 +167,12 @@ html {
   display: block;
   position: relative;
   display: inline-block;
+}
+.form-search {
+  color: #000 !important;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.btn-search {
+  padding: 4px 8px;
 }
